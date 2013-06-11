@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-06-10T16:48:23-04:00</updated>
+  <updated>2013-06-11T09:13:26-04:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Pretty Juiced About the Work I Did Last Night]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2013/06/11/post-number-2/"/>
+    <updated>2013-06-11T08:45:00-04:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2013/06/11/post-number-2</id>
+    <content type="html"><![CDATA[<p>This morning will be the seventh day of The Flatiron School.  Yesterday (the sixth day) was by far the most challenging day for me.  Yesterday we were introduced to many new things in the ruby language and it became a lot to comprehend all at once.  As yesterday was seemingly overwhelming, it became very clear to me that no matter what the issue, the process becomes very important.</p>
+
+<p>We were given a homework assignment to create a basketball game with the following guidelines:</p>
+
+<p><img src="../images/Screen1.png" alt="homework guidelines" /></p>
+
+<p>For my seventh day, this assignment also felt overwhelming.  Luckily for me (some would say), I have an hour long bus commute going home so it was a great opportunity to do some reading on hashes (which is how we were supposed to create this data).</p>
+
+<p>While this feels like a lot of information for me (or at least it did!), remembering the process became key (play on word).  I chose to begin by planning out everything and talking myself through what these hashes would visually look like.  Eventually I was able to visualize these hashes as simple numbered lists:</p>
+
+<p><img src="http://3.bp.blogspot.com/-wk8cXlINClk/UTBiAHyIO0I/AAAAAAAAA3g/qu3POwCibd0/s1600/03-Finished+Multilevel+List.png" alt="numbered list" /></p>
+
+<p>Eventually, my code ended up looking something like this (which I&rsquo;m very proud of):</p>
+
+<p><img src="../images/Screen2.png" alt="my code" /></p>
+
+<p>I am very happy with what I did on this homework assignment as I successfully took a large project and was able to plan out my execution well and break it down into smaller parts.</p>
+
+<p>Later on in the assignment I was asked to make calls to the hash $basketball_game which maybe I&rsquo;ll talk about in another post.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Blog Post 1.0]]></title>
