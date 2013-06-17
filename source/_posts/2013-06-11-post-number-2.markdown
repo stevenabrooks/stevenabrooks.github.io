@@ -20,7 +20,7 @@ While this feels like a lot of information for me (or at least it did!), remembe
 
 Eventually, my code ended up looking something like this (which I'm very proud of):
 
-![my code](../images/Screen2.png)
+![my code](/images/Screen2.png)
 
 I am very happy with what I did on this homework assignment as I successfully took a large project and was able to plan out my execution well and break it down into smaller parts.
 

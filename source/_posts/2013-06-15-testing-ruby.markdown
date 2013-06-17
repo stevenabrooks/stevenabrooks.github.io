@@ -7,7 +7,7 @@ categories:
 ---
 I was quickly drawn to ["Testing Ruby"](https://speakerdeck.com/duien/testing-ruby)  by Emily Price because as a rookie programmer I have come to realize that things such as planning and testing are very important.
 
-![Ruby Testing](../images/Screen3.png)
+![Ruby Testing](/images/Screen3.png)
 
 She writes that testing does many things for a programmer including:
 
