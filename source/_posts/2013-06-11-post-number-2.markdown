@@ -14,7 +14,7 @@ We were given a homework assignment to create a basketball game with the followi
 
 For my seventh day, this assignment also felt overwhelming.  Luckily for me (some would say), I have an hour long bus commute going home so it was a great opportunity to do some reading on hashes (which is how we were supposed to create this data).
 
-While this feels like a lot of information for me (or at least it did!), remembering the process became key (play on word).  I chose to begin by planning out everything and talking myself through what these hashes would visually look like.  Eventually I was able to visualize these hashes as simple numbered lists:
+While this feels like a lot of information for me (or at least it did), remembering the process became key (play on word).  I chose to begin by planning out everything and talking myself through what these hashes would visually look like.  Eventually I was able to visualize these hashes as simple numbered lists:
 
 ![numbered list](http://3.bp.blogspot.com/-wk8cXlINClk/UTBiAHyIO0I/AAAAAAAAA3g/qu3POwCibd0/s1600/03-Finished+Multilevel+List.png)
 
