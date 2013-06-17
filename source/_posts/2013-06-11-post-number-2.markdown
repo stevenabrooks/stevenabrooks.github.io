@@ -9,7 +9,7 @@ This morning will be the seventh day of The Flatiron School.  Yesterday (the six
 
 We were given a homework assignment to create a basketball game with the following guidelines:
 
-![homework guidelines](/images/Screen1.png)
+![homework guidelines](../images/Screen1.png)
 
 
 For my seventh day, this assignment also felt overwhelming.  Luckily for me (some would say), I have an hour long bus commute going home so it was a great opportunity to do some reading on hashes (which is how we were supposed to create this data).
@@ -20,7 +20,7 @@ While this feels like a lot of information for me (or at least it did!), remembe
 
 Eventually, my code ended up looking something like this (which I'm very proud of):
 
-![my code](/images/Screen2.png)
+![my code](../images/Screen2.png)
 
 I am very happy with what I did on this homework assignment as I successfully took a large project and was able to plan out my execution well and break it down into smaller parts.
 
