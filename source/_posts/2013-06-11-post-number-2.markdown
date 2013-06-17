@@ -9,7 +9,7 @@ This morning will be the seventh day of The Flatiron School.  Yesterday (the six
 
 We were given a homework assignment to create a basketball game with the following guidelines:
 
-![homework guidelines](../images/Screen1.png)
+![homework guidelines](/images/Screen1.png)
 
 
 For my seventh day, this assignment also felt overwhelming.  Luckily for me (some would say), I have an hour long bus commute going home so it was a great opportunity to do some reading on hashes (which is how we were supposed to create this data).
