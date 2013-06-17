@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-06-15T16:04:09-04:00</updated>
+  <updated>2013-06-17T09:22:16-04:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -20,7 +20,7 @@
     <id>http://stevenabrooks.github.io/blog/2013/06/15/testing-ruby</id>
     <content type="html"><![CDATA[<p>I was quickly drawn to <a href="https://speakerdeck.com/duien/testing-ruby">&ldquo;Testing Ruby&rdquo;</a>  by Emily Price because as a rookie programmer I have come to realize that things such as planning and testing are very important.</p>
 
-<p><img src="../images/Screen3.png" alt="Ruby Testing" /></p>
+<p><img src="http://stevenabrooks.github.io/images/Screen3.png" alt="Ruby Testing" /></p>
 
 <p>She writes that testing does many things for a programmer including:</p>
 
@@ -65,7 +65,7 @@
 
 <p>We were given a homework assignment to create a basketball game with the following guidelines:</p>
 
-<p><img src="../images/Screen1.png" alt="homework guidelines" /></p>
+<p><img src="http://stevenabrooks.github.io/images/Screen1.png" alt="homework guidelines" /></p>
 
 <p>For my seventh day, this assignment also felt overwhelming.  Luckily for me (some would say), I have an hour long bus commute going home so it was a great opportunity to do some reading on hashes (which is how we were supposed to create this data).</p>
 
@@ -75,7 +75,7 @@
 
 <p>Eventually, my code ended up looking something like this (which I&rsquo;m very proud of):</p>
 
-<p><img src="../images/Screen2.png" alt="my code" /></p>
+<p><img src="http://stevenabrooks.github.io/images/Screen2.png" alt="my code" /></p>
 
 <p>I am very happy with what I did on this homework assignment as I successfully took a large project and was able to plan out my execution well and break it down into smaller parts.</p>
 
