@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Sinatra - Steven Brooks' Blog</title>
+  <meta name="author" content="Steven Brooks">
+
+  
+  <meta name="description" content="The sinatra-examples folder structure at first glance appears to be very large but fortunately very organized. On the first screen there are five &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/06/23/sinatra">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Steven Brooks' Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Steven Brooks' Blog</a></h1>
+  
+    <h2>Student @Flatiron School</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:stevenabrooks.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Sinatra</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-23T15:59:00-04:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>The sinatra-examples folder structure at first glance appears to be very large but fortunately very organized.  On the first screen there are five folders as well as a three additional files.  These additional files are :</p>
+
+<p>.rvmrc &ndash; This is a small file which appears to list the ruby version in which the program runs on.</p>
+
+<p>README.md &ndash; This file appears to give a brief outline of the five folders as well as a setup guide to install the files and run them on a local computer.</p>
+
+<p>classic.rb &ndash; This file appears to show a brief example of what a sinatra app looks like.  By requiring &lsquo;sinatra&rsquo; at the top, this could mean that sinatra gives a large framework for a program and customization can occur.</p>
+
+<p>The first of the five large folders is:</p>
+
+<h3>Assetpack</h3>
+
+<p>assetpack &ndash; This large folders contains four additional folders as well a seven files.  The first additional folder is:</p>
+
+<p>.sass-cache &ndash; Google claims this folder is used for making compiling faster.  It appears as if sinatra creates this folder automatically.  Within this folder are two additional folders which each hold contents that are very similar to images.</p>
+
+<p>app &ndash; This folder holds css files in their own folder, images in their own folder, and js in their own folder which also holds query files.</p>
+
+<p>lib &ndash; This library folder is very large.  It holds a sinatra folder.  That sinatra folder holds as asset pack folder.  That asset pack folder looks like it holds files all containing the sinatra Module and many different sub-modules.</p>
+
+<p>views &ndash; The views folder here holds a file index.erb.  This would be the erg template for the index page of the app.</p>
+
+<p>The assetpack folder also contains a few other files also including a Gemfile which requires additional gems to power the application.</p>
+
+<h3>Middleware</h3>
+
+<p>middleware &ndash; the middleware folder is the second folder on the top level.  This folder contains two sub-folders:</p>
+
+<p>basic_auth &ndash; this folder holds an app.rb files, which appears th eve the basic authentication file for the application.  It also holders the config.ru file which appears to run the authentication file above.</p>
+
+<p>examples &ndash; the example folder is filled with a few files.  Most of them appear to be in some form of Rack in which they are sending information to the server and receiving back status, headers, and responses.  There is also a no_chrone_middleware files which is interesting to me.  The content of the file appear to redirect the user to Internet Explorers default download page.  Does this file send users without Chrome to IE?  The config.ru rile which was also listed in the basic_auth file also runs the application, but my question is which application is it running?</p>
+
+<h3>Modular</h3>
+
+<p>modular &ndash; this is the third folder on the top level of the application.  This folder only contains two files.  It contains a config.ru files which runs the application in the modular folder and a modular.rb file which inputs a sinatra base modular into the application.</p>
+
+<h3>Multiple-app</h3>
+
+<p>multiple-app &ndash; this is the fourth top level folder which holds a websites folder and a config.ru files.  The config.ru file here runs the application but I am unsure as to which part of the application gets ran from this specific file.  The website folder contains four files; blog, init, search, and site.  The blog file appears to put a sinatra modular into the blog class which I am guessing powers the blog portion of the site.  The init file requires other parts of the site I am assuming at the beginning.  The search file is similar to the blog file in which a modular is being passed into the search class.  The site file is also similar to the blog file in which a sinatra modular is being passed into the site class.  In all three instances, the same modular is being passed into the blog, search, and site .rb files.</p>
+
+<h3>View</h3>
+
+<p>view &ndash; the view folder is the fifth top level folder which contains a view folder as well as an app.rb file and a config.ru files.</p>
+
+<p>views &ndash; the views folder has a admin folder as well as a few additional erg and haml files.  The erg files I am assuming are template files for the index, layout, and my_partial.  The admin folder appears to hold an erb file that is the outline of the administration section or page of the application.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Steven Brooks</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-23T15:59:00-04:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/06/23/sinatra/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/06/23/sinatra/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/06/18/baseball/" title="Previous Post: Baseball Is a Game of Pixels">&laquo; Baseball Is a Game of Pixels</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/06/23/sinatra/">Sinatra</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/18/baseball/">Baseball Is a Game of Pixels</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/15/testing-ruby/">Testing Ruby</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/11/post-number-2/">Pretty Juiced About the Work I Did Last Night</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/09/hello-world/">Blog Post 1.0</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/stevenabrooks">@stevenabrooks</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'stevenabrooks',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Steven Brooks -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
