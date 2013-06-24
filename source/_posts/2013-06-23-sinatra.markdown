@@ -51,6 +51,8 @@ view - the view folder is the fifth top level folder which contains a view folde
 
 views - the views folder has a admin folder as well as a few additional erg and haml files.  The erg files I am assuming are template files for the index, layout, and my_partial.  The admin folder appears to hold an erb file that is the outline of the administration section or page of the application.
 
+After doing this assignment I can better see how to structure the files of an application.  I am sure as I get more involved with Sinatra I will see repeat structures as well as files in specific folders.
+
 
 
 
