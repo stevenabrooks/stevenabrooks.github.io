@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-06-23T17:05:17-04:00</updated>
+  <updated>2013-06-24T08:53:34-04:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -63,6 +63,8 @@
 <p>view &ndash; the view folder is the fifth top level folder which contains a view folder as well as an app.rb file and a config.ru files.</p>
 
 <p>views &ndash; the views folder has a admin folder as well as a few additional erg and haml files.  The erg files I am assuming are template files for the index, layout, and my_partial.  The admin folder appears to hold an erb file that is the outline of the administration section or page of the application.</p>
+
+<p>After doing this assignment I can better see how to structure the files of an application.  I am sure as I get more involved with Sinatra I will see repeat structures as well as files in specific folders.</p>
 ]]></content>
   </entry>
   
