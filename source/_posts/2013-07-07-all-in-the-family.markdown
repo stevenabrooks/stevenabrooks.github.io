@@ -5,7 +5,7 @@ date: 2013-07-07 21:20
 comments: true
 categories: 
 ---
-After a fantastic weekend at the beach I was talking to my younger brother David over a nice Paleo dinner.  David is a CS major and on the side develops iPhone applications.  He has made a few apps with his most popular being ["Never Have I Ever"](https://itunes.apple.com/us/app/never-have-i-ever/id401767832?mt=8) and is currently creating a location based app this summer.  
+After a fantastic weekend at the beach I was talking to my younger brother David over a nice Paleo dinner where we absolutely crushed [The Stable](http://thestablerestaurant.com/).  David is a CS major and on the side develops iPhone applications.  He has made a few apps with his most popular being ["Never Have I Ever"](https://itunes.apple.com/us/app/never-have-i-ever/id401767832?mt=8) and is currently creating a location based app this summer.  
 
 ![David code 1](/images/nhie1.png) ![David code 1](/images/nhie2.png)
 
@@ -30,7 +30,9 @@ Steven: Why did you choose to learn objective C over web application languages?
 
 David: When I was a Sophomore in high school, I taught myself C++ and a little bit of Java.  I had no previous knowledge or involvement with HTML or web development and decided to focus on software engineering.  Then, the invention of the iPhone came around and I was hooked.  I saw it as this awesome new product that everyone would be talking about and so turned my attention to mobile development.  It is very interesting to point out that, I am a rising Junior at Loyola University Maryland, aiming for a BS of Computer Science and a minor in Mathematics, and yet, I have never once touched HTML.  In fact, HTML is not even in the CS curriculum because our faculty believe that it is such a basic and easy language that they do not even bother teaching it to us.  Instead, we are to learn it ourselves outside of the classroom if desired.
 
-Pretty interesting stuff.  I definitely learned quite a bit from talking to him.  We are both programmers and learning completely different things.  I was telling him as much as I could about Active Record because I am just obsessed with the type of magic it provides to me and I asked him to show me his code for importing data into his database, saving it, and displaying it.  This is what I got in return:  
+Pretty interesting stuff.  I definitely learned quite a bit from talking to him.  We are both programmers and learning completely different things.  
+
+I was telling him as much as I could about Active Record because I am just obsessed with the type of magic it provides to me and I asked him to show me his code for importing data into his database, saving it, and displaying it.  This is what I got in return:  
 
 ![David code 1](/images/davidcode1.png)
 
@@ -42,8 +44,10 @@ Pretty interesting stuff.  I definitely learned quite a bit from talking to him.
 
 ![David code 5](/images/davidcode5.png)
 
-So somewhere in here he is dating a users location and storing it into a SQL database, then saving it, then making it available.  Apparently in Objective C you have to make methods on methods on methods for a lot of things that with Active Record you can simply run a migrate.
+So somewhere in here he is getting a users location and storing it into a SQL database, then saving it, then making it available.  Apparently in Objective C you have to make methods on methods on methods for a lot of things that with Active Record you can simply run a migrate.  I also realize that the way I presented this code makes it look like databasing in Objective C is the worst thing in the world.  There is a good amount of code here for actually finding the location of the users, but it is still a lot.
 
 Thanks David for letting me interview you.
 
 ![David code 1](/images/meanddavid.jpg)
+
+Beast mode.
