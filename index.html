@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="After a fantastic weekend at the beach I was talking to my younger brother David over a nice Paleo dinner where we absolutely crushed The Stable. &hellip;">
+  <meta name="description" content="For me, today is the day I have become a programmer. Actually, it was pretty exciting and I even got a little emotional about it. Yesterday(Sunday), &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,54 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/22/staring-my-own-app/">Staring My Own App</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-22T10:32:00-04:00" pubdate data-updated="true">Jul 22<span>nd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>For me, today is the day I have become a programmer.  Actually, it was pretty exciting and I even got a little emotional about it.  Yesterday(Sunday), I began creating my own application, and very much enjoyed making it on my own, solving some bugs on my own (or at least the ones I was able to understand). It was very exiting for someone who has only been programming for 7 weeks.  I have come very far and would like to challenge myself in creating my own app.</p>
+
+<p>My friends are very into fitness as well as I am.  We compete in Crossfit events and I wanted to create an app where myself and my friends can input the data from each of their workouts, on top of just having a log, and being able to see their and their friends&#8217; progress visually with visual representations to track progress.</p>
+
+<p>I would like to have a post each day, or at least try to have a post each day, or now that I am thinking about it I should make a post with each new thing I learn while building.  Actually I think I&rsquo;ll do the latter.</p>
+
+<p>I first built three models, a routine model, and exercise model, and a lift model which is a joins between routine and exercise.  The first issue I came into was the form in which I am attempting to allow the user to create a workout along with exercises for that specific routine.  One of the first issue I found is that each time a user makes a routine, the corresponding exercises are being saved into the database as new exercises.  So if I have a &ldquo;squat&rdquo; in one workout and create a &ldquo;squat&rdquo; in another, there becomes two instances of &ldquo;squat&rdquo; in the database.  I decided to push that back because my form is already a mess.</p>
+
+<p>In watching <a href="http://railscasts.com/episodes/196-nested-model-form-part-1">Nested Models</a> on <a href="http://railscasts.com">Railscasts</a>, the author talks about nesting models within the form.  In my routine form, I wrote &ldquo;accepted_nested_attributes_for :exercises&rdquo;.  Now while this will allow each exercises to be nested within a routine, and with the knowledge I have in 7 weeks, I cannot get access to each exercise in the instance of the routine.</p>
+
+<p>I realized my form is messed up.  I need to do something like &ldquo;f.label &lsquo;routine[][exercise[name]]&rdquo; or something in the form and then in the controller loop through that array of exercises and &lt;&lt; or shovel them into that instance of a routine such as &ldquo;@routine.exercises &lt;&lt; whatever_the_params_are&rdquo;.</p>
+
+<p>For me thats a big breakthrough to be able to get this on my own.  It&rsquo;s exciting.  Being able to get the data in a way you want it to is beyond important in Rails and I feel I am on my way!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -485,6 +533,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/07/22/staring-my-own-app/">Staring My Own App</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/07/07/all-in-the-family/">All in the Family</a>
       </li>
     
@@ -498,10 +550,6 @@
     
       <li class="post">
         <a href="/blog/2013/06/15/testing-ruby/">Testing Ruby</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/11/post-number-2/">Pretty Juiced About the Work I Did Last Night</a>
       </li>
     
   </ul>
