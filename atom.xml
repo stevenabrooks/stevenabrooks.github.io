@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-07-22T10:45:31-04:00</updated>
+  <updated>2013-07-23T09:01:28-04:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Day 2]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2013/07/23/day-2/"/>
+    <updated>2013-07-23T08:48:00-04:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2013/07/23/day-2</id>
+    <content type="html"><![CDATA[<p>So last night I was able to get about an hour of work in.  I feel like that a sustainable pace considering I do not want to have energy taken away from my Library group project.</p>
+
+<p>Anyway I feel very strong with form now.  Yesterday, I was doing some work with my form with one of our TA&rsquo;s, Jeff, who recommended I back down from form_for and move to form_tag.  That worked wonders as there is far less rails magic involved in form_tag, and I also am literally only going to have one form for the user to input data for multiple objects.</p>
+
+<p>Form_tag was much easier for me for many reasons.  First, I was able to create to params hash the exact way I wanted to.  This made it very easy for me to locate the the proper information in the controller and add that information into different instance variable.  That process was repetitive, which I enjoyed because I feel I made large strides yesterday as far as the M and C of the MVC model goes.</p>
+
+<p>I also was able to add sets to lifts(which is a joins table between routine and exercises).  Now each lift has many sets which include repetitions and weights.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Staring My Own App]]></title>
