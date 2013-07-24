@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-07-23T09:01:28-04:00</updated>
+  <updated>2013-07-24T10:05:09-04:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Day 3]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2013/07/24/day-3/"/>
+    <updated>2013-07-24T09:27:00-04:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2013/07/24/day-3</id>
+    <content type="html"><![CDATA[<p>Grrrr.  Tough night last night.  The good news is that I&rsquo;m only going to have one form for this app and that&rsquo;s awesome. The bad news it that I am using four freaking models in my single form.  But the good news on that is if I can get this I will be able to crush any form in rails, which is literally one of the top three most important things about rails that I can think of.</p>
+
+<p>One of the things I learned is that in the create method in the controller, nothing in the joins table is happening until I save the information that is in the tables that the joins table belongs to.</p>
+
+<p>Quick post, spent a lot of time just trying to wrap my head around how I get multiple models in one form.  I realize though I can accept_nested_attributes for the sets within the lifts.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Day 2]]></title>
