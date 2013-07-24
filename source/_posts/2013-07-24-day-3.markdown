@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Day 3"
+date: 2013-07-24 09:27
+comments: true
+categories: 
+---
+Grrrr.  Tough night last night.  The good news is that I'm only going to have one form for this app and that's awesome. The bad news it that I am using four freaking models in my single form.  But the good news on that is if I can get this I will be able to crush any form in rails, which is literally one of the top three most important things about rails that I can think of.
+
+One of the things I learned is that in the create method in the controller, nothing in the joins table is happening until I save the information that is in the tables that the joins table belongs to.
+
+Quick post, spent a lot of time just trying to wrap my head around how I get multiple models in one form.  I realize though I can accept_nested_attributes for the sets within the lifts.
