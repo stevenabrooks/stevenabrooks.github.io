@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-07-24T10:05:09-04:00</updated>
+  <updated>2013-07-26T08:53:00-04:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Day 4...How Nested Can Your Form Be?]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2013/07/26/day-4-dot-dot-dot-how-nested-can-your-form-be/"/>
+    <updated>2013-07-26T08:41:00-04:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2013/07/26/day-4-dot-dot-dot-how-nested-can-your-form-be</id>
+    <content type="html"><![CDATA[<p>So yesterday I hit a little bit of a wall.  And the good news it I&rsquo;m not too worried about it.</p>
+
+<p>Right now I have four objects being either created or associated with in my single form.  The reason I&rsquo;m being persistent about having all of this happen in one form is because if I was a user this is the way I would want to implement my workouts.  I would want either create the workout beforehand and after my workout but in either scenario be able to implement all the exercises, sets, reps, and weight used.  If this was not the case and I had multiple forms it would be easy peasy but that&rsquo;s not what I want to do.</p>
+
+<p>Today I&rsquo;ll be working with Joe, one of the TA&rsquo;s here at Flatiron to try to get my form working this way.  If that gets done before the weekend, I would like to attempt to make this form using accepted_attributes_for.  The reason I did not do that was because a confidant of mine suggested I do otherwise as actually locating all of the nested attributes is challenging, at least for someone with less than 8 weeks of programming under his belt.  Also this weekend I am also going to be looking in AJAX because apparently that would solve my issues too.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Day 3]]></title>
