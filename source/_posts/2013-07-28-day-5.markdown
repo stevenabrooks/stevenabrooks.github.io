@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Day 5, Making my Params First"
+date: 2013-07-28 16:46
+comments: true
+categories: 
+---
+Although I have has multiple breakthroughs as far as my knowledge has been concerned over the last few days, I am still very stuck.  The good news is, I am now beginning to think differently about my forms.  Previously, I was worrying about the form first whereas now I am more conceded about creating the params that I want to be given from the form and then making the form first those params that I want.  Here are the current params I would like: 
+
+![My params](/images/params.png)
+
+On the above code, I have a routine, which has a name.  That routine has this thing called arbitrary which means nothing.  But that routine has many lifts, each with an exercise_id and many infos(or sets) which have weight and repetitions.  
+
+These are the params I constructed in IRB.
+
+The issue I am now having is that when I choose more than one exercise in my short form: 
+
+![My form](/images/smallform.png)
+
+The params are only showing :lift once.  My guess is that it is only picking up the last exercise_id because it is overwriting each lift and just leaving the last one.  After about two hours so far today going down a rabbit hole I have decided to post my first question on [Stack Overflow](http://stackoverflow.com/).  So if anyone can help you can see my first questions [here](http://stackoverflow.com/questions/17912435/nested-form-with-multiple-of-the-same-key-names).

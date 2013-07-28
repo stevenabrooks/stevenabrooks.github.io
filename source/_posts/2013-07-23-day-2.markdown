@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Day 2"
+title: "Day 2, Switching to Form Tag from Form For"
 date: 2013-07-23 08:48
 comments: true
 categories: 
