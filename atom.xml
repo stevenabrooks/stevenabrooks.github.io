@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-07-28T16:59:15-04:00</updated>
+  <updated>2013-07-29T09:51:09-04:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Day 6...Hey Dude Remember There Are Keys and Values in Hashes]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2013/07/29/day-6-dot-dot-dot-hey-dude-remember-there-are-keys-and-values-in-hashes/"/>
+    <updated>2013-07-29T09:20:00-04:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2013/07/29/day-6-dot-dot-dot-hey-dude-remember-there-are-keys-and-values-in-hashes</id>
+    <content type="html"><![CDATA[<p>Got it.  Finally.  I couldn&rsquo;t be happier right now.</p>
+
+<p>I&rsquo;m going to reflect a little here.  I&rsquo;ve been programming for 8 weeks now.  In that time, I have learned Ruby, SQL, Git, Sintra, and now Rails.  Holy shit.</p>
+
+<p>While those are remarkable I now truly consider myself a programmer.  In my latest blog post, I mentioned that I was going down a nice long rabbit hole.  But I&rsquo;m here, and you know what, I&rsquo;m totally out of that rabbit hole now.  I am now able to know exactly where some of my errors are and also where I can go to get those errors solved.  On my <a href="http://stackoverflow.com/questions/17912435/nested-form-with-multiple-of-the-same-key-names">StackOverflow question</a>, I was able to articulate my question well enough so that a true Rubyist would be able to answer my questions and for me to understand what he was saying.</p>
+
+<p>Here is my form that will scale and will work.  I whooped you ass.</p>
+
+<p><img src="http://stevenabrooks.github.io/images/correct.png" alt="My form" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Day 5, Making my Params First]]></title>
