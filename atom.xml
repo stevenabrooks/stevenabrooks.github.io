@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-07-29T09:51:09-04:00</updated>
+  <updated>2013-07-30T14:04:59-04:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Day 7...Took Four Models Into One Model]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2013/07/30/day-7-dot-dot-dot-took-four-models-into-one-model/"/>
+    <updated>2013-07-30T13:55:00-04:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2013/07/30/day-7-dot-dot-dot-took-four-models-into-one-model</id>
+    <content type="html"><![CDATA[<p>After over a week of tinkering with my form for my workout app, spending hours with TA&rsquo;s, and even looking to the <a href="http://stackoverflow.com/">Stack Overflow</a> community, I have finally figured out my form.  I now know how to create a form where four models are being used, create all of their associations in the controller, and display them properly in the view.  That&rsquo;s Rails ladies and gentlemen.</p>
+
+<p>Here is my form (which will be changed with some jquery soon):</p>
+
+<p><img src="http://stevenabrooks.github.io/images/forminter.png" alt="My params" /></p>
+
+<p>The trick here was that I wanted many instances of &ldquo;lifts&rdquo; in an array, so creating the variable &ldquo;n&rdquo; and interpolating that variable into the form fields basically set &ldquo;n&rdquo; as a counter.</p>
+
+<p>Then this is how I tied everything together in the controller (which will probably be cleaned up as some point):</p>
+
+<p><img src="http://stevenabrooks.github.io/images/workoutcontroller.png" alt="My params" /></p>
+
+<p>Not bad at all.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Day 6...Hey Dude Remember There Are Keys and Values in Hashes]]></title>
@@ -26,7 +47,7 @@
 
 <p>Here is my form that will scale and will work.  I whooped you ass.</p>
 
-<p><img src="http://stevenabrooks.github.io/images/correct.png" alt="My form" /></p>
+<p><img src="http://stevenabrooks.github.io/images/workoutcontroller.png" alt="My form" /></p>
 ]]></content>
   </entry>
   

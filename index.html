@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="Got it. Finally. I couldn&rsquo;t be happier right now. I&rsquo;m going to reflect a little here. I&rsquo;ve been programming for 8 weeks now. In &hellip;">
+  <meta name="description" content="After over a week of tinkering with my form for my workout app, spending hours with TA&rsquo;s, and even looking to the Stack Overflow community, I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -71,6 +71,54 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/07/30/day-7-dot-dot-dot-took-four-models-into-one-model/">Day 7&#8230;Took Four Models Into One Model</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-30T13:55:00-04:00" pubdate data-updated="true">Jul 30<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>After over a week of tinkering with my form for my workout app, spending hours with TA&rsquo;s, and even looking to the <a href="http://stackoverflow.com/">Stack Overflow</a> community, I have finally figured out my form.  I now know how to create a form where four models are being used, create all of their associations in the controller, and display them properly in the view.  That&rsquo;s Rails ladies and gentlemen.</p>
+
+<p>Here is my form (which will be changed with some jquery soon):</p>
+
+<p><img src="/images/forminter.png" alt="My params" /></p>
+
+<p>The trick here was that I wanted many instances of &ldquo;lifts&rdquo; in an array, so creating the variable &ldquo;n&rdquo; and interpolating that variable into the form fields basically set &ldquo;n&rdquo; as a counter.</p>
+
+<p>Then this is how I tied everything together in the controller (which will probably be cleaned up as some point):</p>
+
+<p><img src="/images/workoutcontroller.png" alt="My params" /></p>
+
+<p>Not bad at all.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/07/29/day-6-dot-dot-dot-hey-dude-remember-there-are-keys-and-values-in-hashes/">Day 6&#8230;Hey Dude Remember There Are Keys and Values in Hashes</a></h1>
     
     
@@ -102,7 +150,7 @@
 
 <p>Here is my form that will scale and will work.  I whooped you ass.</p>
 
-<p><img src="/images/correct.png" alt="My form" /></p>
+<p><img src="/images/workoutcontroller.png" alt="My form" /></p>
 </div>
   
   
@@ -568,76 +616,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/15/testing-ruby/">Testing Ruby</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-15T15:31:00-04:00" pubdate data-updated="true">Jun 15<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I was quickly drawn to <a href="https://speakerdeck.com/duien/testing-ruby">&ldquo;Testing Ruby&rdquo;</a>  by Emily Price because as a rookie programmer I have come to realize that things such as planning and testing are very important.</p>
-
-<p><img src="/images/Screen3.png" alt="Ruby Testing" /></p>
-
-<p>She writes that testing does many things for a programmer including:</p>
-
-<ol>
-<li>Ensuring the code is correct</li>
-<li>Promoting good practice</li>
-<li>Giving reference to how to code actually works.</li>
-</ol>
-
-
-<p>In the first two weeks at Flatiron School, testing out my code before moving on has become very important.  If I can know for certain that a method works (by testing), I never have to worry about that method later on in my program.  It seems like such a simple idea but it was only something I found important after writing dozens of lines of code and realizing one of the first few lines did not work.</p>
-
-<p>One pointer that Price writes about that I learned was to:</p>
-
-<ol>
-<li>Write your test first</li>
-</ol>
-
-
-<p>This is something that I can see would be very useful.  At this point in my programming career I am just learning how to do that so this slideshow comes at a good time for me.</p>
-
-<p>Some of the things I thought of during my first two weeks as a programmer that she brought up were:</p>
-
-<ol>
-<li>Get instant notification when you have an issue</li>
-<li>Write as little code as possible to test</li>
-</ol>
-
-
-<p>As my skills as a programmer grow, I would like to be able to create some sort of a process in which I develop certain ways to test my code to find errors as soon as I can.</p>
-
-<p>Price also has a <a href="https://speakerdeck.com/duien/git-an-introduction">Git Introduction</a> slideshow on <a href="https://speakerdeck.com">speakerdeck</a>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -653,6 +631,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/07/30/day-7-dot-dot-dot-took-four-models-into-one-model/">Day 7&#8230;Took Four Models Into One Model</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/07/29/day-6-dot-dot-dot-hey-dude-remember-there-are-keys-and-values-in-hashes/">Day 6&#8230;Hey Dude Remember There Are Keys and Values in Hashes</a>
       </li>
     
@@ -666,10 +648,6 @@
     
       <li class="post">
         <a href="/blog/2013/07/24/day-3/">Day 3, Four Models in One Form Are Driving Me Nuts</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/23/day-2/">Day 2, Switching to Form Tag From Form For</a>
       </li>
     
   </ul>

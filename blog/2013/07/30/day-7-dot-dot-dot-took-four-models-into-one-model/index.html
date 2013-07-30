@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Testing Ruby - Steven Brooks' Blog</title>
+  <title>Day 7...Took Four Models Into One Model - Steven Brooks' Blog</title>
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="I was quickly drawn to &ldquo;Testing Ruby&rdquo; by Emily Price because as a rookie programmer I have come to realize that things such as planning &hellip;">
+  <meta name="description" content="After over a week of tinkering with my form for my workout app, spending hours with TA&rsquo;s, and even looking to the Stack Overflow community, I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/06/15/testing-ruby">
+  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/07/30/day-7-dot-dot-dot-took-four-models-into-one-model">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Steven Brooks' Blog" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Testing Ruby</h1>
+      <h1 class="entry-title">Day 7...Took Four Models Into One Model</h1>
     
     
       <p class="meta">
@@ -84,48 +84,26 @@
   
 
 
-<time datetime="2013-06-15T15:31:00-04:00" pubdate data-updated="true">Jun 15<span>th</span>, 2013</time>
+<time datetime="2013-07-30T13:55:00-04:00" pubdate data-updated="true">Jul 30<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I was quickly drawn to <a href="https://speakerdeck.com/duien/testing-ruby">&ldquo;Testing Ruby&rdquo;</a>  by Emily Price because as a rookie programmer I have come to realize that things such as planning and testing are very important.</p>
+<div class="entry-content"><p>After over a week of tinkering with my form for my workout app, spending hours with TA&rsquo;s, and even looking to the <a href="http://stackoverflow.com/">Stack Overflow</a> community, I have finally figured out my form.  I now know how to create a form where four models are being used, create all of their associations in the controller, and display them properly in the view.  That&rsquo;s Rails ladies and gentlemen.</p>
 
-<p><img src="/images/Screen3.png" alt="Ruby Testing" /></p>
+<p>Here is my form (which will be changed with some jquery soon):</p>
 
-<p>She writes that testing does many things for a programmer including:</p>
+<p><img src="/images/forminter.png" alt="My params" /></p>
 
-<ol>
-<li>Ensuring the code is correct</li>
-<li>Promoting good practice</li>
-<li>Giving reference to how to code actually works.</li>
-</ol>
+<p>The trick here was that I wanted many instances of &ldquo;lifts&rdquo; in an array, so creating the variable &ldquo;n&rdquo; and interpolating that variable into the form fields basically set &ldquo;n&rdquo; as a counter.</p>
 
+<p>Then this is how I tied everything together in the controller (which will probably be cleaned up as some point):</p>
 
-<p>In the first two weeks at Flatiron School, testing out my code before moving on has become very important.  If I can know for certain that a method works (by testing), I never have to worry about that method later on in my program.  It seems like such a simple idea but it was only something I found important after writing dozens of lines of code and realizing one of the first few lines did not work.</p>
+<p><img src="/images/workoutcontroller.png" alt="My params" /></p>
 
-<p>One pointer that Price writes about that I learned was to:</p>
-
-<ol>
-<li>Write your test first</li>
-</ol>
-
-
-<p>This is something that I can see would be very useful.  At this point in my programming career I am just learning how to do that so this slideshow comes at a good time for me.</p>
-
-<p>Some of the things I thought of during my first two weeks as a programmer that she brought up were:</p>
-
-<ol>
-<li>Get instant notification when you have an issue</li>
-<li>Write as little code as possible to test</li>
-</ol>
-
-
-<p>As my skills as a programmer grow, I would like to be able to create some sort of a process in which I develop certain ways to test my code to find errors as soon as I can.</p>
-
-<p>Price also has a <a href="https://speakerdeck.com/duien/git-an-introduction">Git Introduction</a> slideshow on <a href="https://speakerdeck.com">speakerdeck</a>.</p>
+<p>Not bad at all.</p>
 </div>
 
 
@@ -148,7 +126,7 @@
   
 
 
-<time datetime="2013-06-15T15:31:00-04:00" pubdate data-updated="true">Jun 15<span>th</span>, 2013</time>
+<time datetime="2013-07-30T13:55:00-04:00" pubdate data-updated="true">Jul 30<span>th</span>, 2013</time>
       
 
 
@@ -156,7 +134,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/06/15/testing-ruby/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/06/15/testing-ruby/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/07/30/day-7-dot-dot-dot-took-four-models-into-one-model/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/07/30/day-7-dot-dot-dot-took-four-models-into-one-model/" >Tweet</a>
   
   
   
@@ -165,10 +143,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/06/11/post-number-2/" title="Previous Post: Pretty Juiced About the Work I Did Last Night">&laquo; Pretty Juiced About the Work I Did Last Night</a>
+        <a class="basic-alignment left" href="/blog/2013/07/29/day-6-dot-dot-dot-hey-dude-remember-there-are-keys-and-values-in-hashes/" title="Previous Post: Day 6...Hey Dude Remember There Are Keys and Values in Hashes">&laquo; Day 6...Hey Dude Remember There Are Keys and Values in Hashes</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/06/18/baseball/" title="Next Post: Baseball Is a Game of Pixels">Baseball Is a Game of Pixels &raquo;</a>
       
     </p>
   </footer>
