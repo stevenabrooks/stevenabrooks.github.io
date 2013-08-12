@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Staring My Own App - Steven Brooks' Blog</title>
+  <title>Loving Ruby - Steven Brooks' Blog</title>
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="For me, today is the day I have become a programmer. Actually, it was pretty exciting and I even got a little emotional about it. Yesterday(Sunday), &hellip;">
+  <meta name="description" content="It&rsquo;s been almost a week since I blogged. Before I set out to blog each day I worked on my workout application. I haven&rsquo;t followed through &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/07/22/staring-my-own-app">
+  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/08/12/loving-ruby">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Steven Brooks' Blog" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Staring My Own App</h1>
+      <h1 class="entry-title">Loving Ruby</h1>
     
     
       <p class="meta">
@@ -84,26 +84,32 @@
   
 
 
-<time datetime="2013-07-22T10:32:00-04:00" pubdate data-updated="true">Jul 22<span>nd</span>, 2013</time>
+<time datetime="2013-08-12T08:27:00-04:00" pubdate data-updated="true">Aug 12<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>For me, today is the day I have become a programmer.  Actually, it was pretty exciting and I even got a little emotional about it.  Yesterday(Sunday), I began creating my own application, and very much enjoyed making it on my own, solving some bugs on my own (or at least the ones I was able to understand). It was very exiting for someone who has only been programming for 7 weeks.  I have come very far and would like to challenge myself in creating my own app.</p>
+<div class="entry-content"><p>It&rsquo;s been almost a week since I blogged.  Before I set out to blog each day I worked on my workout application.  I haven&rsquo;t followed through on that.  I&rsquo;ll tell you the reason I haven&rsquo;t blogger yet is because every waking minute I am either working on the app itself or trying to finalize our group project for the <a href="http://info.flatironschool.com/science-002-fair-rsvp-1/2/">Science Fair</a> this Thursday.</p>
 
-<p>My friends are very into fitness as well as I am.  We compete in Crossfit events and I wanted to create an app where myself and my friends can input the data from each of their workouts, on top of just having a log, and being able to see their and their friends&#8217; progress visually with visual representations to track progress.</p>
+<p>Anywho, I have done quite a bit of work on my application since last I blogged.  Last time we spoke, I was trying to implement three javascript functions into my application; calendar, autocomplete, and the ability to create as many exercises and sets as a user wants.  All are done.</p>
 
-<p>I would like to have a post each day, or at least try to have a post each day, or now that I am thinking about it I should make a post with each new thing I learn while building.  Actually I think I&rsquo;ll do the latter.</p>
+<p>I also added bodyweight to a routine and not a user.  I talked to myself about this for roughly an hour and as far as a user is concerned, I realized that a user would be updating their weight during each workout rather than going to a user profile page and updating their weight there.  To me, it made more sense.  People go to the gym, and weight in, so they would be able to input that data when they are inputting the data for their routine.</p>
 
-<p>I first built three models, a routine model, and exercise model, and a lift model which is a joins between routine and exercise.  The first issue I came into was the form in which I am attempting to allow the user to create a workout along with exercises for that specific routine.  One of the first issue I found is that each time a user makes a routine, the corresponding exercises are being saved into the database as new exercises.  So if I have a &ldquo;squat&rdquo; in one workout and create a &ldquo;squat&rdquo; in another, there becomes two instances of &ldquo;squat&rdquo; in the database.  I decided to push that back because my form is already a mess.</p>
+<p>For the past few days I have been working with  <a href="https://developers.google.com/chart/">Google Graph</a> to be able to display the users stats graphically.  I have been living this process.  What you have to do is to take your data and manipulate it in order to feed it to Google a certain way.  That&rsquo;s freaking awesome.  I totally love making five methods for each array Google needs and then doing string manipulation.  In order for me to get what Google wants I have to deliver something like this:</p>
 
-<p>In watching <a href="http://railscasts.com/episodes/196-nested-model-form-part-1">Nested Models</a> on <a href="http://railscasts.com">Railscasts</a>, the author talks about nesting models within the form.  In my routine form, I wrote &ldquo;accepted_nested_attributes_for :exercises&rdquo;.  Now while this will allow each exercises to be nested within a routine, and with the knowledge I have in 7 weeks, I cannot get access to each exercise in the instance of the routine.</p>
+<p><img src="/images/google.png" alt="google" /></p>
 
-<p>I realized my form is messed up.  I need to do something like &ldquo;f.label &lsquo;routine[][exercise[name]]&rdquo; or something in the form and then in the controller loop through that array of exercises and &lt;&lt; or shovel them into that instance of a routine such as &ldquo;@routine.exercises &lt;&lt; whatever_the_params_are&rdquo;.</p>
+<p>Awesome.  That&rsquo;s a challenge I think I can tackle.  Especially since my wheelhouse are Ruby methods, I knew I was bona hit this shit to Beijing. In this information I need to set the first array to be the titles of what I want:</p>
 
-<p>For me thats a big breakthrough to be able to get this on my own.  It&rsquo;s exciting.  Being able to get the data in a way you want it to is beyond important in Rails and I feel I am on my way!</p>
+<p><img src="/images/firstline.png" alt="google" /></p>
+
+<p>Here is that code running in the rails console.  You give it an instance of the routine class and it gives you the right amount of information.  Here is will write &ldquo;sets…&rdquo; as many times as the most sets per the lifts within the instance of the routine:</p>
+
+<p><img src="/images/firstlinerailsc.png" alt="console" /></p>
+
+<p>Next time we chat it up I&rsquo;ll show you more stuff.</p>
 </div>
 
 
@@ -126,7 +132,7 @@
   
 
 
-<time datetime="2013-07-22T10:32:00-04:00" pubdate data-updated="true">Jul 22<span>nd</span>, 2013</time>
+<time datetime="2013-08-12T08:27:00-04:00" pubdate data-updated="true">Aug 12<span>th</span>, 2013</time>
       
 
 
@@ -134,7 +140,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/07/22/staring-my-own-app/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/07/22/staring-my-own-app/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/08/12/loving-ruby/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/08/12/loving-ruby/" >Tweet</a>
   
   
   
@@ -143,10 +149,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/07/07/all-in-the-family/" title="Previous Post: All in the Family">&laquo; All in the Family</a>
+        <a class="basic-alignment left" href="/blog/2013/08/06/2-slash-3-jquery/" title="Previous Post: 2/3 Jquery">&laquo; 2/3 Jquery</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/07/23/day-2/" title="Next Post: Day 2, Switching to Form Tag from Form For">Day 2, Switching to Form Tag from Form For &raquo;</a>
       
     </p>
   </footer>
