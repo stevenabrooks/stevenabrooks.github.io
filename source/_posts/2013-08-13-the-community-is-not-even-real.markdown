@@ -19,7 +19,9 @@ Amazing.  I have learned so much in 10 weeks and I contribute a the large majori
 
 Here is the ongoing conversation I am having with one of the users: [here](https://groups.google.com/forum/#!topic/google-visualization-api/t4jAaaJc200).
 
-I am officially not only searching google blogs or forums from now on, but I will not be bashful at all in asking questions to the public community.  This is similar to my early resistance to asking questions in class, but the first time I asked a dumb question that was not met with laughter I was over that.  Same thing here.  
+I am officially not only searching google blogs or forums from now on, but I will not be bashful at all in asking questions to the public community.  This is similar to my early resistance to asking questions in class, but the first time I asked a dumb question that was not met with laughter I was over that.  Same thing here. 
+
+And as a side not for only searching blogs on google now.  Yesterday I was having trouble with a dashboard for [Google Graph's](https://developers.google.com/chart/) and standard google searching wasn't giving my anything helpful.  But then I searched strictly blogs, and not only was the first blog exactly what I was looking for but it was also a hold-your-hand style tutorial that was beyond perfect for what I was looking for.  Boom.
 
 In my programming career I have asked two questions to the public forum with both being answered within minutes as well as both responders had back and forth conversations with me.  Amazing.
 
