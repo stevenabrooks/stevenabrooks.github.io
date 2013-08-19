@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Day 4...How Nested Can Your Form Be? - Steven Brooks' Blog</title>
+  <title>Have to Do Things Yourself - Steven Brooks' Blog</title>
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="So yesterday I hit a little bit of a wall. And the good news it I&rsquo;m not too worried about it. Right now I have four objects being either &hellip;">
+  <meta name="description" content="I learned a valuable lesson this morning that I should have learned a while ago actually. Or at least I should have picked up on this earlier. Last &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/07/26/day-4-dot-dot-dot-how-nested-can-your-form-be">
+  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/08/19/have-to-do-things-yourself">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Steven Brooks' Blog" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Day 4...How Nested Can Your Form Be?</h1>
+      <h1 class="entry-title">Have to Do Things Yourself</h1>
     
     
       <p class="meta">
@@ -84,18 +84,26 @@
   
 
 
-<time datetime="2013-07-26T08:41:00-04:00" pubdate data-updated="true">Jul 26<span>th</span>, 2013</time>
+<time datetime="2013-08-19T09:32:00-04:00" pubdate data-updated="true">Aug 19<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>So yesterday I hit a little bit of a wall.  And the good news it I&rsquo;m not too worried about it.</p>
+<div class="entry-content"><p>I learned a valuable lesson this morning that I should have learned a while ago actually.  Or at least I should have picked up on this earlier.</p>
 
-<p>Right now I have four objects being either created or associated with in my single form.  The reason I&rsquo;m being persistent about having all of this happen in one form is because if I was a user this is the way I would want to implement my workouts.  I would want either create the workout beforehand and after my workout but in either scenario be able to implement all the exercises, sets, reps, and weight used.  If this was not the case and I had multiple forms it would be easy peasy but that&rsquo;s not what I want to do.</p>
+<p>Last night I was watching a few <a href="http://railscasts.com">Railscasts</a> and stumble upon a few interesting CMS videos.  The one that I thought was the coolest was <a href="http://railscasts.com/episodes/284-active-admin">Active Admin</a>.  Active Admin it an awesome, or so I though, CMS for a rails app.</p>
 
-<p>Today I&rsquo;ll be working with Joe, one of the TA&rsquo;s here at Flatiron to try to get my form working this way.  If that gets done before the weekend, I would like to attempt to make this form using accepted_attributes_for.  The reason I did not do that was because a confidant of mine suggested I do otherwise as actually locating all of the nested attributes is challenging, at least for someone with less than 8 weeks of programming under his belt.  Also this weekend I am also going to be looking in AJAX because apparently that would solve my issues too.</p>
+<p>Although what I said above is a little all over the place the point I eventually learned was that if you really need something in your app, you need to build it yourself.  Look at the home page for Active Admin:</p>
+
+<p><img src="/images/activeadmin.png" alt="active admin" /></p>
+
+<p>C&#8217;mon, this looks amazing.  It apparently let&rsquo;s you filter by anything, have scope, etc., etc.  But under the cover, this gem messes with the MVC model and makes it difficult to work with your previous controllers if you are adding Active Admin on top of your app.</p>
+
+<p>This morning I was telling a few classmates before the session started about Active Admin and how cool I thought it was.  Our head instructor, Avi Flombaum, shook his head and told me that it really wasn&rsquo;t that great.  It made think of my trading days before I became a student at <a href="http://flatironschool.com/">The Flatiron School</a>.  At first I had my charts with a million different indicators on them, and as it turned out, I really didn&rsquo;t even use any of them.  So over time I took off indicators and as I took them off my gains increased.</p>
+
+<p>The truth is, when I was trading, I needed a little as possible.  I needed exactly the minimum for me to get the job done, so to speak.  Same goes for coding.  Yes this Active Admin looks amazing, but the truth is I don&rsquo;t need fireworks and amazing colors and anything above exactly what I need.  I have total confidence that I can make my own CMS pretty easily, and maybe make it pretty with some simple <a href="http://getbootstrap.com/2.3.2/">Bootstrap</a>.</p>
 </div>
 
 
@@ -118,7 +126,7 @@
   
 
 
-<time datetime="2013-07-26T08:41:00-04:00" pubdate data-updated="true">Jul 26<span>th</span>, 2013</time>
+<time datetime="2013-08-19T09:32:00-04:00" pubdate data-updated="true">Aug 19<span>th</span>, 2013</time>
       
 
 
@@ -126,7 +134,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/07/26/day-4-dot-dot-dot-how-nested-can-your-form-be/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/07/26/day-4-dot-dot-dot-how-nested-can-your-form-be/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/08/19/have-to-do-things-yourself/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/08/19/have-to-do-things-yourself/" >Tweet</a>
   
   
   
@@ -135,10 +143,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/07/24/day-3/" title="Previous Post: Day 3, Four Models in One Form Are Driving Me Nuts">&laquo; Day 3, Four Models in One Form Are Driving Me Nuts</a>
+        <a class="basic-alignment left" href="/blog/2013/08/13/the-community-is-not-even-real/" title="Previous Post: The Community is Not Even Real">&laquo; The Community is Not Even Real</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/07/28/day-5/" title="Next Post: Day 5, Making my Params First">Day 5, Making my Params First &raquo;</a>
       
     </p>
   </footer>
