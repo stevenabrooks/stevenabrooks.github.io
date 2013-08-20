@@ -11,6 +11,6 @@ I learned great lessons today about responsive websites.  The first lesson it to
 
 to your application and specifically to your layout file if you are using rails.  So rather than your site looking nice but having the iPhone zoom out like crazy, it will look something like this
 
-![my responsive form](/images/photo.png)
+![my responsive form](/images/photo.PNG)
 
 So while Bootstrap is amazing and allows people like me to create responsive sites without actually making them responsive, just remember to add the snippit above to your layout file.
