@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Day 2, Switching to Form Tag from Form For - Steven Brooks' Blog</title>
+  <title>Making Responsive Sites for Mobile - Steven Brooks' Blog</title>
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="So last night I was able to get about an hour of work in. I feel like that a sustainable pace considering I do not want to have energy taken away &hellip;">
+  <meta name="description" content="I learned great lessons today about responsive websites. The first lesson it to use a site such as The Responsinator in order to be able to see your &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/07/23/day-2">
+  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/08/20/making-responsive-sites-for-mobile">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Steven Brooks' Blog" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Day 2, Switching to Form Tag From Form For</h1>
+      <h1 class="entry-title">Making Responsive Sites for Mobile</h1>
     
     
       <p class="meta">
@@ -84,20 +84,22 @@
   
 
 
-<time datetime="2013-07-23T08:48:00-04:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
+<time datetime="2013-08-20T17:34:00-04:00" pubdate data-updated="true">Aug 20<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>So last night I was able to get about an hour of work in.  I feel like that a sustainable pace considering I do not want to have energy taken away from my Library group project.</p>
+<div class="entry-content"><p>I learned great lessons today about responsive websites.  The first lesson it to use a site such as <a href="http://responsinator.com/">The Responsinator</a> in order to be able to see your application across multiple platforms.  Second, use <a href="http://getbootstrap.com/2.3.2/">Twitter Bootstrap</a>.  Bootstrap comes with a responsive CSS stylesheet so that as long as you don&rsquo;t set a height/width for certain elements, your work will just become responsive on its own.  The third part is that on some mobile devices, such as the iPhone, the device will have auto zoom-out going for some reason.  In order to combat this you need to add the line</p>
 
-<p>Anyway I feel very strong with form now.  Yesterday, I was doing some work with my form with one of our TA&rsquo;s, Jeff, who recommended I back down from form_for and move to form_tag.  That worked wonders as there is far less rails magic involved in form_tag, and I also am literally only going to have one form for the user to input data for multiple objects.</p>
+<p><img src="/images/responsive.png" alt="responsive" /></p>
 
-<p>Form_tag was much easier for me for many reasons.  First, I was able to create to params hash the exact way I wanted to.  This made it very easy for me to locate the the proper information in the controller and add that information into different instance variable.  That process was repetitive, which I enjoyed because I feel I made large strides yesterday as far as the M and C of the MVC model goes.</p>
+<p>to your application and specifically to your layout file if you are using rails.  So rather than your site looking nice but having the iPhone zoom out like crazy, it will look something like this</p>
 
-<p>I also was able to add sets to lifts(which is a joins table between routine and exercises).  Now each lift has many sets which include repetitions and weights.</p>
+<p><img src="/images/photo.png" alt="my responsive form" /></p>
+
+<p>So while Bootstrap is amazing and allows people like me to create responsive sites without actually making them responsive, just remember to add the snippit above to your layout file.</p>
 </div>
 
 
@@ -120,7 +122,7 @@
   
 
 
-<time datetime="2013-07-23T08:48:00-04:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
+<time datetime="2013-08-20T17:34:00-04:00" pubdate data-updated="true">Aug 20<span>th</span>, 2013</time>
       
 
 
@@ -128,7 +130,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/07/23/day-2/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/07/23/day-2/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/08/20/making-responsive-sites-for-mobile/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/08/20/making-responsive-sites-for-mobile/" >Tweet</a>
   
   
   
@@ -137,10 +139,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/07/22/staring-my-own-app/" title="Previous Post: Staring My Own App">&laquo; Staring My Own App</a>
+        <a class="basic-alignment left" href="/blog/2013/08/19/have-to-do-things-yourself/" title="Previous Post: Have to Do Things Yourself">&laquo; Have to Do Things Yourself</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/07/24/day-3/" title="Next Post: Day 3, Four Models in One Form Are Driving Me Nuts">Day 3, Four Models in One Form Are Driving Me Nuts &raquo;</a>
       
     </p>
   </footer>
