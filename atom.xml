@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-08-20T17:45:11-04:00</updated>
+  <updated>2013-08-20T17:47:02-04:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -24,7 +24,7 @@
 
 <p>to your application and specifically to your layout file if you are using rails.  So rather than your site looking nice but having the iPhone zoom out like crazy, it will look something like this</p>
 
-<p><img src="http://stevenabrooks.github.io/images/photo.png" alt="my responsive form" /></p>
+<p><img src="http://stevenabrooks.github.io/images/photo.PNG" alt="my responsive form" /></p>
 
 <p>So while Bootstrap is amazing and allows people like me to create responsive sites without actually making them responsive, just remember to add the snippit above to your layout file.</p>
 ]]></content>
