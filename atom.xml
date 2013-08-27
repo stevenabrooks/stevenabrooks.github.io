@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-08-26T08:36:45-04:00</updated>
+  <updated>2013-08-26T20:22:59-04:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Controller Scope]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2013/08/26/controller-scope/"/>
+    <updated>2013-08-26T20:22:00-04:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2013/08/26/controller-scope</id>
+    <content type="html"><![CDATA[<p>Well I had two interviews today&hellip;and on the second interview I had a questions to which i did not get the full answer to.</p>
+
+<p>The question was, &ldquo;why should we abstract methods out of the controller and put them into the model in rails?&rdquo;  Actually i think the question was worded a little different but that&rsquo;s pretty close.</p>
+
+<p>I answered by claiming that you want to abstract methods into the model because a messy controller would be difficult for another programmer to read your code.  Now that isn&rsquo;t wrong, but it isn&rsquo;t right either.</p>
+
+<p>The full correct answer has to do with scope, and after some help from the friendly interviewer I was able to get the answer.   If you create a method in the controller it&rsquo;s scope is just to that specific controller.  If you make a method in the model not only does its controller and view had access to those methods but so do all the other models.</p>
+
+<p>The scope I was introduced to in the past 12 weeks was variable scope, etc.  So this was a fun problem to work through.</p>
+
+<p>You learn something new everyday&hellip;or at least you should try.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Graduated]]></title>
@@ -525,21 +544,6 @@
 <p>I am very happy with what I did on this homework assignment as I successfully took a large project and was able to plan out my execution well and break it down into smaller parts.</p>
 
 <p>Later on in the assignment I was asked to make calls to the hash $basketball_game which maybe I&rsquo;ll talk about in another post.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Blog Post 1.0]]></title>
-    <link href="http://stevenabrooks.github.io/blog/2013/06/09/hello-world/"/>
-    <updated>2013-06-09T17:51:00-04:00</updated>
-    <id>http://stevenabrooks.github.io/blog/2013/06/09/hello-world</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m excited to begin blogging about my experience in learning to become a programmer and especially my experience as a student at The Flatiron School.</p>
-
-<p>I&rsquo;d like to write these posts and have this blog tailored to a wide variety of people ranging from someone who has no programming knowledge to those who are masters in the field (I&rsquo;m sure once my development skills and vocabulary grow a good number of these posts will begin to be more technical.)  I can promise this specific blog will be different than other blogs built by programmers because I believe my background is very unique to this field.  While my fellow classmates come from many different background ranging from professional skydivers to accountants at Goldman Sachs, the only job I&rsquo;ve had has been as a professional baseball player.  One the other side of the coin I cannot promise that I will have perfect grammar or that I will not curse from time to time.</p>
-
-<p>I&rsquo;d also like to thank Max Jacobson (a fellow classmate) for helping me in debugging issues to set up this blog to my Github account.</p>
-
-<p>To be continued&hellip;</p>
 ]]></content>
   </entry>
   
