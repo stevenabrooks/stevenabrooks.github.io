@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-08-26T20:22:59-04:00</updated>
+  <updated>2013-09-25T11:57:05-04:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[It's Been a While]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2013/09/25/its-been-a-while/"/>
+    <updated>2013-09-25T11:55:00-04:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2013/09/25/its-been-a-while</id>
+    <content type="html"><![CDATA[<p>Dear Everyone,</p>
+
+<p>I&rsquo;m sorry.  It&rsquo;s been a while since I last blogged.  I graduated The Flatiron School a few weeks ago and am currently running all over the joint trying to find a great job with an awesome company.  Rather than blogging, my days have been spend networking, interviewing, and running around like a mad man.</p>
+
+<p>In the next few days I would like to highlight some of the things I have been working on (I have been trying out a lot of ruby gems).</p>
+
+<p>Till then, have a good one,
+Steven</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Learned a Little About Notation Today]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2013/08/28/learned-a-little-about-notation-today/"/>
+    <updated>2013-08-28T10:49:00-04:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2013/08/28/learned-a-little-about-notation-today</id>
+    <content type="html"><![CDATA[<p>So today I learned something drastically new.  One of my classmates, who just happens to be a beast at programming, went to an interview yesterday for a very prominent company here in New York.  They asked him a lot of CS questions because this was not for a junior position, and lucky, besides the fact that my friend is just really smart, he had a background in CS.  So he smoked some of these questions.</p>
+
+<p>One of the things he thought I should have a grasp on was <a href="http://en.wikipedia.org/wiki/Big_O_notation">O Notation</a>.  Now what I am about to say is me trying to replay the 20 minutes conversation I had with my classmate this morn</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Controller Scope]]></title>
@@ -474,76 +501,6 @@
 <p><img src="http://s3.amazonaws.com/crunchbase_prod_assets/assets/images/resized/0001/0688/10688v39-max-250x250.jpg" alt="class zuckerberg" />  <img src="http://www.3dmusclejourney.com/resources/mcgwire_creatine%20article.jpg?timestamp=1311286970851" alt="class player" /></p>
 
 <p>Also I wrote this post last night and after proofreading this I realized that my sentences are wayyyyyyy too long.  Kinda like my methods.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Testing Ruby]]></title>
-    <link href="http://stevenabrooks.github.io/blog/2013/06/15/testing-ruby/"/>
-    <updated>2013-06-15T15:31:00-04:00</updated>
-    <id>http://stevenabrooks.github.io/blog/2013/06/15/testing-ruby</id>
-    <content type="html"><![CDATA[<p>I was quickly drawn to <a href="https://speakerdeck.com/duien/testing-ruby">&ldquo;Testing Ruby&rdquo;</a>  by Emily Price because as a rookie programmer I have come to realize that things such as planning and testing are very important.</p>
-
-<p><img src="http://stevenabrooks.github.io/images/Screen3.png" alt="Ruby Testing" /></p>
-
-<p>She writes that testing does many things for a programmer including:</p>
-
-<ol>
-<li>Ensuring the code is correct</li>
-<li>Promoting good practice</li>
-<li>Giving reference to how to code actually works.</li>
-</ol>
-
-
-<p>In the first two weeks at Flatiron School, testing out my code before moving on has become very important.  If I can know for certain that a method works (by testing), I never have to worry about that method later on in my program.  It seems like such a simple idea but it was only something I found important after writing dozens of lines of code and realizing one of the first few lines did not work.</p>
-
-<p>One pointer that Price writes about that I learned was to:</p>
-
-<ol>
-<li>Write your test first</li>
-</ol>
-
-
-<p>This is something that I can see would be very useful.  At this point in my programming career I am just learning how to do that so this slideshow comes at a good time for me.</p>
-
-<p>Some of the things I thought of during my first two weeks as a programmer that she brought up were:</p>
-
-<ol>
-<li>Get instant notification when you have an issue</li>
-<li>Write as little code as possible to test</li>
-</ol>
-
-
-<p>As my skills as a programmer grow, I would like to be able to create some sort of a process in which I develop certain ways to test my code to find errors as soon as I can.</p>
-
-<p>Price also has a <a href="https://speakerdeck.com/duien/git-an-introduction">Git Introduction</a> slideshow on <a href="https://speakerdeck.com">speakerdeck</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Pretty Juiced About the Work I Did Last Night]]></title>
-    <link href="http://stevenabrooks.github.io/blog/2013/06/11/post-number-2/"/>
-    <updated>2013-06-11T08:45:00-04:00</updated>
-    <id>http://stevenabrooks.github.io/blog/2013/06/11/post-number-2</id>
-    <content type="html"><![CDATA[<p>This morning will be the seventh day of The Flatiron School.  Yesterday (the sixth day) was by far the most challenging day for me.  Yesterday we were introduced to many new things in the ruby language and it became a lot to comprehend all at once.  As yesterday was seemingly overwhelming, it became very clear to me that no matter what the issue, the process becomes very important.</p>
-
-<p>We were given a homework assignment to create a basketball game with the following guidelines:</p>
-
-<p><img src="http://stevenabrooks.github.io/images/Screen1.png" alt="homework guidelines" /></p>
-
-<p>For my seventh day, this assignment also felt overwhelming.  Luckily for me (some would say), I have an hour long bus commute going home so it was a great opportunity to do some reading on hashes (which is how we were supposed to create this data).</p>
-
-<p>While this feels like a lot of information for me (or at least it did), remembering the process became key (play on word).  I chose to begin by planning out everything and talking myself through what these hashes would visually look like.  Eventually I was able to visualize these hashes as simple numbered lists:</p>
-
-<p><img src="http://3.bp.blogspot.com/-wk8cXlINClk/UTBiAHyIO0I/AAAAAAAAA3g/qu3POwCibd0/s1600/03-Finished+Multilevel+List.png" alt="numbered list" /></p>
-
-<p>Eventually, my code ended up looking something like this (which I&rsquo;m very proud of):</p>
-
-<p><img src="http://stevenabrooks.github.io/images/Screen2.png" alt="my code" /></p>
-
-<p>I am very happy with what I did on this homework assignment as I successfully took a large project and was able to plan out my execution well and break it down into smaller parts.</p>
-
-<p>Later on in the assignment I was asked to make calls to the hash $basketball_game which maybe I&rsquo;ll talk about in another post.</p>
 ]]></content>
   </entry>
   
