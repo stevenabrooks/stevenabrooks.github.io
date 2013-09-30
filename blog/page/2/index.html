@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="After over a week of tinkering with my form for my workout app, spending hours with TA&rsquo;s, and even looking to the Stack Overflow community, I &hellip;">
+  <meta name="description" content="It&rsquo;s been a few days since I have blogged and consequently a few days since I have been able to work on my Workout App. That will change this &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,60 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/05/day-idk-dot-dot-dot-getting-busy-with-jquery/">Day IDK&#8230;Getting Busy With JQuery</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-05T08:36:00-04:00" pubdate data-updated="true">Aug 5<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It&rsquo;s been a few days since I have blogged and consequently a few days since I have been able to work on my Workout App.  That will change this week.</p>
+
+<p>Over the weekend when I was able to work on my app I was split between the next step to take.  I had two options: make the form better by adding Jquery to it or start making methods that will be used when a user wants to do some form of analytics on their workouts.  Although to date I prefer the backend and making methods, I decided to take a shot at the Jquery stuff, which I am a total newbie in.</p>
+
+<p>My first stop was visiting the <a href="http://jqueryui.com/">Jquery UI</a> website.  I totally love this site.  This site makes it so easy for me to do the programmers version of drop and drag for many awesome front end features.  Looking through what they have available, I realized I would like an autocomplete function for the user to choose their exercises that way as apposed to a select list that could get very long.  Also, an autocomplete function would allow me to find_or_create_by an exercise!  Next I would like to have a calendar for the user to say when that workout will or had been completed.  Although active record gives a created_at and updated_at attribute for everything in any table, a user may do a weeks worth of workouts and create the routines and information all in one day.  Active record might consider those created_at very similar times, so when a user goes to look back at their workouts overt time, I want that information to be accurate. I also would love to have a form that lists one exercise at a time and a user chooses how many sets per each exercise, and after they complete the information for one exercise and it&rsquo;s sets they create another exercise and so on.</p>
+
+<p>Out of the three I was able to complete just the calendar.  I do not know why the autocomplete is not working and I am getting a few nice errors with my last query function.</p>
+
+<p>Here is the current code to implement that calendar:</p>
+
+<p><img src="/images/calendar.png" alt="My params" /></p>
+
+<p>Simple enough.</p>
+
+<p>Here is my current code for the autocomplete:</p>
+
+<p><img src="/images/autocomplete.png" alt="My params" /></p>
+
+<p>The other code for creating new form fields on the fly is a mess.  Either way I will show the correct code for all of the three things I would like to do in the following days.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -536,86 +590,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/18/baseball/">Baseball Is a Game of Pixels</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-18T18:22:00-04:00" pubdate data-updated="true">Jun 18<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>When I started coming up with ideas for this post I began by thinking about my specific issues in the code I have written to date (12 days) and the concepts that would help with those issues.  One of the issues I had was keeping track of all my methods/variables early on and trying to find where each method/variable was coming from and what information it was giving.  I then wanted to see if I could come up with plugins for Sublime 2 that would paint a background color pasted behind each variable/method as well as where else it would be in the code, and that background color would stay there as long as you wanted.  This is different than Sublime circling the words or phrases you click on.  Eventually I ran this by a classmate who tore down the idea so I will not be writing about that.</p>
-
-<p>Over Chipotle on Tuesday I was speaking to two classmates about some of the things I did as an athlete and baseball player and was telling them that it was amazing how many similarities there were between being a baseball player and a programmer.  I&rsquo;d like to introduce you to some of them:</p>
-
-<h3>It&rsquo;s Not Boring</h3>
-
-<p>Baseball, like programming, seems to be doing the same thing over and over again, which is why people perceive it to be boring, but that&rsquo;s really just to the untrained eye.  In baseball, you play the game with the same rules each day and as a hitter you hit against a pitcher every day.  But every day is a new game and again a new pitcher or set of pitchers.  The same macro level things occur daily in games but the fine elements of the game change every day.</p>
-
-<p>Programming is very similar where for the most part you are coding into a computer every day, but you are not writing the same code each and every day.  Each day brings new tasks, errors, and goals.</p>
-
-<h3>Be Comfortable With Discomfort</h3>
-
-<p>Being the batter in the 9th inning of the ACC Baseball Championship Game with the bases loaded where your team is down by one run and the opponent has their best pitcher throwing against you in front of thousands of people is not comfortable.  Period.  Writing dozens of lines of code only to find out none of it works when you have a deadline in five minutes and you have no idea what the error message in Terminal is telling you is not comfortable.</p>
-
-<p>Discomfort is part of the game in baseball and programming.  As a baseball player I was at my best when I accepted these situations as part of my role and became comfortable with discomfort.  The same goes for good programmers, they must be comfortable with discomfort and realize that creating code that doesn&rsquo;t work as well as not knowing how to do certain things is part of the role.</p>
-
-<h3>Breaking Things Down</h3>
-
-<p>As I have learned first hand in my first twelve days as a programmer, programs have many many parts.  The same goes for a swing in baseball.  In a swing, there are many, many, many, many smaller parts that create the whole swing just as there are many, many, many, many smaller parts that create an entire program.</p>
-
-<p>In both scenarios, the key is to break down the whole into smaller and more manageable parts so when something goes wrong, it is easier to pinpoint error.  In baseball if a player happens to be lunging forward before he swings rather than trying to say the entire swing is a mess he may pick a smaller part in his swing.  Looking at something like film could help the player pinpoint the smaller issue.  Typically, if a player is lunging in the batters box then their is an issue with his head (interestingly enough).</p>
-
-<p>This scenario arrises in code as well.  If a programmer is trying to run code and an error pops up it would not be wise to suggest the entire program is wrong and throw it away.  Looking at the error messages that come up will allow the programmer to pinpoint the issue down to a smaller aspect rather than the entire code.</p>
-
-<h3>Practice &amp; Adapting</h3>
-
-<p>If you don&rsquo;t use it you lose it.  Yes, you do.  Everybody wants to hit home runs, but you won&rsquo;t even be put into the starting lineup unless you practice your craft and are always improving.  If you are not always trying to make yourself better, you are getting worse and there really isn&rsquo;t anything in between.</p>
-
-<p>As programmers, the more code we write, the more familiar we become with things such as syntax, and the better we become at coding.  You also won&rsquo;t be able to make Facebook if you don&rsquo;t know the basics and whatever else goes into making Facebook.  Its just like the more batting practice a baseball player takes the better he becomes (in theory).</p>
-
-<p>Both professionals also require adaptation.  Ever since technology began to play in integral role in baseball players have had to adapt more frequently and in shorter times.  The information the teams can get and store on individual players is astonishing.  Every at bat I had starting in college was tracked to the &ldquo;T&rdquo;.  Every opponent knew about each of those at bats and would pitch me a certain according to my perceived weaknesses.  As a player I needed to adapt to those changes and work on my weak points.  Once I got better at those first weak points others would arise and would begin the cycle again.  If I was unable to adapt quickly, I would have been no good.</p>
-
-<p>While improving on weak points in programming is important, it is also equally important to be able to move with the times.  I say this as far an new languages, technologies, updates, etc.  I am currently running Ruby 1.9.3 but I am willing to bet that soon I will need to use a newer version and quickly learn the differences in the newest version and be able to implement them.  And after that I&rsquo;m sure a newer version of something will have come out by then and I will have to repeat the cycle.</p>
-
-<h3>Playing On a Team</h3>
-
-<p>This was the most surprising of the bunch for me.  My younger brother is a Computer Science Major in Loyola in Baltimore and from what I could gather from him, being a programmer meant there would be little interaction with others.  Once I began as a student as The Flatiron School I quickly realized that this would not be the case, rather it would be the opposite.  Being able to program as a member of a team was kinda the icing on the cake for me as far as becoming a developer.</p>
-
-<p>Like in sports, working well with a team takes a certain skill set.  So far, it has been much easier to work with a team of developers (my classmates) that it was to play with baseball players.  In the environment I am currently in, all of us are trying to learn a new skill together, so it makes more sense as of right now that the members of the team are easier to work with.</p>
-
-<p>There are some others things such as preparation and mentality that are very similar between the two.  But there are definitely some surprising similarities if you ask me.  Who would have thought these two people were so similar?</p>
-
-<p><img src="http://s3.amazonaws.com/crunchbase_prod_assets/assets/images/resized/0001/0688/10688v39-max-250x250.jpg" alt="class zuckerberg" />  <img src="http://www.3dmusclejourney.com/resources/mcgwire_creatine%20article.jpg?timestamp=1311286970851" alt="class player" /></p>
-
-<p>Also I wrote this post last night and after proofreading this I realized that my sentences are wayyyyyyy too long.  Kinda like my methods.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -633,6 +607,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/30/searching-today/">Searching Today</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/25/its-been-a-while/">It&#8217;s Been a While</a>
       </li>
     
@@ -646,10 +624,6 @@
     
       <li class="post">
         <a href="/blog/2013/08/26/graduated/">Graduated</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/20/making-responsive-sites-for-mobile/">Making Responsive Sites for Mobile</a>
       </li>
     
   </ul>
