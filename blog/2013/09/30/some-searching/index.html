@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Day 6...Hey Dude Remember There Are Keys and Values in Hashes - Steven Brooks' Blog</title>
+  <title>Rails DataTables - Steven Brooks' Blog</title>
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="Got it. Finally. I couldn&rsquo;t be happier right now. I&rsquo;m going to reflect a little here. I&rsquo;ve been programming for 8 weeks now. In &hellip;">
+  <meta name="description" content="As my last post stated, I was planning on doing some work on searches in rails. I have done two of them so far today with the first being Data Tables &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/07/29/day-6-dot-dot-dot-hey-dude-remember-there-are-keys-and-values-in-hashes">
+  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/09/30/some-searching">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Steven Brooks' Blog" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Day 6...Hey Dude Remember There Are Keys and Values in Hashes</h1>
+      <h1 class="entry-title">Rails DataTables</h1>
     
     
       <p class="meta">
@@ -84,22 +84,28 @@
   
 
 
-<time datetime="2013-07-29T09:20:00-04:00" pubdate data-updated="true">Jul 29<span>th</span>, 2013</time>
+<time datetime="2013-09-30T14:43:00-04:00" pubdate data-updated="true">Sep 30<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Got it.  Finally.  I couldn&rsquo;t be happier right now.</p>
+<div class="entry-content"><p>As my last post stated, I was planning on doing some work on searches in rails.  I have done two of them so far today with the first being Data Tables and the second being Ransack.</p>
 
-<p>I&rsquo;m going to reflect a little here.  I&rsquo;ve been programming for 8 weeks now.  In that time, I have learned Ruby, SQL, Git, Sintra, and now Rails.  Holy shit.</p>
+<p>Datatables is pretty cool.  It&rsquo;s not necessarily just search but it looks like a really cool admin feature.  You can search any of the column, sort any of the columns, and have pagination really easily.</p>
 
-<p>While those are remarkable I now truly consider myself a programmer.  In my latest blog post, I mentioned that I was going down a nice long rabbit hole.  But I&rsquo;m here, and you know what, I&rsquo;m totally out of that rabbit hole now.  I am now able to know exactly where some of my errors are and also where I can go to get those errors solved.  On my <a href="http://stackoverflow.com/questions/17912435/nested-form-with-multiple-of-the-same-key-names">StackOverflow question</a>, I was able to articulate my question well enough so that a true Rubyist would be able to answer my questions and for me to understand what he was saying.</p>
+<p>You are out by adding the gem then once you do that you simply give the table you are trying to sort an ID.</p>
 
-<p>Here is my form that will scale and will work.  I whooped you ass.</p>
+<p><img src="/images/datatables_view.png" alt="My params" /></p>
 
-<p><img src="/images/workoutcontroller.png" alt="My form" /></p>
+<p>Then go into the corresponding JS file and add a little snippet:</p>
+
+<p><img src="/images/datatables_js.png" alt="My params" /></p>
+
+<p>And magically this shows up:</p>
+
+<p><img src="/images/datatables.png" alt="My params" /></p>
 </div>
 
 
@@ -122,7 +128,7 @@
   
 
 
-<time datetime="2013-07-29T09:20:00-04:00" pubdate data-updated="true">Jul 29<span>th</span>, 2013</time>
+<time datetime="2013-09-30T14:43:00-04:00" pubdate data-updated="true">Sep 30<span>th</span>, 2013</time>
       
 
 
@@ -130,7 +136,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/07/29/day-6-dot-dot-dot-hey-dude-remember-there-are-keys-and-values-in-hashes/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/07/29/day-6-dot-dot-dot-hey-dude-remember-there-are-keys-and-values-in-hashes/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/09/30/some-searching/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/09/30/some-searching/" >Tweet</a>
   
   
   
@@ -139,10 +145,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/07/28/day-5/" title="Previous Post: Day 5, Making my Params First">&laquo; Day 5, Making my Params First</a>
+        <a class="basic-alignment left" href="/blog/2013/09/30/searching-today/" title="Previous Post: Searching Today">&laquo; Searching Today</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/07/30/day-7-dot-dot-dot-took-four-models-into-one-model/" title="Next Post: Day 7...Took Four Models Into One Model">Day 7...Took Four Models Into One Model &raquo;</a>
       
     </p>
   </footer>
