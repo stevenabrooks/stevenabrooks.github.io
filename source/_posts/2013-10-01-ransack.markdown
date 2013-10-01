@@ -1,0 +1,21 @@
+---
+layout: post
+title: "Ransack"
+date: 2013-10-01 09:27
+comments: true
+categories: 
+---
+Yesterday I worked on another search gem this time being [Ransack](https://github.com/ernie/ransack).  In [Outlinked](https://outlinked.flatironschool.com) we used Sunspot (who I'm not even going to give a link to) which I will never use again.  I was very pleased with how Ransack went and how easy it was to use as well as have dynamic searching.
+
+Ransack was very strait forward.  This is what my html.erb file looked like.  This allowed a user to continue to drill down their search (dynamic):
+
+![My params](/images/ransack_view.png)
+
+Then you go into the controller and set your instance variable to the results of the search:
+
+![My params](/images/ransack_controller.png)
+
+And bam, you get a nice dynamic search (I'm wondering if these drop downs can be autompletes, that would probable make the UX a little better):
+
+![My params](/images/ransack.png)
+
