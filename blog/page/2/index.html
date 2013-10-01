@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="So I&rsquo;m 2/3 of the way there with my javascript/jquery wants. Yesterday I mentioned that I wanted to have a calendar to properly keep track of &hellip;">
+  <meta name="description" content="It&rsquo;s been almost a week since I blogged. Before I set out to blog each day I worked on my workout application. I haven&rsquo;t followed through &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,60 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/12/loving-ruby/">Loving Ruby</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-12T08:27:00-04:00" pubdate data-updated="true">Aug 12<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It&rsquo;s been almost a week since I blogged.  Before I set out to blog each day I worked on my workout application.  I haven&rsquo;t followed through on that.  I&rsquo;ll tell you the reason I haven&rsquo;t blogger yet is because every waking minute I am either working on the app itself or trying to finalize our group project for the <a href="http://info.flatironschool.com/science-002-fair-rsvp-1/2/">Science Fair</a> this Thursday.</p>
+
+<p>Anywho, I have done quite a bit of work on my application since last I blogged.  Last time we spoke, I was trying to implement three javascript functions into my application; calendar, autocomplete, and the ability to create as many exercises and sets as a user wants.  All are done.</p>
+
+<p>I also added bodyweight to a routine and not a user.  I talked to myself about this for roughly an hour and as far as a user is concerned, I realized that a user would be updating their weight during each workout rather than going to a user profile page and updating their weight there.  To me, it made more sense.  People go to the gym, and weight in, so they would be able to input that data when they are inputting the data for their routine.</p>
+
+<p>For the past few days I have been working with  <a href="https://developers.google.com/chart/">Google Graph</a> to be able to display the users stats graphically.  I have been living this process.  What you have to do is to take your data and manipulate it in order to feed it to Google a certain way.  That&rsquo;s freaking awesome.  I totally love making five methods for each array Google needs and then doing string manipulation.  In order for me to get what Google wants I have to deliver something like this:</p>
+
+<p><img src="/images/google.png" alt="google" /></p>
+
+<p>Awesome.  That&rsquo;s a challenge I think I can tackle.  Especially since my wheelhouse are Ruby methods, I knew I was bona hit this shit to Beijing. In this information I need to set the first array to be the titles of what I want:</p>
+
+<p><img src="/images/firstline.png" alt="google" /></p>
+
+<p>Here is that code running in the rails console.  You give it an instance of the routine class and it gives you the right amount of information.  Here is will write &ldquo;sets…&rdquo; as many times as the most sets per the lifts within the instance of the routine:</p>
+
+<p><img src="/images/firstlinerailsc.png" alt="console" /></p>
+
+<p>Next time we chat it up I&rsquo;ll show you more stuff.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -482,84 +536,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/07/all-in-the-family/">All in the Family</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-07T21:20:00-04:00" pubdate data-updated="true">Jul 7<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>After a fantastic weekend at the beach I was talking to my younger brother David over a nice Paleo dinner where we absolutely crushed <a href="http://thestablerestaurant.com/">The Stable</a>.  David is a CS major and on the side develops iPhone applications.  He has made a few apps with his most popular being <a href="https://itunes.apple.com/us/app/never-have-i-ever/id401767832?mt=8">&ldquo;Never Have I Ever&rdquo;</a> and is currently creating a location based app this summer.</p>
-
-<p><img src="/images/nhie1.png" alt="David code 1" /> <img src="/images/nhie2.png" alt="David code 1" /></p>
-
-<p>I was explaining to him why I believe native was garbage and so we were talking about some of the things he enjoyed and didn&rsquo;t enjoy as far as iPhone development.  We talked for a while and I remember he said a few interesting things about Objective C and specifically native applications in general.  Because I paid for dinner he was kind enough to answer a few questions:</p>
-
-<p>Steven: What are some of the difficulties in using objective C?</p>
-
-<p>David: A major complaint that a lot of programmers have relating to Objective-C is that a Mac is required in order to actually write and compile your Objective-C code.  It is unfortunate that Apple does not allow the development of Objective-C on a Windows based platform.  This denial of Windows based developers means that if someone wants to develop for the iPhone/iPad/Mac, you must first pay Apple to get a Mac and then pay Apple $99 yearly to be part of their developer program.  In terms of actual code writing, I do wish that it was easier to test your app on multiple devices.  In order to test a singular app on multiple iPhones, you have to collect the device id and create a Provisioning Profile, which is basically a certificate that allows the app to run, and distribute that profile to every device you want to use.  This makes it a big challenge if I want to, for example, show my brothers my latest app and let them fool around with it and provide feedback.</p>
-
-<p>Steven: What do you think could be easier in developing with objective C?</p>
-
-<p>David: One thing that I would like to be easier about Objective-C is how it uses Frameworks.  Frameworks in Objective-C are like libraries in C or like packages in Java that you must import in order to use their information.  It is annoying to have to figure out what Framework you need to include in order to use a certain piece of code.  It would be a lot easier if all the Frameworks that have been created and are available to you to use and just automatically imported by the compiler when needed.  All the Frameworks we use are already included in iOS or OS X, so why can&rsquo;t the device choose the needed Frameworks instead of me telling it to?</p>
-
-<p>Steven: Do you feel objective C will be around in three years?</p>
-
-<p>David: Yes I believe that Objective-C will still be around and heavily used in three years time.  We are currently in an evolving technological world which has transitioned to computers the size of rooms to handheld computers and smartphones.  I must point out that, Objective-C has not created solely for the iPhone.  Objective-C was created by Apple for the Mac and Mac OS X.  Once the iPhone came around, it was then transformed to work with iOS as well.  Therefore, in addition to the ever growing mobile market, the fact that Objective-C is used to build applications for the Mac means that it will endure through the years.</p>
-
-<p>Steven: Why did you choose to learn objective C over web application languages?</p>
-
-<p>David: When I was a Sophomore in high school, I taught myself C++ and a little bit of Java.  I had no previous knowledge or involvement with HTML or web development and decided to focus on software engineering.  Then, the invention of the iPhone came around and I was hooked.  I saw it as this awesome new product that everyone would be talking about and so turned my attention to mobile development.  It is very interesting to point out that, I am a rising Junior at Loyola University Maryland, aiming for a BS of Computer Science and a minor in Mathematics, and yet, I have never once touched HTML.  In fact, HTML is not even in the CS curriculum because our faculty believe that it is such a basic and easy language that they do not even bother teaching it to us.  Instead, we are to learn it ourselves outside of the classroom if desired.</p>
-
-<p>Pretty interesting stuff.  I definitely learned quite a bit from talking to him.  We are both programmers and learning completely different things.</p>
-
-<p>I was telling him as much as I could about Active Record because I am just obsessed with the type of magic it provides to me and I asked him to show me his code for importing data into his database, saving it, and displaying it.  This is what I got in return:</p>
-
-<p><img src="/images/davidcode1.png" alt="David code 1" /></p>
-
-<p><img src="/images/davidcode2.png" alt="David code 2" /></p>
-
-<p><img src="/images/davidcode3.png" alt="David code 3" /></p>
-
-<p><img src="/images/davidcode4.png" alt="David code 4" /></p>
-
-<p><img src="/images/davidcode5.png" alt="David code 5" /></p>
-
-<p>So somewhere in here he is getting a users location and storing it into a SQL database, then saving it, then making it available.  Apparently in Objective C you have to make methods on methods on methods for a lot of things that with Active Record you can simply run a migrate.  I also realize that the way I presented this code makes it look like databasing in Objective C is the worst thing in the world.  There is a good amount of code here for actually finding the location of the users, but it is still a lot.</p>
-
-<p>Thanks David for letting me interview you.</p>
-
-<p><img src="/images/meanddavid.jpg" alt="David code 1" /></p>
-
-<p>Beast mode.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -577,6 +553,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/10/01/ransack/">Ransack</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/30/some-searching/">Rails DataTables</a>
       </li>
     
@@ -590,10 +570,6 @@
     
       <li class="post">
         <a href="/blog/2013/08/28/learned-a-little-about-notation-today/">Learned a Little About Notation Today</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/26/controller-scope/">Controller Scope</a>
       </li>
     
   </ul>
