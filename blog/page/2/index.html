@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="Quick post today. Currently having a nice mini lecture on client/server stuff by Blake Johnson. Anyway real quick I just wanted to get down on paper &hellip;">
+  <meta name="description" content="I learned a valuable lesson this morning that I should have learned a while ago actually. Or at least I should have picked up on this earlier. Last &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,54 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/19/have-to-do-things-yourself/">Have to Do Things Yourself</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-19T09:32:00-04:00" pubdate data-updated="true">Aug 19<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I learned a valuable lesson this morning that I should have learned a while ago actually.  Or at least I should have picked up on this earlier.</p>
+
+<p>Last night I was watching a few <a href="http://railscasts.com">Railscasts</a> and stumble upon a few interesting CMS videos.  The one that I thought was the coolest was <a href="http://railscasts.com/episodes/284-active-admin">Active Admin</a>.  Active Admin it an awesome, or so I though, CMS for a rails app.</p>
+
+<p>Although what I said above is a little all over the place the point I eventually learned was that if you really need something in your app, you need to build it yourself.  Look at the home page for Active Admin:</p>
+
+<p><img src="/images/activeadmin.png" alt="active admin" /></p>
+
+<p>C&#8217;mon, this looks amazing.  It apparently let&rsquo;s you filter by anything, have scope, etc., etc.  But under the cover, this gem messes with the MVC model and makes it difficult to work with your previous controllers if you are adding Active Admin on top of your app.</p>
+
+<p>This morning I was telling a few classmates before the session started about Active Admin and how cool I thought it was.  Our head instructor, Avi Flombaum, shook his head and told me that it really wasn&rsquo;t that great.  It made think of my trading days before I became a student at <a href="http://flatironschool.com/">The Flatiron School</a>.  At first I had my charts with a million different indicators on them, and as it turned out, I really didn&rsquo;t even use any of them.  So over time I took off indicators and as I took them off my gains increased.</p>
+
+<p>The truth is, when I was trading, I needed a little as possible.  I needed exactly the minimum for me to get the job done, so to speak.  Same goes for coding.  Yes this Active Admin looks amazing, but the truth is I don&rsquo;t need fireworks and amazing colors and anything above exactly what I need.  I have total confidence that I can make my own CMS pretty easily, and maybe make it pretty with some simple <a href="http://getbootstrap.com/2.3.2/">Bootstrap</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -504,48 +552,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/23/day-2/">Day 2, Switching to Form Tag From Form For</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-23T08:48:00-04:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>So last night I was able to get about an hour of work in.  I feel like that a sustainable pace considering I do not want to have energy taken away from my Library group project.</p>
-
-<p>Anyway I feel very strong with form now.  Yesterday, I was doing some work with my form with one of our TA&rsquo;s, Jeff, who recommended I back down from form_for and move to form_tag.  That worked wonders as there is far less rails magic involved in form_tag, and I also am literally only going to have one form for the user to input data for multiple objects.</p>
-
-<p>Form_tag was much easier for me for many reasons.  First, I was able to create to params hash the exact way I wanted to.  This made it very easy for me to locate the the proper information in the controller and add that information into different instance variable.  That process was repetitive, which I enjoyed because I feel I made large strides yesterday as far as the M and C of the MVC model goes.</p>
-
-<p>I also was able to add sets to lifts(which is a joins table between routine and exercises).  Now each lift has many sets which include repetitions and weights.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -563,6 +569,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/10/07/a-lot-to-come-ahead/">A Lot to Come Ahead</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/10/05/push-it-real-good/">Push It Real Good</a>
       </li>
     
@@ -576,10 +586,6 @@
     
       <li class="post">
         <a href="/blog/2013/09/30/searching-today/">Searching Today</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/25/its-been-a-while/">It&#8217;s Been a While</a>
       </li>
     
   </ul>

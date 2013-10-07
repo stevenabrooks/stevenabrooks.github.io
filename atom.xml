@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-10-05T18:27:45-04:00</updated>
+  <updated>2013-10-07T18:12:49-04:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[A Lot to Come Ahead]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2013/10/07/a-lot-to-come-ahead/"/>
+    <updated>2013-10-07T18:08:00-04:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2013/10/07/a-lot-to-come-ahead</id>
+    <content type="html"><![CDATA[<p>Everyone,</p>
+
+<p>Unfortunately that last few days I have not been able to update my blog due to a family emergency.  The good news is that I have still been finding a few hours here and there to get some coding work in.  In the past few days I have authenticated users with Devise and Omiauth (together) as well as added the Letsrate gem to my workout application (allowing each exercise to have a 5 star rating).  I plan on writing at least 2 post from these topics when I get a chance.  I also spun up an app with the ActiveAdmin gem but I will only be giving a link to the pseudo (a little outdated) blog I followed for it.  I will also be added a post for some of the gotcha&rsquo;s I encountered while setting up Rspec and FactoryGirl today.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Push It Real Good]]></title>
@@ -396,21 +407,6 @@ Steven</p>
 <p>One of the things I learned is that in the create method in the controller, nothing in the joins table is happening until I save the information that is in the tables that the joins table belongs to.</p>
 
 <p>Quick post, spent a lot of time just trying to wrap my head around how I get multiple models in one form.  I realize though I can accept_nested_attributes for the sets within the lifts.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Day 2, Switching to Form Tag from Form For]]></title>
-    <link href="http://stevenabrooks.github.io/blog/2013/07/23/day-2/"/>
-    <updated>2013-07-23T08:48:00-04:00</updated>
-    <id>http://stevenabrooks.github.io/blog/2013/07/23/day-2</id>
-    <content type="html"><![CDATA[<p>So last night I was able to get about an hour of work in.  I feel like that a sustainable pace considering I do not want to have energy taken away from my Library group project.</p>
-
-<p>Anyway I feel very strong with form now.  Yesterday, I was doing some work with my form with one of our TA&rsquo;s, Jeff, who recommended I back down from form_for and move to form_tag.  That worked wonders as there is far less rails magic involved in form_tag, and I also am literally only going to have one form for the user to input data for multiple objects.</p>
-
-<p>Form_tag was much easier for me for many reasons.  First, I was able to create to params hash the exact way I wanted to.  This made it very easy for me to locate the the proper information in the controller and add that information into different instance variable.  That process was repetitive, which I enjoyed because I feel I made large strides yesterday as far as the M and C of the MVC model goes.</p>
-
-<p>I also was able to add sets to lifts(which is a joins table between routine and exercises).  Now each lift has many sets which include repetitions and weights.</p>
 ]]></content>
   </entry>
   
