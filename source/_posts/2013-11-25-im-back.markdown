@@ -1,0 +1,32 @@
+---
+layout: post
+title: "I'm Back"
+date: 2013-11-25 17:08
+comments: true
+categories: 
+---
+Dear Everyone Who Has Read My Blog,
+
+According to my watch, it should have been about two months since I last blogged.  These past two months have been a very challenging time for me as my father recently passed away.
+
+I will be starting up my blog again soon as within the last week or so I have been able to get back to programming.  One of the things I have been working on has been speeding up my Workout App and adding Eager Loading into my application.  Thus far I have eliminated a little over 60% of my queries.  
+
+Actually it's probably better I do some stuff now.  In my Workout App the individual workouts #show page has a visual representation of a users workout through the Google Charts.  Originally, my #show action looked like this:
+
+![My params](/images/firstshow.png)
+
+Very strait forward, I had created a :graph method that would all the charts to work.  When I do this, here is what the queries look like:
+
+![My params](/images/firstquery.png)
+
+Yuck, that's 18 queries, and although it's not very slow on my current app, if this workout had more than a few exercises with a few sets, it could be much slower.
+
+Then I started looking into Eager Loading, which allowed me to turn my #show action into:
+
+![My params](/images/secondshow.png)
+
+Here, I am loading the routine for the action, that routine belongs to a user and has many lifts.  Those lifts belong to an exercise and have many infos.  So now when I Eager Load into the instance of routine and run the :graph method, we get this:
+
+![My params](/images/secondquery.png)
+
+Just 5 queries.  
