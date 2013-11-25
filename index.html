@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="Everyone, Unfortunately that last few days I have not been able to update my blog due to a family emergency. The good news is that I have still been &hellip;">
+  <meta name="description" content="Dear Everyone Who Has Read My Blog, According to my watch, it should have been about two months since I last blogged. These past two months have been &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,66 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/11/25/im-back/">I&#8217;m Back</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-25T17:08:00-05:00" pubdate data-updated="true">Nov 25<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Dear Everyone Who Has Read My Blog,</p>
+
+<p>According to my watch, it should have been about two months since I last blogged.  These past two months have been a very challenging time for me as my father recently passed away.</p>
+
+<p>I will be starting up my blog again soon as within the last week or so I have been able to get back to programming.  One of the things I have been working on has been speeding up my Workout App and adding Eager Loading into my application.  Thus far I have eliminated a little over 60% of my queries.</p>
+
+<p>Actually it&rsquo;s probably better I do some stuff now.  In my Workout App the individual workouts #show page has a visual representation of a users workout through the Google Charts.  Originally, my #show action looked like this:</p>
+
+<p><img src="/images/firstshow.png" alt="My params" /></p>
+
+<p>Very strait forward, I had created a :graph method that would all the charts to work.  When I do this, here is what the queries look like:</p>
+
+<p><img src="/images/firstquery.png" alt="My params" /></p>
+
+<p>Yuck, that&rsquo;s 18 queries, and although it&rsquo;s not very slow on my current app, if this workout had more than a few exercises with a few sets, it could be much slower.</p>
+
+<p>Then I started looking into Eager Loading, which allowed me to turn my #show action into:</p>
+
+<p><img src="/images/secondshow.png" alt="My params" /></p>
+
+<p>Here, I am loading the routine for the action, that routine belongs to a user and has many lifts.  Those lifts belong to an exercise and have many infos.  So now when I Eager Load into the instance of routine and run the :graph method, we get this:</p>
+
+<p><img src="/images/secondquery.png" alt="My params" /></p>
+
+<p>Just 5 queries.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -473,50 +533,6 @@ Steven</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/20/making-responsive-sites-for-mobile/">Making Responsive Sites for Mobile</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-20T17:34:00-04:00" pubdate data-updated="true">Aug 20<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I learned great lessons today about responsive websites.  The first lesson it to use a site such as <a href="http://responsinator.com/">The Responsinator</a> in order to be able to see your application across multiple platforms.  Second, use <a href="http://getbootstrap.com/2.3.2/">Twitter Bootstrap</a>.  Bootstrap comes with a responsive CSS stylesheet so that as long as you don&rsquo;t set a height/width for certain elements, your work will just become responsive on its own.  The third part is that on some mobile devices, such as the iPhone, the device will have auto zoom-out going for some reason.  In order to combat this you need to add the line</p>
-
-<p><img src="/images/responsive.png" alt="responsive" /></p>
-
-<p>to your application and specifically to your layout file if you are using rails.  So rather than your site looking nice but having the iPhone zoom out like crazy, it will look something like this</p>
-
-<p><img src="/images/photo.PNG" alt="my responsive form" /></p>
-
-<p>So while Bootstrap is amazing and allows people like me to create responsive sites without actually making them responsive, just remember to add the snippit above to your layout file.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -532,6 +548,10 @@ Steven</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/11/25/im-back/">I&#8217;m Back</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/10/07/a-lot-to-come-ahead/">A Lot to Come Ahead</a>
       </li>
     
@@ -545,10 +565,6 @@ Steven</p>
     
       <li class="post">
         <a href="/blog/2013/09/30/some-searching/">Rails DataTables</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/30/searching-today/">Searching Today</a>
       </li>
     
   </ul>

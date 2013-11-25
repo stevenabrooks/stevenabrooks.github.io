@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Push It Real Good - Steven Brooks' Blog</title>
+  <title>I'm Back - Steven Brooks' Blog</title>
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="Real quick post today on deployment. The apps I made thus far have all been deployed following these guidelines: Spike Grobstein = Beast If you were &hellip;">
+  <meta name="description" content="Dear Everyone Who Has Read My Blog, According to my watch, it should have been about two months since I last blogged. These past two months have been &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/10/05/push-it-real-good">
+  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/11/25/im-back">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Steven Brooks' Blog" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Push It Real Good</h1>
+      <h1 class="entry-title">I'm Back</h1>
     
     
       <p class="meta">
@@ -84,34 +84,38 @@
   
 
 
-<time datetime="2013-10-05T18:23:00-04:00" pubdate data-updated="true">Oct 5<span>th</span>, 2013</time>
+<time datetime="2013-11-25T17:08:00-05:00" pubdate data-updated="true">Nov 25<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Real quick post today on deployment.</p>
+<div class="entry-content"><p>Dear Everyone Who Has Read My Blog,</p>
 
-<p>The apps I made thus far have all been deployed following these guidelines:</p>
+<p>According to my watch, it should have been about two months since I last blogged.  These past two months have been a very challenging time for me as my father recently passed away.</p>
 
-<p><a href="http://stackoverflow.com/">Spike Grobstein = Beast</a></p>
+<p>I will be starting up my blog again soon as within the last week or so I have been able to get back to programming.  One of the things I have been working on has been speeding up my Workout App and adding Eager Loading into my application.  Thus far I have eliminated a little over 60% of my queries.</p>
 
-<p>If you were able to successfully deploy your rails app to production via Capistrano you have done all the heavy lifting already.  If you make new changes that you would like to push to the server all you have to do is <a href="https://twitter.com/Chris_GonzGonz">thanks for my boy Chris Gonzales</a>:</p>
+<p>Actually it&rsquo;s probably better I do some stuff now.  In my Workout App the individual workouts #show page has a visual representation of a users workout through the Google Charts.  Originally, my #show action looked like this:</p>
 
-<ol>
-<li>Go into your public folder on your local machine and write the command:</li>
-</ol>
+<p><img src="/images/firstshow.png" alt="My params" /></p>
 
+<p>Very strait forward, I had created a :graph method that would all the charts to work.  When I do this, here is what the queries look like:</p>
 
-<p>cap deploy:setup</p>
+<p><img src="/images/firstquery.png" alt="My params" /></p>
 
-<ol>
-<li>Follow it up by the command:</li>
-</ol>
+<p>Yuck, that&rsquo;s 18 queries, and although it&rsquo;s not very slow on my current app, if this workout had more than a few exercises with a few sets, it could be much slower.</p>
 
+<p>Then I started looking into Eager Loading, which allowed me to turn my #show action into:</p>
 
-<p>cap deploy</p>
+<p><img src="/images/secondshow.png" alt="My params" /></p>
+
+<p>Here, I am loading the routine for the action, that routine belongs to a user and has many lifts.  Those lifts belong to an exercise and have many infos.  So now when I Eager Load into the instance of routine and run the :graph method, we get this:</p>
+
+<p><img src="/images/secondquery.png" alt="My params" /></p>
+
+<p>Just 5 queries.</p>
 </div>
 
 
@@ -134,7 +138,7 @@
   
 
 
-<time datetime="2013-10-05T18:23:00-04:00" pubdate data-updated="true">Oct 5<span>th</span>, 2013</time>
+<time datetime="2013-11-25T17:08:00-05:00" pubdate data-updated="true">Nov 25<span>th</span>, 2013</time>
       
 
 
@@ -142,7 +146,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/10/05/push-it-real-good/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/10/05/push-it-real-good/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/11/25/im-back/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/11/25/im-back/" >Tweet</a>
   
   
   
@@ -151,10 +155,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/10/01/ransack/" title="Previous Post: Ransack">&laquo; Ransack</a>
+        <a class="basic-alignment left" href="/blog/2013/10/07/a-lot-to-come-ahead/" title="Previous Post: A Lot to Come Ahead">&laquo; A Lot to Come Ahead</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/10/07/a-lot-to-come-ahead/" title="Next Post: A Lot to Come Ahead">A Lot to Come Ahead &raquo;</a>
       
     </p>
   </footer>
