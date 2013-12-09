@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-12-09T18:44:18-05:00</updated>
+  <updated>2013-12-09T18:45:00-05:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[The Community is Not Even Real]]></title>
+    <title type="html"><![CDATA[Serialize Attributes]]></title>
     <link href="http://stevenabrooks.github.io/blog/2013/12/09/serializing-model-attributes/"/>
     <updated>2013-12-09T09:23:00-05:00</updated>
     <id>http://stevenabrooks.github.io/blog/2013/12/09/serializing-model-attributes</id>
