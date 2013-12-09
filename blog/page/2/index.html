@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="Last Friday, myself and 31 other students graduated from The Flatiron School. It was a fantastic 12 weeks and an excellent start to my programming &hellip;">
+  <meta name="description" content="Well I had two interviews today&hellip;and on the second interview I had a questions to which i did not get the full answer to. The question was, & &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,52 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/26/controller-scope/">Controller Scope</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-26T20:22:00-04:00" pubdate data-updated="true">Aug 26<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Well I had two interviews today&hellip;and on the second interview I had a questions to which i did not get the full answer to.</p>
+
+<p>The question was, &ldquo;why should we abstract methods out of the controller and put them into the model in rails?&rdquo;  Actually i think the question was worded a little different but that&rsquo;s pretty close.</p>
+
+<p>I answered by claiming that you want to abstract methods into the model because a messy controller would be difficult for another programmer to read your code.  Now that isn&rsquo;t wrong, but it isn&rsquo;t right either.</p>
+
+<p>The full correct answer has to do with scope, and after some help from the friendly interviewer I was able to get the answer.   If you create a method in the controller it&rsquo;s scope is just to that specific controller.  If you make a method in the model not only does its controller and view had access to those methods but so do all the other models.</p>
+
+<p>The scope I was introduced to in the past 12 weeks was variable scope, etc.  So this was a fun problem to work through.</p>
+
+<p>You learn something new everyday&hellip;or at least you should try.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -253,56 +299,6 @@
 <p>Maybe in my spare time I&rsquo;ll find a way to do analytics on this.  Would be really interesting to see the average time it takes someone to respond to a S-Overflow or forum question.  I totally love data crunching so maybe that will be something I can do.</p>
 
 <p>Also I&rsquo;m thinking of asking this guy what his <a href="https://www.github.com/">GitHub</a> is and tip him on <a href="https://www.gittip.com/">GitTip</a> because I would totally do that.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/13/serializing-model-attributes/">The Community Is Not Even Real</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-13T09:23:00-04:00" pubdate data-updated="true">Aug 13<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>So after I successfully jail-rigged my blog, I can now make new posts.  I have a bunch that I want to talk about, but one I wanted touch on today was serializing attributes for a model.</p>
-
-<p>Here is the scenario.  One of the index pages for my currently client lists all the items they have available for rent (it&rsquo;s a music company).  They have microphones, computers, instruments, anything you could rent.  It&rsquo;s probably about 10 different categories of products that a customer can rent.</p>
-
-<p>I built the back end with <a href="http://www.activeadmin.info/">ActiveAdmin</a> so the client can easily change the content of the site.  The previous developer had hard coded all of the content, and the client was not comfortable going into the actual code to make changes.</p>
-
-<p>So we have a rental page that lists all the items for rent.  Because there are 10 different categories of items, do I want to make 10 different models and do the proper associations, or because the items only have names do I want to come up with something else?</p>
-
-<p>I found out that I could serialize an attribute in rails.  Its super simple:</p>
-
-<p><img src="/images/serialize.png" alt="My params" /></p>
-
-<p>What we are doing his is simple, rather than creating a whole nothing model and creating the association, this model (staff), can have many titles, but those titles cannot have many attributes.</p>
-
-<p>This was a really good way for allow the client to add many single attribute attributes to a model.</p>
 </div>
   
   
@@ -579,6 +575,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/09/serializing-model-attributes/">The Community Is Not Even Real</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/06/test/">Test</a>
       </li>
     
@@ -592,10 +592,6 @@
     
       <li class="post">
         <a href="/blog/2013/10/05/push-it-real-good/">Push It Real Good</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/10/01/ransack/">Ransack</a>
       </li>
     
   </ul>
