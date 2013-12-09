@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "The Community is Not Even Real"
-date: 2013-08-13 09:23
+title: "Serialize Attributes"
+date: 2013-12-9 09:23
 categories:
 ---
 So after I successfully jail-rigged my blog, I can now make new posts.  I have a bunch that I want to talk about, but one I wanted touch on today was serializing attributes for a model.
