@@ -265,6 +265,56 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/08/13/serializing-model-attributes/">The Community Is Not Even Real</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-13T09:23:00-04:00" pubdate data-updated="true">Aug 13<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>So after I successfully jail-rigged my blog, I can now make new posts.  I have a bunch that I want to talk about, but one I wanted touch on today was serializing attributes for a model.</p>
+
+<p>Here is the scenario.  One of the index pages for my currently client lists all the items they have available for rent (it&rsquo;s a music company).  They have microphones, computers, instruments, anything you could rent.  It&rsquo;s probably about 10 different categories of products that a customer can rent.</p>
+
+<p>I built the back end with <a href="http://www.activeadmin.info/">ActiveAdmin</a> so the client can easily change the content of the site.  The previous developer had hard coded all of the content, and the client was not comfortable going into the actual code to make changes.</p>
+
+<p>So we have a rental page that lists all the items for rent.  Because there are 10 different categories of items, do I want to make 10 different models and do the proper associations, or because the items only have names do I want to come up with something else?</p>
+
+<p>I found out that I could serialize an attribute in rails.  Its super simple:</p>
+
+<p><img src="/images/serialize.png" alt="My params" /></p>
+
+<p>What we are doing his is simple, rather than creating a whole nothing model and creating the association, this model (staff), can have many titles, but those titles cannot have many attributes.</p>
+
+<p>This was a really good way for allow the client to add many single attribute attributes to a model.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/08/12/loving-ruby/">Loving Ruby</a></h1>
     
     
@@ -505,54 +555,6 @@
 <p>Here is my form that will scale and will work.  I whooped you ass.</p>
 
 <p><img src="/images/workoutcontroller.png" alt="My form" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/28/day-5/">Day 5, Making My Params First</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-28T16:46:00-04:00" pubdate data-updated="true">Jul 28<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Although I have has multiple breakthroughs as far as my knowledge has been concerned over the last few days, I am still very stuck.  The good news is, I am now beginning to think differently about my forms.  Previously, I was worrying about the form first whereas now I am more conceded about creating the params that I want to be given from the form and then making the form first those params that I want.  Here are the current params I would like:</p>
-
-<p><img src="/images/params.png" alt="My params" /></p>
-
-<p>On the above code, I have a routine, which has a name.  That routine has this thing called arbitrary which means nothing.  But that routine has many lifts, each with an exercise_id and many infos(or sets) which have weight and repetitions.</p>
-
-<p>These are the params I constructed in IRB.</p>
-
-<p>The issue I am now having is that when I choose more than one exercise in my short form:</p>
-
-<p><img src="/images/smallform.png" alt="My form" /></p>
-
-<p>The params are only showing :lift once.  My guess is that it is only picking up the last exercise_id because it is overwriting each lift and just leaving the last one.  After about two hours so far today going down a rabbit hole I have decided to post my first question on <a href="http://stackoverflow.com/">Stack Overflow</a>.  So if anyone can help you can see my first questions <a href="http://stackoverflow.com/questions/17912435/nested-form-with-multiple-of-the-same-key-names">here</a>.</p>
 </div>
   
   

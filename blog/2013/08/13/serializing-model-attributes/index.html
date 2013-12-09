@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="Quick post today. Currently having a nice mini lecture on client/server stuff by Blake Johnson. Anyway real quick I just wanted to get down on paper &hellip;">
+  <meta name="description" content="So after I successfully jail-rigged my blog, I can now make new posts. I have a bunch that I want to talk about, but one I wanted touch on today was &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/08/13/the-community-is-not-even-real">
+  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/08/13/serializing-model-attributes">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Steven Brooks' Blog" type="application/atom+xml">
@@ -91,29 +91,21 @@
   </header>
 
 
-<div class="entry-content"><p>Quick post today.  Currently having a nice mini lecture on client/server stuff by <a href="https://twitter.com/blake41">Blake Johnson</a>.</p>
+<div class="entry-content"><p>So after I successfully jail-rigged my blog, I can now make new posts.  I have a bunch that I want to talk about, but one I wanted touch on today was serializing attributes for a model.</p>
 
-<p>Anyway real quick I just wanted to get down on paper, or on the keys, how awesome the programming community is.</p>
+<p>Here is the scenario.  One of the index pages for my currently client lists all the items they have available for rent (it&rsquo;s a music company).  They have microphones, computers, instruments, anything you could rent.  It&rsquo;s probably about 10 different categories of products that a customer can rent.</p>
 
-<p>Yesterday at the end of the day I was struggling with some <a href="https://developers.google.com/chart/">Google Graph</a> stuff.  I wanted to head home a little early to get to the gym so I though I&rsquo;d throw some darts online and see if any of them stuck.</p>
+<p>I built the back end with <a href="http://www.activeadmin.info/">ActiveAdmin</a> so the client can easily change the content of the site.  The previous developer had hard coded all of the content, and the client was not comfortable going into the actual code to make changes.</p>
 
-<p>I posted two questions online hoping that maybe by the time I got home (1.5 hour commute) maybe somebody would help me.  I put a question on <a href="http://stackoverflow.com/">Stack Overflow</a> and also the <a href="https://groups.google.com/forum/#!forum/google-visualization-api">Google Chart&rsquo;s Forum</a>.</p>
+<p>So we have a rental page that lists all the items for rent.  Because there are 10 different categories of items, do I want to make 10 different models and do the proper associations, or because the items only have names do I want to come up with something else?</p>
 
-<p>I sent my two questions, packed up my keys, and as I opened the door to leave <a href="http://flatironschool.com/">The Flatiron School</a> I get an email response from someone from the Charts forum.  I couldn&rsquo;t believe it.  The thread that I asked a question on hadn&rsquo;t been active at all for a month, and a member responded to me in less than 2 minutes.</p>
+<p>I found out that I could serialize an attribute in rails.  Its super simple:</p>
 
-<p>Amazing.  I have learned so much in 10 weeks and I contribute a the large majority of that to the resources I have to my disposal here at <a href="http://flatironschool.com/">The Flatiron School</a>, but I feel more confident now that even when I am not a student here and on my own at 2am, I will have no trouble getting the help I need.  The community is unreal.</p>
+<p><img src="/images/serialize.png" alt="My params" /></p>
 
-<p>Here is the ongoing conversation I am having with one of the users: <a href="https://groups.google.com/forum/#!topic/google-visualization-api/t4jAaaJc200">here</a>.</p>
+<p>What we are doing his is simple, rather than creating a whole nothing model and creating the association, this model (staff), can have many titles, but those titles cannot have many attributes.</p>
 
-<p>I am officially not only searching google blogs or forums from now on, but I will not be bashful at all in asking questions to the public community.  This is similar to my early resistance to asking questions in class, but the first time I asked a dumb question that was not met with laughter I was over that.  Same thing here.</p>
-
-<p>And as a side not for only searching blogs on google now.  Yesterday I was having trouble with a dashboard for <a href="https://developers.google.com/chart/">Google Graph&rsquo;s</a> and standard google searching wasn&rsquo;t giving my anything helpful.  But then I searched strictly blogs, and not only was the first blog exactly what I was looking for but it was also a hold-your-hand style tutorial that was beyond perfect for what I was looking for.  Boom.</p>
-
-<p>In my programming career I have asked two questions to the public forum with both being answered within minutes as well as both responders had back and forth conversations with me.  Amazing.</p>
-
-<p>Maybe in my spare time I&rsquo;ll find a way to do analytics on this.  Would be really interesting to see the average time it takes someone to respond to a S-Overflow or forum question.  I totally love data crunching so maybe that will be something I can do.</p>
-
-<p>Also I&rsquo;m thinking of asking this guy what his <a href="https://www.github.com/">GitHub</a> is and tip him on <a href="https://www.gittip.com/">GitTip</a> because I would totally do that.</p>
+<p>This was a really good way for allow the client to add many single attribute attributes to a model.</p>
 </div>
 
 
@@ -144,7 +136,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/08/13/the-community-is-not-even-real/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/08/13/the-community-is-not-even-real/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/08/13/serializing-model-attributes/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/08/13/serializing-model-attributes/" >Tweet</a>
   
   
   
@@ -153,10 +145,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/13/serializing-model-attributes/" title="Previous Post: The Community is Not Even Real">&laquo; The Community is Not Even Real</a>
+        <a class="basic-alignment left" href="/blog/2013/08/12/loving-ruby/" title="Previous Post: Loving Ruby">&laquo; Loving Ruby</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/08/19/have-to-do-things-yourself/" title="Next Post: Have to Do Things Yourself">Have to Do Things Yourself &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2013/08/13/the-community-is-not-even-real/" title="Next Post: The Community is Not Even Real">The Community is Not Even Real &raquo;</a>
       
     </p>
   </footer>
