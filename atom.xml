@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-12-09T18:45:00-05:00</updated>
+  <updated>2013-12-09T18:51:09-05:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -28,7 +28,9 @@
 
 <p>I found out that I could serialize an attribute in rails.  Its super simple:</p>
 
-<p><img src="http://stevenabrooks.github.io/images/serialize.png" alt="My params" /></p>
+<p>For some reason, images won&rsquo;t work on my blog right now.  But here is some simply code:</p>
+
+<p>&ldquo;serialize :tasks, Array&rdquo;</p>
 
 <p>What we are doing his is simple, rather than creating a whole nothing model and creating the association, this model (staff), can have many titles, but those titles cannot have many attributes.</p>
 
