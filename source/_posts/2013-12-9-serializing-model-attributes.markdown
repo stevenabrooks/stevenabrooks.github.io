@@ -14,9 +14,7 @@ So we have a rental page that lists all the items for rent.  Because there are 1
 
 I found out that I could serialize an attribute in rails.  Its super simple:
 
-For some reason, images won't work on my blog right now.  But here is some simply code:
-
-"serialize :tasks, Array"
+![My params](/images/serialize.png)
 
 What we are doing his is simple, rather than creating a whole nothing model and creating the association, this model (staff), can have many titles, but those titles cannot have many attributes.
 
