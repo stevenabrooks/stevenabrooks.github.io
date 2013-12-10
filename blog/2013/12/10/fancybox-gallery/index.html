@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Testing Ruby - Steven Brooks' Blog</title>
+  <title>FancyBox Gallery Trix - Steven Brooks' Blog</title>
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="I was quickly drawn to &ldquo;Testing Ruby&rdquo; by Emily Price because as a rookie programmer I have come to realize that things such as planning &hellip;">
+  <meta name="description" content="Cool, so one of the features my latest client is asking me to do is adding is an image gallery of their studios. After searching around for a little &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/06/15/testing-ruby">
+  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/12/10/fancybox-gallery">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Steven Brooks' Blog" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Testing Ruby</h1>
+      <h1 class="entry-title">FancyBox Gallery Trix</h1>
     
     
       <p class="meta">
@@ -84,48 +84,54 @@
   
 
 
-<time datetime="2013-06-15T15:31:00-04:00" pubdate data-updated="true">Jun 15<span>th</span>, 2013</time>
+<time datetime="2013-12-10T10:23:00-05:00" pubdate data-updated="true">Dec 10<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I was quickly drawn to <a href="https://speakerdeck.com/duien/testing-ruby">&ldquo;Testing Ruby&rdquo;</a>  by Emily Price because as a rookie programmer I have come to realize that things such as planning and testing are very important.</p>
+<div class="entry-content"><p>Cool, so one of the features my latest client is asking me to do is adding is an image gallery of their studios.  After searching around for a little bit, I stumbled upon the <a href="https://github.com/hecticjeff/fancybox-rails">Fancybox Rails</a> gem.  Cool, let&rsquo;s check it out.</p>
 
-<p><img src="/images/Screen3.png" alt="Ruby Testing" /></p>
+<p>This gem is great, it adds all the assets required for <a href="http://fancybox.net/">Fancybox</a> to your assets, and all you have to do is add:</p>
 
-<p>She writes that testing does many things for a programmer including:</p>
+<p>//= require fancybox</p>
 
-<ol>
-<li>Ensuring the code is correct</li>
-<li>Promoting good practice</li>
-<li>Giving reference to how to code actually works.</li>
-</ol>
+<p>to your application.js file and:</p>
 
+<p>*= require fancy box</p>
 
-<p>In the first two weeks at Flatiron School, testing out my code before moving on has become very important.  If I can know for certain that a method works (by testing), I never have to worry about that method later on in my program.  It seems like such a simple idea but it was only something I found important after writing dozens of lines of code and realizing one of the first few lines did not work.</p>
+<p>to your application.css file.</p>
 
-<p>One pointer that Price writes about that I learned was to:</p>
+<p>Awesome.  Now that all of that is squared away, let&rsquo;s get to work.  In our controller we are working with this array:</p>
 
-<ol>
-<li>Write your test first</li>
-</ol>
+<p><img src="/images/galleryall.png" alt="My params" /></p>
 
+<p>This is an array of all the pictures we are working with.  If we want to loop through all of these, we use the following code:</p>
 
-<p>This is something that I can see would be very useful.  At this point in my programming career I am just learning how to do that so this slideshow comes at a good time for me.</p>
+<p><img src="/images/fancyloop.png" alt="My params" /></p>
 
-<p>Some of the things I thought of during my first two weeks as a programmer that she brought up were:</p>
+<p>If we throw on a little jQuery, we get a workable Fancybox:</p>
 
-<ol>
-<li>Get instant notification when you have an issue</li>
-<li>Write as little code as possible to test</li>
-</ol>
+<p><img src="/images/fancycode.png" alt="My params" /></p>
 
+<p>What happens here is were are looking through all the paintings in the gallery and setting them to the same :rel.  This allows Fancybox to know all images with :rel &ldquo;studio_images&rdquo; is to be grouped together in a gallery.</p>
 
-<p>As my skills as a programmer grow, I would like to be able to create some sort of a process in which I develop certain ways to test my code to find errors as soon as I can.</p>
+<p>The problem here is that we now have eight links, with all eight links opening up to the same gallery.  That&rsquo;s not good, we want one link to open to all of the images in the gallery.  Cool, let&rsquo;s solve this problem.</p>
 
-<p>Price also has a <a href="https://speakerdeck.com/duien/git-an-introduction">Git Introduction</a> slideshow on <a href="https://speakerdeck.com">speakerdeck</a>.</p>
+<p>How about we make two instance variables in the controller, one for the first image, and one for the rest, this way if we ever delete the first image, another will replace it.  The benefit here is that there will be no image duplication because between the two arrays, we will have all the images, but no duplicates.</p>
+
+<p><img src="/images/fancycontroller.png" alt="My params" /></p>
+
+<p>So now we have these two variable, and we need to make a link in the view to open the gallery.  Let&rsquo;s do that:</p>
+
+<p><img src="/images/click_thing.png" alt="My params" /></p>
+
+<p>If you have noticed, both lines of code have different id&rsquo;s, can you guess why?  If we have both lines of code, we will have eight different links.  We only want one link, let&rsquo;s hide the second array.</p>
+
+<p><img src="/images/fancyhide.png" alt="My params" /></p>
+
+<p>And you are left with one link which points to all the images in your gallery, good work.</p>
 </div>
 
 
@@ -148,7 +154,7 @@
   
 
 
-<time datetime="2013-06-15T15:31:00-04:00" pubdate data-updated="true">Jun 15<span>th</span>, 2013</time>
+<time datetime="2013-12-10T10:23:00-05:00" pubdate data-updated="true">Dec 10<span>th</span>, 2013</time>
       
 
 
@@ -156,7 +162,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/06/15/testing-ruby/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/06/15/testing-ruby/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/12/10/fancybox-gallery/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/12/10/fancybox-gallery/" >Tweet</a>
   
   
   
@@ -165,10 +171,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/06/11/post-number-2/" title="Previous Post: Pretty Juiced About the Work I Did Last Night">&laquo; Pretty Juiced About the Work I Did Last Night</a>
+        <a class="basic-alignment left" href="/blog/2013/12/10/highlight-current-page-rails/" title="Previous Post: Highlight Current Page Rails">&laquo; Highlight Current Page Rails</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/06/18/baseball/" title="Next Post: Baseball Is a Game of Pixels">Baseball Is a Game of Pixels &raquo;</a>
       
     </p>
   </footer>

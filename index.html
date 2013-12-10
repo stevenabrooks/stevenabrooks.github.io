@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="I&rsquo;ll admit, I am not an authority figure when it comes to front end. I&rsquo;m not talking about things like Bootstrap, I&rsquo;m talking about &hellip;">
+  <meta name="description" content="Cool, so one of the features my latest client is asking me to do is adding is an image gallery of their studios. After searching around for a little &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,82 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/10/fancybox-gallery/">FancyBox Gallery Trix</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-10T10:23:00-05:00" pubdate data-updated="true">Dec 10<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Cool, so one of the features my latest client is asking me to do is adding is an image gallery of their studios.  After searching around for a little bit, I stumbled upon the <a href="https://github.com/hecticjeff/fancybox-rails">Fancybox Rails</a> gem.  Cool, let&rsquo;s check it out.</p>
+
+<p>This gem is great, it adds all the assets required for <a href="http://fancybox.net/">Fancybox</a> to your assets, and all you have to do is add:</p>
+
+<p>//= require fancybox</p>
+
+<p>to your application.js file and:</p>
+
+<p>*= require fancy box</p>
+
+<p>to your application.css file.</p>
+
+<p>Awesome.  Now that all of that is squared away, let&rsquo;s get to work.  In our controller we are working with this array:</p>
+
+<p><img src="/images/galleryall.png" alt="My params" /></p>
+
+<p>This is an array of all the pictures we are working with.  If we want to loop through all of these, we use the following code:</p>
+
+<p><img src="/images/fancyloop.png" alt="My params" /></p>
+
+<p>If we throw on a little jQuery, we get a workable Fancybox:</p>
+
+<p><img src="/images/fancycode.png" alt="My params" /></p>
+
+<p>What happens here is were are looking through all the paintings in the gallery and setting them to the same :rel.  This allows Fancybox to know all images with :rel &ldquo;studio_images&rdquo; is to be grouped together in a gallery.</p>
+
+<p>The problem here is that we now have eight links, with all eight links opening up to the same gallery.  That&rsquo;s not good, we want one link to open to all of the images in the gallery.  Cool, let&rsquo;s solve this problem.</p>
+
+<p>How about we make two instance variables in the controller, one for the first image, and one for the rest, this way if we ever delete the first image, another will replace it.  The benefit here is that there will be no image duplication because between the two arrays, we will have all the images, but no duplicates.</p>
+
+<p><img src="/images/fancycontroller.png" alt="My params" /></p>
+
+<p>So now we have these two variable, and we need to make a link in the view to open the gallery.  Let&rsquo;s do that:</p>
+
+<p><img src="/images/click_thing.png" alt="My params" /></p>
+
+<p>If you have noticed, both lines of code have different id&rsquo;s, can you guess why?  If we have both lines of code, we will have eight different links.  We only want one link, let&rsquo;s hide the second array.</p>
+
+<p><img src="/images/fancyhide.png" alt="My params" /></p>
+
+<p>And you are left with one link which points to all the images in your gallery, good work.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -498,49 +574,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/25/its-been-a-while/">It&#8217;s Been a While</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-25T11:55:00-04:00" pubdate data-updated="true">Sep 25<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Dear Everyone,</p>
-
-<p>I&rsquo;m sorry.  It&rsquo;s been a while since I last blogged.  I graduated The Flatiron School a few weeks ago and am currently running all over the joint trying to find a great job with an awesome company.  Rather than blogging, my days have been spend networking, interviewing, and running around like a mad man.</p>
-
-<p>In the next few days I would like to highlight some of the things I have been working on (I have been trying out a lot of ruby gems).</p>
-
-<p>Till then, have a good one,
-Steven</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -556,6 +589,10 @@ Steven</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/10/fancybox-gallery/">FancyBox Gallery Trix</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/10/highlight-current-page-rails/">Highlight Current Page Rails</a>
       </li>
     
@@ -569,10 +606,6 @@ Steven</p>
     
       <li class="post">
         <a href="/blog/2013/11/25/im-back/">I&#8217;m Back</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/10/07/a-lot-to-come-ahead/">A Lot to Come Ahead</a>
       </li>
     
   </ul>
