@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-12-10T08:57:05-05:00</updated>
+  <updated>2013-12-10T09:12:27-05:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Highlight Current Page Rails]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2013/12/10/highlight-current-page-rails/"/>
+    <updated>2013-12-10T09:23:00-05:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2013/12/10/highlight-current-page-rails</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ll admit, I am not an authority figure when it comes to front end.  I&rsquo;m not talking about things like <a href="http://getbootstrap.com/">Bootstrap</a>, I&rsquo;m talking about getting super down and dirty within a stylesheet.</p>
+
+<p>I had a fun little problem to solve yesterday when working on the site for my current client.  The client wanted the page the user was currently on to be highlighted in the navbar.</p>
+
+<p>I immediately thought to add some sort of conditional, but went strait to <a href="http://stackoverflow.com/">Stack Overflow</a> to see what programmers before me have done.</p>
+
+<p>Turns out, there are two ways you can do something like this.  In both scenarios, we are going to create a helper method, but the helper method can check different things.</p>
+
+<p>For those who are not making a navbar dynamically, I would suggest using the following:</p>
+
+<p><img src="http://stevenabrooks.github.io/images/controllermethod.png" alt="My params" /></p>
+
+<p><img src="http://stevenabrooks.github.io/images/controllercode.png" alt="My params" /></p>
+
+<p>This way, you can have the helper method return some thing (in this case, the name of the new class) depending on what controller the request is using.</p>
+
+<p>If you are going to dynamically create the navbar, I suggest you do something like this:</p>
+
+<p><img src="http://stevenabrooks.github.io/images/pathmethod.png" alt="My params" /></p>
+
+<p><img src="http://stevenabrooks.github.io/images/pathcode.png" alt="My params" /></p>
+
+<p>This way, the helper is checking the request url, and simply passing in the path.  I actually found this second way of doing this buggy because the root path becomes highlighted for all the other paths.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Serialize Attributes]]></title>
@@ -408,23 +439,6 @@ Steven</p>
 <p><img src="http://stevenabrooks.github.io/images/workoutcontroller.png" alt="My params" /></p>
 
 <p>Not bad at all.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Day 6...Hey Dude Remember There Are Keys and Values in Hashes]]></title>
-    <link href="http://stevenabrooks.github.io/blog/2013/07/29/day-6-dot-dot-dot-hey-dude-remember-there-are-keys-and-values-in-hashes/"/>
-    <updated>2013-07-29T09:20:00-04:00</updated>
-    <id>http://stevenabrooks.github.io/blog/2013/07/29/day-6-dot-dot-dot-hey-dude-remember-there-are-keys-and-values-in-hashes</id>
-    <content type="html"><![CDATA[<p>Got it.  Finally.  I couldn&rsquo;t be happier right now.</p>
-
-<p>I&rsquo;m going to reflect a little here.  I&rsquo;ve been programming for 8 weeks now.  In that time, I have learned Ruby, SQL, Git, Sintra, and now Rails.  Holy shit.</p>
-
-<p>While those are remarkable I now truly consider myself a programmer.  In my latest blog post, I mentioned that I was going down a nice long rabbit hole.  But I&rsquo;m here, and you know what, I&rsquo;m totally out of that rabbit hole now.  I am now able to know exactly where some of my errors are and also where I can go to get those errors solved.  On my <a href="http://stackoverflow.com/questions/17912435/nested-form-with-multiple-of-the-same-key-names">StackOverflow question</a>, I was able to articulate my question well enough so that a true Rubyist would be able to answer my questions and for me to understand what he was saying.</p>
-
-<p>Here is my form that will scale and will work.  I whooped you ass.</p>
-
-<p><img src="http://stevenabrooks.github.io/images/workoutcontroller.png" alt="My form" /></p>
 ]]></content>
   </entry>
   

@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="So after I successfully jail-rigged my blog, I can now make new posts. I have a bunch that I want to talk about, but one I wanted touch on today was &hellip;">
+  <meta name="description" content="I&rsquo;ll admit, I am not an authority figure when it comes to front end. I&rsquo;m not talking about things like Bootstrap, I&rsquo;m talking about &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,64 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/10/highlight-current-page-rails/">Highlight Current Page Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-10T09:23:00-05:00" pubdate data-updated="true">Dec 10<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;ll admit, I am not an authority figure when it comes to front end.  I&rsquo;m not talking about things like <a href="http://getbootstrap.com/">Bootstrap</a>, I&rsquo;m talking about getting super down and dirty within a stylesheet.</p>
+
+<p>I had a fun little problem to solve yesterday when working on the site for my current client.  The client wanted the page the user was currently on to be highlighted in the navbar.</p>
+
+<p>I immediately thought to add some sort of conditional, but went strait to <a href="http://stackoverflow.com/">Stack Overflow</a> to see what programmers before me have done.</p>
+
+<p>Turns out, there are two ways you can do something like this.  In both scenarios, we are going to create a helper method, but the helper method can check different things.</p>
+
+<p>For those who are not making a navbar dynamically, I would suggest using the following:</p>
+
+<p><img src="/images/controllermethod.png" alt="My params" /></p>
+
+<p><img src="/images/controllercode.png" alt="My params" /></p>
+
+<p>This way, you can have the helper method return some thing (in this case, the name of the new class) depending on what controller the request is using.</p>
+
+<p>If you are going to dynamically create the navbar, I suggest you do something like this:</p>
+
+<p><img src="/images/pathmethod.png" alt="My params" /></p>
+
+<p><img src="/images/pathcode.png" alt="My params" /></p>
+
+<p>This way, the helper is checking the request url, and simply passing in the path.  I actually found this second way of doing this buggy because the root path becomes highlighted for all the other paths.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -483,52 +541,6 @@ Steven</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/28/learned-a-little-about-notation-today/">Learned a Little About Notation Today</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-28T10:49:00-04:00" pubdate data-updated="true">Aug 28<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>So today I learned something drastically new.  One of my classmates, who just happens to be a beast at programming, went to an interview yesterday for a very prominent company here in New York.  They asked him a lot of CS questions because this was not for a junior position, and lucky, besides the fact that my friend is just really smart, he had a background in CS.  So he smoked some of these questions.</p>
-
-<p>One of the things he thought I should have a grasp on was <a href="http://en.wikipedia.org/wiki/Big_O_notation">O Notation</a>.  Now what I am about to say is me trying to replay the 20 minutes conversation I had with my classmate this morning.</p>
-
-<p>O(1) describes an algorithm that will always execute in the same time (or space) regardless of the size of the input data set.</p>
-
-<p>O(N) describes an algorithm whose performance will grow linearly and in direct proportion to the size of the input data set.</p>
-
-<p>O(N2) represents an algorithm whose performance is directly proportional to the square of the size of the input data set.</p>
-
-<p>O(2N) denotes an algorithm whose growth will double with each additional element in the input data set.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -544,6 +556,10 @@ Steven</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/10/highlight-current-page-rails/">Highlight Current Page Rails</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/09/serializing-model-attributes/">Serialize Attributes</a>
       </li>
     
@@ -557,10 +573,6 @@ Steven</p>
     
       <li class="post">
         <a href="/blog/2013/10/07/a-lot-to-come-ahead/">A Lot to Come Ahead</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/10/05/push-it-real-good/">Push It Real Good</a>
       </li>
     
   </ul>
