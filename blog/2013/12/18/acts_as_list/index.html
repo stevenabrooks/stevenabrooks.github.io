@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ransack - Steven Brooks' Blog</title>
+  <title>Serialize Attributes - Steven Brooks' Blog</title>
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="Yesterday I worked on another search gem this time being Ransack. In Outlinked we used Sunspot (who I&rsquo;m not even going to give a link to) which &hellip;">
+  <meta name="description" content="Today has been a great day for me thus far. For the current site I am working on, the client requested two features recently: 1) Allow him to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/10/01/ransack">
+  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/12/18/acts_as_list">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Steven Brooks' Blog" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Ransack</h1>
+      <h1 class="entry-title">Serialize Attributes</h1>
     
     
       <p class="meta">
@@ -84,26 +84,49 @@
   
 
 
-<time datetime="2013-10-01T09:27:00-04:00" pubdate data-updated="true">Oct 1<span>st</span>, 2013</time>
+<time datetime="2013-12-18T09:23:00-05:00" pubdate data-updated="true">Dec 18<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Yesterday I worked on another search gem this time being <a href="https://github.com/ernie/ransack">Ransack</a>.  In <a href="https://outlinked.flatironschool.com">Outlinked</a> we used Sunspot (who I&rsquo;m not even going to give a link to) which I will never use again.  I was very pleased with how Ransack went and how easy it was to use as well as have dynamic searching.</p>
+<div class="entry-content"><p>Today has been a great day for me thus far.  For the current site I am working on, the client requested two features recently:</p>
 
-<p>Ransack was very strait forward.  This is what my html.erb file looked like.  This allowed a user to continue to drill down their search (dynamic):</p>
+<p>1) Allow him to reposition images(order)</p>
 
-<p><img src="/images/ransack_view.png" alt="My params" /></p>
+<p>2) Allow him to upload files and have his clients view/download them</p>
 
-<p>Then you go into the controller and set your instance variable to the results of the search:</p>
+<p>Cool.  Had no idea how to do either off the top of my head.  Let&rsquo;s try to tackle the first one.</p>
 
-<p><img src="/images/ransack_controller.png" alt="My params" /></p>
+<p>On a high level, I was thinking this process should go something like this:</p>
 
-<p>And bam, you get a nice dynamic search (I&rsquo;m wondering if these drop downs can be autompletes, that would probable make the UX a little better):</p>
+<ul>
+<li>See if an object had been updated</li>
+<li>Find out which object that was</li>
+<li>See the new position is has and if that position is already taken up</li>
+<li>Track whether that object went up or down in position</li>
+<li>Change the other positions accordingly</li>
+</ul>
 
-<p><img src="/images/ransack.png" alt="My params" /></p>
+
+<p>Myself and xxxx were actually constructing the code to write this whole thing out.  We started by writing a rails test:</p>
+
+<p><img src="/images/unittest.png" alt="My params" /></p>
+
+<p>Here we are testing to see if we change the position of a studio, we need the other studios&#8217; positions to change accordingly.</p>
+
+<p>Now here&rsquo;s the real issue, all of the CRUD of an object in this app is being done by <a href="http://www.activeadmin.info/">Active Admin</a>.  Actually I guess it wasn&rsquo;t so hard to know where to look to solve this problem…callbacks.</p>
+
+<p>Cool we here the best this to do is the have a before_save callback.  We need to check if the  current object has been changed.  But wait, duh, there&rsquo;s this thing called <a href="https://github.com/swanandp/acts_as_list">acts_as_list</a> that does the reordering for you.  Luckily, this gem has a method (:insert_at(#)) that not only inserts the object where you want it but also reorders the list, doing the heavy lifting for us.</p>
+
+<p>Great.  The idea that this process requires a before_save callback is right, and now we just need to connect the dots.  We must ask if a object has been changed, then insert it accordingly:</p>
+
+<p><img src="/images/beforefilter.png" alt="My params" /></p>
+
+<p><img src="/images/actslist.png" alt="My params" /></p>
+
+<p>and bam, we can change any object to have a different position and the rest of the positions are reordered, and it works with Active Admin.  Check.</p>
 </div>
 
 
@@ -126,7 +149,7 @@
   
 
 
-<time datetime="2013-10-01T09:27:00-04:00" pubdate data-updated="true">Oct 1<span>st</span>, 2013</time>
+<time datetime="2013-12-18T09:23:00-05:00" pubdate data-updated="true">Dec 18<span>th</span>, 2013</time>
       
 
 
@@ -134,7 +157,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/10/01/ransack/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/10/01/ransack/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/12/18/acts_as_list/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/12/18/acts_as_list/" >Tweet</a>
   
   
   
@@ -143,10 +166,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/09/30/some-searching/" title="Previous Post: Rails DataTables">&laquo; Rails DataTables</a>
+        <a class="basic-alignment left" href="/blog/2013/12/11/upgrading-app-to-heroku-standards/" title="Previous Post: Updating App to be Good With Heroku">&laquo; Updating App to be Good With Heroku</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/10/05/push-it-real-good/" title="Next Post: Push It Real Good">Push It Real Good &raquo;</a>
       
     </p>
   </footer>

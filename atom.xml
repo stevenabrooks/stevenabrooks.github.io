@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-12-10T15:31:33-05:00</updated>
+  <updated>2013-12-18T12:10:46-05:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -12,6 +12,122 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Serialize Attributes]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2013/12/18/acts_as_list/"/>
+    <updated>2013-12-18T09:23:00-05:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2013/12/18/acts_as_list</id>
+    <content type="html"><![CDATA[<p>Today has been a great day for me thus far.  For the current site I am working on, the client requested two features recently:</p>
+
+<p>1) Allow him to reposition images(order)</p>
+
+<p>2) Allow him to upload files and have his clients view/download them</p>
+
+<p>Cool.  Had no idea how to do either off the top of my head.  Let&rsquo;s try to tackle the first one.</p>
+
+<p>On a high level, I was thinking this process should go something like this:</p>
+
+<ul>
+<li>See if an object had been updated</li>
+<li>Find out which object that was</li>
+<li>See the new position is has and if that position is already taken up</li>
+<li>Track whether that object went up or down in position</li>
+<li>Change the other positions accordingly</li>
+</ul>
+
+
+<p>Myself and xxxx were actually constructing the code to write this whole thing out.  We started by writing a rails test:</p>
+
+<p><img src="http://stevenabrooks.github.io/images/unittest.png" alt="My params" /></p>
+
+<p>Here we are testing to see if we change the position of a studio, we need the other studios&#8217; positions to change accordingly.</p>
+
+<p>Now here&rsquo;s the real issue, all of the CRUD of an object in this app is being done by <a href="http://www.activeadmin.info/">Active Admin</a>.  Actually I guess it wasn&rsquo;t so hard to know where to look to solve this problem…callbacks.</p>
+
+<p>Cool we here the best this to do is the have a before_save callback.  We need to check if the  current object has been changed.  But wait, duh, there&rsquo;s this thing called <a href="https://github.com/swanandp/acts_as_list">acts_as_list</a> that does the reordering for you.  Luckily, this gem has a method (:insert_at(#)) that not only inserts the object where you want it but also reorders the list, doing the heavy lifting for us.</p>
+
+<p>Great.  The idea that this process requires a before_save callback is right, and now we just need to connect the dots.  We must ask if a object has been changed, then insert it accordingly:</p>
+
+<p><img src="http://stevenabrooks.github.io/images/beforefilter.png" alt="My params" /></p>
+
+<p><img src="http://stevenabrooks.github.io/images/actslist.png" alt="My params" /></p>
+
+<p>and bam, we can change any object to have a different position and the rest of the positions are reordered, and it works with Active Admin.  Check.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Updating App to be Good With Heroku]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2013/12/11/upgrading-app-to-heroku-standards/"/>
+    <updated>2013-12-11T09:23:00-05:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2013/12/11/upgrading-app-to-heroku-standards</id>
+    <content type="html"><![CDATA[<p>My plan for right now is to take my <a href="https://github.com/stevenabrooks/workout-app">Workout App</a> and upgrade it to be compatible with <a href="https://heroku.com">Heroku</a>.  The free Digital Ocean surfers I had access to this summer are no longer available.  Actually, if I can get this done well with my person app maybe I can do this with my other apps.  I will write this post as I go.  Right now, my app is with Rails 3.2.13 (okay by Heroku) and Ruby 1.9.3 (not okay with Heroku).</p>
+
+<p>What we know for sure is that Heroku requires Ruby 2.0.  Let&rsquo;s do that.  In the Gemfile, add this line of code:</p>
+
+<p><img src="http://stevenabrooks.github.io/images/2.0.png" alt="My params" /></p>
+
+<p>A small gotcha here is that not only does Ruby 2.0 have to be installed locally, but you might be on a different version of Ruby.  Make sure to run the:</p>
+
+<p>$ rvm use 2.0</p>
+
+<p>command.</p>
+
+<p>On the current app I am working on for a client, I was trying to figure out how to transfer the data from my local Sqlite3 database to the eventual Postgresql database.  This is when I stumbled across <a href="https://github.com/rroblak/seed_dump">Seed Dump</a>, an awesome gem that allows you to fill your seeds file with everything in the current database.  For someone like me who is using rails 3.2, you must use:</p>
+
+<p>&lsquo;gem &ldquo;seed_dump&rdquo;, &ldquo;~> 0.5.3&rdquo;&rsquo;</p>
+
+<p>To run the gem, the command is:</p>
+
+<p>$ rake db:seed:dump</p>
+
+<p>Great, next we have to take our Sqlite3 database, and move it into the Development and Test Group.</p>
+
+<p>Cool, next we have to create a Production Group in our Gemfile and add the following:</p>
+
+<p><img src="http://stevenabrooks.github.io/images/production.png" alt="My params" /></p>
+
+<p>This allows Postgresql to be used in production.</p>
+
+<p>So let&rsquo;s see. We have Ruby 2.0.  We have a way to seed the production database.  We have set up a Postgresql database in production.  We&rsquo;re probably pretty close.</p>
+
+<p>So let&rsquo;s run:</p>
+
+<p>$ bundle</p>
+
+<p>and see how that goes.  Okay great! That actually worked without any issue.</p>
+
+<p>Now let&rsquo;s dump that data:</p>
+
+<p>$ rake db:seed:dump</p>
+
+<p>Beautiful, all the data from my local development Sqlite3 database is in my seeds file.  Now let&rsquo;s go to Heroku and see what&rsquo;s going on there.</p>
+
+<p>$ heroku login</p>
+
+<p>Now add the following code into your application.rb file:</p>
+
+<p>&ldquo;config.assets.initialize_on_precompile = false&rdquo;</p>
+
+<p>$ heroku create</p>
+
+<p>Now deploy your code:</p>
+
+<p>$ git push heroku master</p>
+
+<p>Awesome.  Now Heroku is doing it&rsquo;s magic, and although it seemingly appears like we are done, we are not my friends.</p>
+
+<p>We have to run two commands for the <a href="https://devcenter.heroku.com/articles/dynos">dyno</a>.</p>
+
+<p>$ heroku ps:scale web=1
+$ heroku ps</p>
+
+<p>Now we have to migrate the database.</p>
+
+<p>$ heroku run rake db:migrate</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[FancyBox Gallery Trix]]></title>
@@ -415,58 +531,6 @@ Steven</p>
 <p><img src="http://stevenabrooks.github.io/images/firstlinerailsc.png" alt="console" /></p>
 
 <p>Next time we chat it up I&rsquo;ll show you more stuff.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[2/3 Jquery]]></title>
-    <link href="http://stevenabrooks.github.io/blog/2013/08/06/2-slash-3-jquery/"/>
-    <updated>2013-08-06T08:30:00-04:00</updated>
-    <id>http://stevenabrooks.github.io/blog/2013/08/06/2-slash-3-jquery</id>
-    <content type="html"><![CDATA[<p>So I&rsquo;m 2/3 of the way there with my javascript/jquery wants.  Yesterday I mentioned that I wanted to have a calendar to properly keep track of workout days rather than active record&rsquo;s created_at, I wanted to autocomplete the exercise name so that in the controller/model I can find_or_create_by for an exercise rather than a drop down, and I wanted to have a form that started with one exercise and a user can add as many sets to that as they choose as well as more exercises with sets.</p>
-
-<p>As I&rsquo;m sure you&rsquo;ve assumed by now I completed the first two but not the last.  Here is functioning code for the calendar:</p>
-
-<p><img src="http://stevenabrooks.github.io/images/calendar.png" alt="My params" /></p>
-
-<p>Here is the code I posted yesterday which was an attempt at autocomplete which didn&rsquo;t work…can you spot the errors?</p>
-
-<p><img src="http://stevenabrooks.github.io/images/autocomplete.png" alt="My params" /></p>
-
-<p>From what I understand, or at least from the changes I made along with a JS Ninja (Jon Grover), I had a few semicolon issues as well as placing the array after the function.  I don&rsquo;t know for sure but it felt like I had to create the array for the autocomplete before that array is called in the function.  Here is the javascript code that allows both the calendar and the autocomplete to function properly:</p>
-
-<p><img src="http://stevenabrooks.github.io/images/working-js.png" alt="My params" /></p>
-
-<p>The issue I have been having on creating a new exercise is that javascript, or at least my javascript, does like the idea of appending and ERB tag.  I&rsquo;ll get to the bottom of it though.  I&rsquo;d like to save the before and after code for the same post as I feel it would be super useful for a lot of people as it&rsquo;s own post.  Cool beans.</p>
-
-<p>Also, over the weekend I made a ton of methods to find out certain details about my workouts, such as best sets, most weight used, % increase in total weight over time, etc.  Really pumped about those and after this form is finished up I am going to move on to different layouts so that I can graphically show the cool data I came up with.  One thing at a time though.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Day IDK...Getting Busy With JQuery]]></title>
-    <link href="http://stevenabrooks.github.io/blog/2013/08/05/day-idk-dot-dot-dot-getting-busy-with-jquery/"/>
-    <updated>2013-08-05T08:36:00-04:00</updated>
-    <id>http://stevenabrooks.github.io/blog/2013/08/05/day-idk-dot-dot-dot-getting-busy-with-jquery</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s been a few days since I have blogged and consequently a few days since I have been able to work on my Workout App.  That will change this week.</p>
-
-<p>Over the weekend when I was able to work on my app I was split between the next step to take.  I had two options: make the form better by adding Jquery to it or start making methods that will be used when a user wants to do some form of analytics on their workouts.  Although to date I prefer the backend and making methods, I decided to take a shot at the Jquery stuff, which I am a total newbie in.</p>
-
-<p>My first stop was visiting the <a href="http://jqueryui.com/">Jquery UI</a> website.  I totally love this site.  This site makes it so easy for me to do the programmers version of drop and drag for many awesome front end features.  Looking through what they have available, I realized I would like an autocomplete function for the user to choose their exercises that way as apposed to a select list that could get very long.  Also, an autocomplete function would allow me to find_or_create_by an exercise!  Next I would like to have a calendar for the user to say when that workout will or had been completed.  Although active record gives a created_at and updated_at attribute for everything in any table, a user may do a weeks worth of workouts and create the routines and information all in one day.  Active record might consider those created_at very similar times, so when a user goes to look back at their workouts overt time, I want that information to be accurate. I also would love to have a form that lists one exercise at a time and a user chooses how many sets per each exercise, and after they complete the information for one exercise and it&rsquo;s sets they create another exercise and so on.</p>
-
-<p>Out of the three I was able to complete just the calendar.  I do not know why the autocomplete is not working and I am getting a few nice errors with my last query function.</p>
-
-<p>Here is the current code to implement that calendar:</p>
-
-<p><img src="http://stevenabrooks.github.io/images/calendar.png" alt="My params" /></p>
-
-<p>Simple enough.</p>
-
-<p>Here is my current code for the autocomplete:</p>
-
-<p><img src="http://stevenabrooks.github.io/images/autocomplete.png" alt="My params" /></p>
-
-<p>The other code for creating new form fields on the fly is a mess.  Either way I will show the correct code for all of the three things I would like to do in the following days.</p>
 ]]></content>
   </entry>
   

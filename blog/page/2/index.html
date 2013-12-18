@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="Dear Everyone, I&rsquo;m sorry. It&rsquo;s been a while since I last blogged. I graduated The Flatiron School a few weeks ago and am currently &hellip;">
+  <meta name="description" content="As my last post stated, I was planning on doing some work on searches in rails. I have done two of them so far today with the first being Data Tables &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,92 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/30/some-searching/">Rails DataTables</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-30T14:43:00-04:00" pubdate data-updated="true">Sep 30<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>As my last post stated, I was planning on doing some work on searches in rails.  I have done two of them so far today with the first being Data Tables and the second being Ransack.</p>
+
+<p>Datatables is pretty cool.  It&rsquo;s not necessarily just search but it looks like a really cool admin feature.  You can search any of the column, sort any of the columns, and have pagination really easily.</p>
+
+<p>You are out by adding the gem then once you do that you simply give the table you are trying to sort an ID.</p>
+
+<p><img src="/images/datatables_view.png" alt="My params" /></p>
+
+<p>Then go into the corresponding JS file and add a little snippet:</p>
+
+<p><img src="/images/datatables_js.png" alt="My params" /></p>
+
+<p>And magically this shows up:</p>
+
+<p><img src="/images/datatables.png" alt="My params" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/30/searching-today/">Searching Today</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-30T10:42:00-04:00" pubdate data-updated="true">Sep 30<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;m going to try to start something new on my blog.  Unfortunately the last few weeks I haven&rsquo;t been able to code as much as I would have liked to (most of my time has been spent networking, interviewing, etc).  So now I&rsquo;d like do a few hours a day of different rails features and log what went on here on my blog.  Today I&rsquo;m going to work on search which will include manual search as well as some of the gems such as Sunspot.  Ttyl.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -449,112 +535,6 @@ Steven</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/06/2-slash-3-jquery/">2/3 Jquery</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-06T08:30:00-04:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>So I&rsquo;m 2/3 of the way there with my javascript/jquery wants.  Yesterday I mentioned that I wanted to have a calendar to properly keep track of workout days rather than active record&rsquo;s created_at, I wanted to autocomplete the exercise name so that in the controller/model I can find_or_create_by for an exercise rather than a drop down, and I wanted to have a form that started with one exercise and a user can add as many sets to that as they choose as well as more exercises with sets.</p>
-
-<p>As I&rsquo;m sure you&rsquo;ve assumed by now I completed the first two but not the last.  Here is functioning code for the calendar:</p>
-
-<p><img src="/images/calendar.png" alt="My params" /></p>
-
-<p>Here is the code I posted yesterday which was an attempt at autocomplete which didn&rsquo;t work…can you spot the errors?</p>
-
-<p><img src="/images/autocomplete.png" alt="My params" /></p>
-
-<p>From what I understand, or at least from the changes I made along with a JS Ninja (Jon Grover), I had a few semicolon issues as well as placing the array after the function.  I don&rsquo;t know for sure but it felt like I had to create the array for the autocomplete before that array is called in the function.  Here is the javascript code that allows both the calendar and the autocomplete to function properly:</p>
-
-<p><img src="/images/working-js.png" alt="My params" /></p>
-
-<p>The issue I have been having on creating a new exercise is that javascript, or at least my javascript, does like the idea of appending and ERB tag.  I&rsquo;ll get to the bottom of it though.  I&rsquo;d like to save the before and after code for the same post as I feel it would be super useful for a lot of people as it&rsquo;s own post.  Cool beans.</p>
-
-<p>Also, over the weekend I made a ton of methods to find out certain details about my workouts, such as best sets, most weight used, % increase in total weight over time, etc.  Really pumped about those and after this form is finished up I am going to move on to different layouts so that I can graphically show the cool data I came up with.  One thing at a time though.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/05/day-idk-dot-dot-dot-getting-busy-with-jquery/">Day IDK&#8230;Getting Busy With JQuery</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-05T08:36:00-04:00" pubdate data-updated="true">Aug 5<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It&rsquo;s been a few days since I have blogged and consequently a few days since I have been able to work on my Workout App.  That will change this week.</p>
-
-<p>Over the weekend when I was able to work on my app I was split between the next step to take.  I had two options: make the form better by adding Jquery to it or start making methods that will be used when a user wants to do some form of analytics on their workouts.  Although to date I prefer the backend and making methods, I decided to take a shot at the Jquery stuff, which I am a total newbie in.</p>
-
-<p>My first stop was visiting the <a href="http://jqueryui.com/">Jquery UI</a> website.  I totally love this site.  This site makes it so easy for me to do the programmers version of drop and drag for many awesome front end features.  Looking through what they have available, I realized I would like an autocomplete function for the user to choose their exercises that way as apposed to a select list that could get very long.  Also, an autocomplete function would allow me to find_or_create_by an exercise!  Next I would like to have a calendar for the user to say when that workout will or had been completed.  Although active record gives a created_at and updated_at attribute for everything in any table, a user may do a weeks worth of workouts and create the routines and information all in one day.  Active record might consider those created_at very similar times, so when a user goes to look back at their workouts overt time, I want that information to be accurate. I also would love to have a form that lists one exercise at a time and a user chooses how many sets per each exercise, and after they complete the information for one exercise and it&rsquo;s sets they create another exercise and so on.</p>
-
-<p>Out of the three I was able to complete just the calendar.  I do not know why the autocomplete is not working and I am getting a few nice errors with my last query function.</p>
-
-<p>Here is the current code to implement that calendar:</p>
-
-<p><img src="/images/calendar.png" alt="My params" /></p>
-
-<p>Simple enough.</p>
-
-<p>Here is my current code for the autocomplete:</p>
-
-<p><img src="/images/autocomplete.png" alt="My params" /></p>
-
-<p>The other code for creating new form fields on the fly is a mess.  Either way I will show the correct code for all of the three things I would like to do in the following days.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -572,6 +552,14 @@ Steven</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/18/acts_as_list/">Serialize Attributes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/11/upgrading-app-to-heroku-standards/">Updating App to Be Good With Heroku</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/10/fancybox-gallery/">FancyBox Gallery Trix</a>
       </li>
     
@@ -581,14 +569,6 @@ Steven</p>
     
       <li class="post">
         <a href="/blog/2013/12/09/serializing-model-attributes/">Serialize Attributes</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/06/test/">Test</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/25/im-back/">I&#8217;m Back</a>
       </li>
     
   </ul>
