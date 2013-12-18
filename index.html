@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="Today has been a great day for me thus far. For the current site I am working on, the client requested two features recently: 1) Allow him to &hellip;">
+  <meta name="description" content="Okay I&rsquo;m back. When we last left we had two request for the current app I&rsquo;m working on. We nailed the first, now on to the second task. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,56 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/18/rails-upload-download/">Upload/Download in Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-18T09:25:00-05:00" pubdate data-updated="true">Dec 18<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Okay I&rsquo;m back.  When we last left we had two request for the current app I&rsquo;m working on.  We nailed the first, now on to the second task.  We are supposed to allow the client to upload files so that people can download them from the app.  Again, no idea before I started.</p>
+
+<p>Well here&rsquo;s something nice, I already am using <a href="https://github.com/carrierwaveuploader/carrierwave">CarrierWave</a> and feel pretty comfortable with it.  A thing to note is that most people assume this gem is only good for uploading images (likely due to the <a href="http://railscasts.com/episodes/253-carrierwave-file-uploads">Railscast episode</a>). It&rsquo;s not, actually its great for many files (I am currently upload .mp3, .mp4, .mov, and .wav files).</p>
+
+<p>So I know how to upload the files, but how do you view the file or download it?</p>
+
+<p>I stumbled upon how to view the file when I was trying to make it download:</p>
+
+<p><img src="/images/linkview.png" alt="My params" /></p>
+
+<p>We are simply linking to where the upload attachment is.  Now for download:</p>
+
+<p><img src="/images/linkdownload.png" alt="My params" /></p>
+
+<p>Here we are linking to the attachment url and downloading the file.  Not bad once you know how to do it.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -559,56 +609,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/30/some-searching/">Rails DataTables</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-30T14:43:00-04:00" pubdate data-updated="true">Sep 30<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>As my last post stated, I was planning on doing some work on searches in rails.  I have done two of them so far today with the first being Data Tables and the second being Ransack.</p>
-
-<p>Datatables is pretty cool.  It&rsquo;s not necessarily just search but it looks like a really cool admin feature.  You can search any of the column, sort any of the columns, and have pagination really easily.</p>
-
-<p>You are out by adding the gem then once you do that you simply give the table you are trying to sort an ID.</p>
-
-<p><img src="/images/datatables_view.png" alt="My params" /></p>
-
-<p>Then go into the corresponding JS file and add a little snippet:</p>
-
-<p><img src="/images/datatables_js.png" alt="My params" /></p>
-
-<p>And magically this shows up:</p>
-
-<p><img src="/images/datatables.png" alt="My params" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -624,6 +624,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/18/rails-upload-download/">Upload/Download in Rails</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/18/acts_as_list/">Acts_as_List With Active Admin</a>
       </li>
     
@@ -637,10 +641,6 @@
     
       <li class="post">
         <a href="/blog/2013/12/09/serializing-model-attributes/">Serialize Attributes</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/06/test/">Test</a>
       </li>
     
   </ul>

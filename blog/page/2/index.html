@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="I&rsquo;m going to try to start something new on my blog. Unfortunately the last few weeks I haven&rsquo;t been able to code as much as I would have &hellip;">
+  <meta name="description" content="As my last post stated, I was planning on doing some work on searches in rails. I have done two of them so far today with the first being Data Tables &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,56 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/30/some-searching/">Rails DataTables</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-30T14:43:00-04:00" pubdate data-updated="true">Sep 30<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>As my last post stated, I was planning on doing some work on searches in rails.  I have done two of them so far today with the first being Data Tables and the second being Ransack.</p>
+
+<p>Datatables is pretty cool.  It&rsquo;s not necessarily just search but it looks like a really cool admin feature.  You can search any of the column, sort any of the columns, and have pagination really easily.</p>
+
+<p>You are out by adding the gem then once you do that you simply give the table you are trying to sort an ID.</p>
+
+<p><img src="/images/datatables_view.png" alt="My params" /></p>
+
+<p>Then go into the corresponding JS file and add a little snippet:</p>
+
+<p><img src="/images/datatables_js.png" alt="My params" /></p>
+
+<p>And magically this shows up:</p>
+
+<p><img src="/images/datatables.png" alt="My params" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -485,58 +535,6 @@ Steven</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/06/2-slash-3-jquery/">2/3 Jquery</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-06T08:30:00-04:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>So I&rsquo;m 2/3 of the way there with my javascript/jquery wants.  Yesterday I mentioned that I wanted to have a calendar to properly keep track of workout days rather than active record&rsquo;s created_at, I wanted to autocomplete the exercise name so that in the controller/model I can find_or_create_by for an exercise rather than a drop down, and I wanted to have a form that started with one exercise and a user can add as many sets to that as they choose as well as more exercises with sets.</p>
-
-<p>As I&rsquo;m sure you&rsquo;ve assumed by now I completed the first two but not the last.  Here is functioning code for the calendar:</p>
-
-<p><img src="/images/calendar.png" alt="My params" /></p>
-
-<p>Here is the code I posted yesterday which was an attempt at autocomplete which didn&rsquo;t work…can you spot the errors?</p>
-
-<p><img src="/images/autocomplete.png" alt="My params" /></p>
-
-<p>From what I understand, or at least from the changes I made along with a JS Ninja (Jon Grover), I had a few semicolon issues as well as placing the array after the function.  I don&rsquo;t know for sure but it felt like I had to create the array for the autocomplete before that array is called in the function.  Here is the javascript code that allows both the calendar and the autocomplete to function properly:</p>
-
-<p><img src="/images/working-js.png" alt="My params" /></p>
-
-<p>The issue I have been having on creating a new exercise is that javascript, or at least my javascript, does like the idea of appending and ERB tag.  I&rsquo;ll get to the bottom of it though.  I&rsquo;d like to save the before and after code for the same post as I feel it would be super useful for a lot of people as it&rsquo;s own post.  Cool beans.</p>
-
-<p>Also, over the weekend I made a ton of methods to find out certain details about my workouts, such as best sets, most weight used, % increase in total weight over time, etc.  Really pumped about those and after this form is finished up I am going to move on to different layouts so that I can graphically show the cool data I came up with.  One thing at a time though.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -554,6 +552,10 @@ Steven</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/18/rails-upload-download/">Upload/Download in Rails</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/18/acts_as_list/">Acts_as_List With Active Admin</a>
       </li>
     
@@ -567,10 +569,6 @@ Steven</p>
     
       <li class="post">
         <a href="/blog/2013/12/09/serializing-model-attributes/">Serialize Attributes</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/06/test/">Test</a>
       </li>
     
   </ul>
