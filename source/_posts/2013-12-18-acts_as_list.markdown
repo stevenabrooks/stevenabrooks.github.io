@@ -20,7 +20,7 @@ On a high level, I was thinking this process should go something like this:
 * Track whether that object went up or down in position
 * Change the other positions accordingly 
 
-Myself and xxxx were actually constructing the code to write this whole thing out.  We started by writing a rails test:
+Myself and [Avi](https://twitter.com/aviflombaum) were actually constructing the code to write this whole thing out.  We started by writing a rails test:
 
 ![My params](/images/unittest.png)
 
