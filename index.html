@@ -142,105 +142,6 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/12/11/upgrading-app-to-heroku-standards/">Updating App to Be Good With Heroku</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-11T09:23:00-05:00" pubdate data-updated="true">Dec 11<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>My plan for right now is to take my <a href="https://github.com/stevenabrooks/workout-app">Workout App</a> and upgrade it to be compatible with <a href="https://heroku.com">Heroku</a>.  The free Digital Ocean surfers I had access to this summer are no longer available.  Actually, if I can get this done well with my person app maybe I can do this with my other apps.  I will write this post as I go.  Right now, my app is with Rails 3.2.13 (okay by Heroku) and Ruby 1.9.3 (not okay with Heroku).</p>
-
-<p>What we know for sure is that Heroku requires Ruby 2.0.  Let&rsquo;s do that.  In the Gemfile, add this line of code:</p>
-
-<p><img src="/images/2.0.png" alt="My params" /></p>
-
-<p>A small gotcha here is that not only does Ruby 2.0 have to be installed locally, but you might be on a different version of Ruby.  Make sure to run the:</p>
-
-<p>$ rvm use 2.0</p>
-
-<p>command.</p>
-
-<p>On the current app I am working on for a client, I was trying to figure out how to transfer the data from my local Sqlite3 database to the eventual Postgresql database.  This is when I stumbled across <a href="https://github.com/rroblak/seed_dump">Seed Dump</a>, an awesome gem that allows you to fill your seeds file with everything in the current database.  For someone like me who is using rails 3.2, you must use:</p>
-
-<p>&lsquo;gem &ldquo;seed_dump&rdquo;, &ldquo;~> 0.5.3&rdquo;&rsquo;</p>
-
-<p>To run the gem, the command is:</p>
-
-<p>$ rake db:seed:dump</p>
-
-<p>Great, next we have to take our Sqlite3 database, and move it into the Development and Test Group.</p>
-
-<p>Cool, next we have to create a Production Group in our Gemfile and add the following:</p>
-
-<p><img src="/images/production.png" alt="My params" /></p>
-
-<p>This allows Postgresql to be used in production.</p>
-
-<p>So let&rsquo;s see. We have Ruby 2.0.  We have a way to seed the production database.  We have set up a Postgresql database in production.  We&rsquo;re probably pretty close.</p>
-
-<p>So let&rsquo;s run:</p>
-
-<p>$ bundle</p>
-
-<p>and see how that goes.  Okay great! That actually worked without any issue.</p>
-
-<p>Now let&rsquo;s dump that data:</p>
-
-<p>$ rake db:seed:dump</p>
-
-<p>Beautiful, all the data from my local development Sqlite3 database is in my seeds file.  Now let&rsquo;s go to Heroku and see what&rsquo;s going on there.</p>
-
-<p>$ heroku login</p>
-
-<p>Now add the following code into your application.rb file:</p>
-
-<p>&ldquo;config.assets.initialize_on_precompile = false&rdquo;</p>
-
-<p>$ heroku create</p>
-
-<p>Now deploy your code:</p>
-
-<p>$ git push heroku master</p>
-
-<p>Awesome.  Now Heroku is doing it&rsquo;s magic, and although it seemingly appears like we are done, we are not my friends.</p>
-
-<p>We have to run two commands for the <a href="https://devcenter.heroku.com/articles/dynos">dyno</a>.</p>
-
-<p>$ heroku ps:scale web=1
-$ heroku ps</p>
-
-<p>Now we have to migrate the database.</p>
-
-<p>$ heroku run rake db:migrate</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
       <h1 class="entry-title"><a href="/blog/2013/12/10/fancybox-gallery/">FancyBox Gallery Trix</a></h1>
     
     
@@ -658,6 +559,56 @@ $ heroku ps</p>
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/30/some-searching/">Rails DataTables</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-30T14:43:00-04:00" pubdate data-updated="true">Sep 30<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>As my last post stated, I was planning on doing some work on searches in rails.  I have done two of them so far today with the first being Data Tables and the second being Ransack.</p>
+
+<p>Datatables is pretty cool.  It&rsquo;s not necessarily just search but it looks like a really cool admin feature.  You can search any of the column, sort any of the columns, and have pagination really easily.</p>
+
+<p>You are out by adding the gem then once you do that you simply give the table you are trying to sort an ID.</p>
+
+<p><img src="/images/datatables_view.png" alt="My params" /></p>
+
+<p>Then go into the corresponding JS file and add a little snippet:</p>
+
+<p><img src="/images/datatables_js.png" alt="My params" /></p>
+
+<p>And magically this shows up:</p>
+
+<p><img src="/images/datatables.png" alt="My params" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -677,10 +628,6 @@ $ heroku ps</p>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/12/11/upgrading-app-to-heroku-standards/">Updating App to Be Good With Heroku</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2013/12/10/fancybox-gallery/">FancyBox Gallery Trix</a>
       </li>
     
@@ -690,6 +637,10 @@ $ heroku ps</p>
     
       <li class="post">
         <a href="/blog/2013/12/09/serializing-model-attributes/">Serialize Attributes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/06/test/">Test</a>
       </li>
     
   </ul>
