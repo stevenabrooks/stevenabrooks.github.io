@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-12-18T12:30:07-05:00</updated>
+  <updated>2013-12-27T16:23:03-05:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -12,6 +12,50 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Heroku, AWS, DNS Simple]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2013/12/27/push-to-heroku/"/>
+    <updated>2013-12-27T09:25:00-05:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2013/12/27/push-to-heroku</id>
+    <content type="html"><![CDATA[<p>Here&rsquo;s the scenario.  You have a site you created locally.  It has file uploading.  You have a domain name.  You don&rsquo;t want to take forever compiling assets and doing all that stuff to push the code to a server.</p>
+
+<p>Okay, that&rsquo;s probably not a lay up that you have all those things.  But I had to find a way to get those images to same in production and find an easy way just to push the code to production.</p>
+
+<p>To do this I used three things:</p>
+
+<ol>
+<li><a href="https://www.heroku.com/%E2%80%8E">Heroku</a></li>
+<li><a href="http://aws.amazon.com/">AWS</a></li>
+<li><a href="https://dnsimple.com/domains">DNS Simple</a></li>
+</ol>
+
+
+<p>Let&rsquo;s start from the top.  Heroku. Things to note here.  You have to use at least rails 3 and ruby 2.  I was not using ruby 2 so we have to go into our gemfile and add the line:</p>
+
+<p>ruby &lsquo;2.0.0&rsquo;</p>
+
+<p>and then run the bundler.  You might have an issue or two with other gems but the bundler usually tells you that you can do to fix it.</p>
+
+<p>Now, Heroku also requires you use a Postgresql database in production, so we need to take our sqlite3 db and add it to the test and development groups on our gem file and add the &lsquo;pg&rsquo; gem to our production group.  Bundle it.  Okay Heroku is &ldquo;ready&rdquo;.</p>
+
+<p>Now on to AWS.  This is where I will be storing my files that are uploaded to my application.  Since <a href="https://github.com/carrierwaveuploader/carrierwave">CarrierWave</a> is just hosting them locally, I will need a way for those files to work in production.  To set up AWS, you need to first go and create an account.  I&rsquo;m not going to tell you how to do that.  First, you need to add the &ldquo;fog&rdquo; gem to your gemfile and bundle.</p>
+
+<p>Then make an initializer file.  Mine is called &ldquo;carrierwave.rb&rdquo; because I am using carrierwave for file processing.  Here is my initializer file:</p>
+
+<p><img src="http://stevenabrooks.github.io/images/aws.png" alt="My params" /></p>
+
+<p>Pretty simple all we have to do if add our aws_access_key_id, aws_secret_access_key, and our fog_directory.  Super simple, and now when we upload files they will be saved in our backer on S3.</p>
+
+<p>Let throw it up on heroku and see what&rsquo;s going on.  Follow this tutorial if you don&rsquo;t know how to set yourself up on <a href="https://devcenter.heroku.com/articles/getting-started-with-rails3">Heroku</a>.  It&rsquo;s a joke how easy it is.</p>
+
+<p>But now we have a app on Heroku and the files are storage on AWS so they will work in production, but now we want to use our super cool domain that we bought from GoDaddy.  No problem.  Enter <a href="https://dnsimple.com/domains">DNS Simple</a>.</p>
+
+<p>We head to <a href="https://dnsimple.com/domains">DNS Simple</a>, and set up an account.  After we log in, we add a domain.  Then we go to services, and scroll down to Heroku and click on that.  Then we go back and click on the Advanced Editor where we see our domain with an ALIAS and CNAME.  Change the content of the ALIAS to your url (with the www) and the content of the CNAME to your heroku app&rsquo;s url.  This tells your domain to redirect everything to your heroku url.  Now head on back to heroku and go into the settings of your app.  GO down to url&rsquo;s and add the the cool url.</p>
+
+<p>You have now successfully pushed an app to production, made the files work in production, and set up that code on your fancy url.  Nice</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Upload/Download in Rails]]></title>
@@ -455,33 +499,6 @@ Steven</p>
 <p>Maybe in my spare time I&rsquo;ll find a way to do analytics on this.  Would be really interesting to see the average time it takes someone to respond to a S-Overflow or forum question.  I totally love data crunching so maybe that will be something I can do.</p>
 
 <p>Also I&rsquo;m thinking of asking this guy what his <a href="https://www.github.com/">GitHub</a> is and tip him on <a href="https://www.gittip.com/">GitTip</a> because I would totally do that.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Loving Ruby]]></title>
-    <link href="http://stevenabrooks.github.io/blog/2013/08/12/loving-ruby/"/>
-    <updated>2013-08-12T08:27:00-04:00</updated>
-    <id>http://stevenabrooks.github.io/blog/2013/08/12/loving-ruby</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s been almost a week since I blogged.  Before I set out to blog each day I worked on my workout application.  I haven&rsquo;t followed through on that.  I&rsquo;ll tell you the reason I haven&rsquo;t blogger yet is because every waking minute I am either working on the app itself or trying to finalize our group project for the <a href="http://info.flatironschool.com/science-002-fair-rsvp-1/2/">Science Fair</a> this Thursday.</p>
-
-<p>Anywho, I have done quite a bit of work on my application since last I blogged.  Last time we spoke, I was trying to implement three javascript functions into my application; calendar, autocomplete, and the ability to create as many exercises and sets as a user wants.  All are done.</p>
-
-<p>I also added bodyweight to a routine and not a user.  I talked to myself about this for roughly an hour and as far as a user is concerned, I realized that a user would be updating their weight during each workout rather than going to a user profile page and updating their weight there.  To me, it made more sense.  People go to the gym, and weight in, so they would be able to input that data when they are inputting the data for their routine.</p>
-
-<p>For the past few days I have been working with  <a href="https://developers.google.com/chart/">Google Graph</a> to be able to display the users stats graphically.  I have been living this process.  What you have to do is to take your data and manipulate it in order to feed it to Google a certain way.  That&rsquo;s freaking awesome.  I totally love making five methods for each array Google needs and then doing string manipulation.  In order for me to get what Google wants I have to deliver something like this:</p>
-
-<p><img src="http://stevenabrooks.github.io/images/google.png" alt="google" /></p>
-
-<p>Awesome.  That&rsquo;s a challenge I think I can tackle.  Especially since my wheelhouse are Ruby methods, I knew I was bona hit this shit to Beijing. In this information I need to set the first array to be the titles of what I want:</p>
-
-<p><img src="http://stevenabrooks.github.io/images/firstline.png" alt="google" /></p>
-
-<p>Here is that code running in the rails console.  You give it an instance of the routine class and it gives you the right amount of information.  Here is will write &ldquo;sets…&rdquo; as many times as the most sets per the lifts within the instance of the routine:</p>
-
-<p><img src="http://stevenabrooks.github.io/images/firstlinerailsc.png" alt="console" /></p>
-
-<p>Next time we chat it up I&rsquo;ll show you more stuff.</p>
 ]]></content>
   </entry>
   

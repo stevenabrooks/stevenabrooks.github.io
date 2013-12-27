@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="As my last post stated, I was planning on doing some work on searches in rails. I have done two of them so far today with the first being Data Tables &hellip;">
+  <meta name="description" content="Yesterday I worked on another search gem this time being Ransack. In Outlinked we used Sunspot (who I&rsquo;m not even going to give a link to) which &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,54 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/10/01/ransack/">Ransack</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-01T09:27:00-04:00" pubdate data-updated="true">Oct 1<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Yesterday I worked on another search gem this time being <a href="https://github.com/ernie/ransack">Ransack</a>.  In <a href="https://outlinked.flatironschool.com">Outlinked</a> we used Sunspot (who I&rsquo;m not even going to give a link to) which I will never use again.  I was very pleased with how Ransack went and how easy it was to use as well as have dynamic searching.</p>
+
+<p>Ransack was very strait forward.  This is what my html.erb file looked like.  This allowed a user to continue to drill down their search (dynamic):</p>
+
+<p><img src="/images/ransack_view.png" alt="My params" /></p>
+
+<p>Then you go into the controller and set your instance variable to the results of the search:</p>
+
+<p><img src="/images/ransack_controller.png" alt="My params" /></p>
+
+<p>And bam, you get a nice dynamic search (I&rsquo;m wondering if these drop downs can be autompletes, that would probable make the UX a little better):</p>
+
+<p><img src="/images/ransack.png" alt="My params" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -481,60 +529,6 @@ Steven</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/12/loving-ruby/">Loving Ruby</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-12T08:27:00-04:00" pubdate data-updated="true">Aug 12<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It&rsquo;s been almost a week since I blogged.  Before I set out to blog each day I worked on my workout application.  I haven&rsquo;t followed through on that.  I&rsquo;ll tell you the reason I haven&rsquo;t blogger yet is because every waking minute I am either working on the app itself or trying to finalize our group project for the <a href="http://info.flatironschool.com/science-002-fair-rsvp-1/2/">Science Fair</a> this Thursday.</p>
-
-<p>Anywho, I have done quite a bit of work on my application since last I blogged.  Last time we spoke, I was trying to implement three javascript functions into my application; calendar, autocomplete, and the ability to create as many exercises and sets as a user wants.  All are done.</p>
-
-<p>I also added bodyweight to a routine and not a user.  I talked to myself about this for roughly an hour and as far as a user is concerned, I realized that a user would be updating their weight during each workout rather than going to a user profile page and updating their weight there.  To me, it made more sense.  People go to the gym, and weight in, so they would be able to input that data when they are inputting the data for their routine.</p>
-
-<p>For the past few days I have been working with  <a href="https://developers.google.com/chart/">Google Graph</a> to be able to display the users stats graphically.  I have been living this process.  What you have to do is to take your data and manipulate it in order to feed it to Google a certain way.  That&rsquo;s freaking awesome.  I totally love making five methods for each array Google needs and then doing string manipulation.  In order for me to get what Google wants I have to deliver something like this:</p>
-
-<p><img src="/images/google.png" alt="google" /></p>
-
-<p>Awesome.  That&rsquo;s a challenge I think I can tackle.  Especially since my wheelhouse are Ruby methods, I knew I was bona hit this shit to Beijing. In this information I need to set the first array to be the titles of what I want:</p>
-
-<p><img src="/images/firstline.png" alt="google" /></p>
-
-<p>Here is that code running in the rails console.  You give it an instance of the routine class and it gives you the right amount of information.  Here is will write &ldquo;sets…&rdquo; as many times as the most sets per the lifts within the instance of the routine:</p>
-
-<p><img src="/images/firstlinerailsc.png" alt="console" /></p>
-
-<p>Next time we chat it up I&rsquo;ll show you more stuff.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -552,6 +546,10 @@ Steven</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/27/push-to-heroku/">Heroku, AWS, DNS Simple</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/18/rails-upload-download/">Upload/Download in Rails</a>
       </li>
     
@@ -565,10 +563,6 @@ Steven</p>
     
       <li class="post">
         <a href="/blog/2013/12/10/highlight-current-page-rails/">Highlight Current Page Rails</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/09/serializing-model-attributes/">Serialize Attributes</a>
       </li>
     
   </ul>

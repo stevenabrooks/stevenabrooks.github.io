@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="Okay I&rsquo;m back. When we last left we had two request for the current app I&rsquo;m working on. We nailed the first, now on to the second task. &hellip;">
+  <meta name="description" content="Here&rsquo;s the scenario. You have a site you created locally. It has file uploading. You have a domain name. You don&rsquo;t want to take forever &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,77 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/27/push-to-heroku/">Heroku, AWS, DNS Simple</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-27T09:25:00-05:00" pubdate data-updated="true">Dec 27<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Here&rsquo;s the scenario.  You have a site you created locally.  It has file uploading.  You have a domain name.  You don&rsquo;t want to take forever compiling assets and doing all that stuff to push the code to a server.</p>
+
+<p>Okay, that&rsquo;s probably not a lay up that you have all those things.  But I had to find a way to get those images to same in production and find an easy way just to push the code to production.</p>
+
+<p>To do this I used three things:</p>
+
+<ol>
+<li><a href="https://www.heroku.com/%E2%80%8E">Heroku</a></li>
+<li><a href="http://aws.amazon.com/">AWS</a></li>
+<li><a href="https://dnsimple.com/domains">DNS Simple</a></li>
+</ol>
+
+
+<p>Let&rsquo;s start from the top.  Heroku. Things to note here.  You have to use at least rails 3 and ruby 2.  I was not using ruby 2 so we have to go into our gemfile and add the line:</p>
+
+<p>ruby &lsquo;2.0.0&rsquo;</p>
+
+<p>and then run the bundler.  You might have an issue or two with other gems but the bundler usually tells you that you can do to fix it.</p>
+
+<p>Now, Heroku also requires you use a Postgresql database in production, so we need to take our sqlite3 db and add it to the test and development groups on our gem file and add the &lsquo;pg&rsquo; gem to our production group.  Bundle it.  Okay Heroku is &ldquo;ready&rdquo;.</p>
+
+<p>Now on to AWS.  This is where I will be storing my files that are uploaded to my application.  Since <a href="https://github.com/carrierwaveuploader/carrierwave">CarrierWave</a> is just hosting them locally, I will need a way for those files to work in production.  To set up AWS, you need to first go and create an account.  I&rsquo;m not going to tell you how to do that.  First, you need to add the &ldquo;fog&rdquo; gem to your gemfile and bundle.</p>
+
+<p>Then make an initializer file.  Mine is called &ldquo;carrierwave.rb&rdquo; because I am using carrierwave for file processing.  Here is my initializer file:</p>
+
+<p><img src="/images/aws.png" alt="My params" /></p>
+
+<p>Pretty simple all we have to do if add our aws_access_key_id, aws_secret_access_key, and our fog_directory.  Super simple, and now when we upload files they will be saved in our backer on S3.</p>
+
+<p>Let throw it up on heroku and see what&rsquo;s going on.  Follow this tutorial if you don&rsquo;t know how to set yourself up on <a href="https://devcenter.heroku.com/articles/getting-started-with-rails3">Heroku</a>.  It&rsquo;s a joke how easy it is.</p>
+
+<p>But now we have a app on Heroku and the files are storage on AWS so they will work in production, but now we want to use our super cool domain that we bought from GoDaddy.  No problem.  Enter <a href="https://dnsimple.com/domains">DNS Simple</a>.</p>
+
+<p>We head to <a href="https://dnsimple.com/domains">DNS Simple</a>, and set up an account.  After we log in, we add a domain.  Then we go to services, and scroll down to Heroku and click on that.  Then we go back and click on the Advanced Editor where we see our domain with an ALIAS and CNAME.  Change the content of the ALIAS to your url (with the www) and the content of the CNAME to your heroku app&rsquo;s url.  This tells your domain to redirect everything to your heroku url.  Now head on back to heroku and go into the settings of your app.  GO down to url&rsquo;s and add the the cool url.</p>
+
+<p>You have now successfully pushed an app to production, made the files work in production, and set up that code on your fancy url.  Nice</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -561,54 +632,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/10/01/ransack/">Ransack</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-10-01T09:27:00-04:00" pubdate data-updated="true">Oct 1<span>st</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Yesterday I worked on another search gem this time being <a href="https://github.com/ernie/ransack">Ransack</a>.  In <a href="https://outlinked.flatironschool.com">Outlinked</a> we used Sunspot (who I&rsquo;m not even going to give a link to) which I will never use again.  I was very pleased with how Ransack went and how easy it was to use as well as have dynamic searching.</p>
-
-<p>Ransack was very strait forward.  This is what my html.erb file looked like.  This allowed a user to continue to drill down their search (dynamic):</p>
-
-<p><img src="/images/ransack_view.png" alt="My params" /></p>
-
-<p>Then you go into the controller and set your instance variable to the results of the search:</p>
-
-<p><img src="/images/ransack_controller.png" alt="My params" /></p>
-
-<p>And bam, you get a nice dynamic search (I&rsquo;m wondering if these drop downs can be autompletes, that would probable make the UX a little better):</p>
-
-<p><img src="/images/ransack.png" alt="My params" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -624,6 +647,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/27/push-to-heroku/">Heroku, AWS, DNS Simple</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/18/rails-upload-download/">Upload/Download in Rails</a>
       </li>
     
@@ -637,10 +664,6 @@
     
       <li class="post">
         <a href="/blog/2013/12/10/highlight-current-page-rails/">Highlight Current Page Rails</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/09/serializing-model-attributes/">Serialize Attributes</a>
       </li>
     
   </ul>

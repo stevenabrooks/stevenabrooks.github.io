@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Graduated - Steven Brooks' Blog</title>
+  <title>Heroku, AWS, DNS Simple - Steven Brooks' Blog</title>
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="Last Friday, myself and 31 other students graduated from The Flatiron School. It was a fantastic 12 weeks and an excellent start to my programming &hellip;">
+  <meta name="description" content="Here&rsquo;s the scenario. You have a site you created locally. It has file uploading. You have a domain name. You don&rsquo;t want to take forever &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/08/26/graduated">
+  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/12/27/push-to-heroku">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Steven Brooks' Blog" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Graduated</h1>
+      <h1 class="entry-title">Heroku, AWS, DNS Simple</h1>
     
     
       <p class="meta">
@@ -84,22 +84,49 @@
   
 
 
-<time datetime="2013-08-26T08:27:00-04:00" pubdate data-updated="true">Aug 26<span>th</span>, 2013</time>
+<time datetime="2013-12-27T09:25:00-05:00" pubdate data-updated="true">Dec 27<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Last Friday, myself and 31 other students graduated from <a href="http://flatironschool.com/">The Flatiron School</a>.  It was a fantastic 12 weeks and an excellent start to my programming career.  We also Karaoke&rsquo;d a lot Friday night and I still don&rsquo;t have much of a voice so that probably won&rsquo;t help all my interviews this week.</p>
+<div class="entry-content"><p>Here&rsquo;s the scenario.  You have a site you created locally.  It has file uploading.  You have a domain name.  You don&rsquo;t want to take forever compiling assets and doing all that stuff to push the code to a server.</p>
 
-<p>Either way I wanted to make a quick post today about some of my goals for the near future.</p>
+<p>Okay, that&rsquo;s probably not a lay up that you have all those things.  But I had to find a way to get those images to same in production and find an easy way just to push the code to production.</p>
 
-<p>I feel strong with ruby, I feel I can make anything in ruby, but I also feel weak specifically in meta programming ruby.  So on my current to-do list, meta programming in ruby is for certain up there at the top.</p>
+<p>To do this I used three things:</p>
 
-<p>Although I spent a good amount of time blogging about and working on my <a href="http://192.241.139.122/">Workout App</a>, I have decided to put that on the back burner for a while.  One of the things I got out of working on this application was the javascript and jQuery work.  Those are also very high on my list.  Last week I completed the first section of the <a href="http://www.codeavengers.com/">Code Avenger&rsquo;s</a> javascript tutorial.  I have to say this style of tutorial blows all other tutorials out of the water.  Because I know ruby I really needed a javascript tutorial which would be a stickler on syntax.  Avengers is very good at that and I just wish they would create third level for javascript which is supposed to focus on objects, GUI&rsquo;s, and events.</p>
+<ol>
+<li><a href="https://www.heroku.com/%E2%80%8E">Heroku</a></li>
+<li><a href="http://aws.amazon.com/">AWS</a></li>
+<li><a href="https://dnsimple.com/domains">DNS Simple</a></li>
+</ol>
 
-<p>Another thing that is high on my list is blogging. As I get heavy into the interviewing process there will be questions I am asked to which I do not know the answer to.  I would like to blog about specific questions that I do not know the answer to.</p>
+
+<p>Let&rsquo;s start from the top.  Heroku. Things to note here.  You have to use at least rails 3 and ruby 2.  I was not using ruby 2 so we have to go into our gemfile and add the line:</p>
+
+<p>ruby &lsquo;2.0.0&rsquo;</p>
+
+<p>and then run the bundler.  You might have an issue or two with other gems but the bundler usually tells you that you can do to fix it.</p>
+
+<p>Now, Heroku also requires you use a Postgresql database in production, so we need to take our sqlite3 db and add it to the test and development groups on our gem file and add the &lsquo;pg&rsquo; gem to our production group.  Bundle it.  Okay Heroku is &ldquo;ready&rdquo;.</p>
+
+<p>Now on to AWS.  This is where I will be storing my files that are uploaded to my application.  Since <a href="https://github.com/carrierwaveuploader/carrierwave">CarrierWave</a> is just hosting them locally, I will need a way for those files to work in production.  To set up AWS, you need to first go and create an account.  I&rsquo;m not going to tell you how to do that.  First, you need to add the &ldquo;fog&rdquo; gem to your gemfile and bundle.</p>
+
+<p>Then make an initializer file.  Mine is called &ldquo;carrierwave.rb&rdquo; because I am using carrierwave for file processing.  Here is my initializer file:</p>
+
+<p><img src="/images/aws.png" alt="My params" /></p>
+
+<p>Pretty simple all we have to do if add our aws_access_key_id, aws_secret_access_key, and our fog_directory.  Super simple, and now when we upload files they will be saved in our backer on S3.</p>
+
+<p>Let throw it up on heroku and see what&rsquo;s going on.  Follow this tutorial if you don&rsquo;t know how to set yourself up on <a href="https://devcenter.heroku.com/articles/getting-started-with-rails3">Heroku</a>.  It&rsquo;s a joke how easy it is.</p>
+
+<p>But now we have a app on Heroku and the files are storage on AWS so they will work in production, but now we want to use our super cool domain that we bought from GoDaddy.  No problem.  Enter <a href="https://dnsimple.com/domains">DNS Simple</a>.</p>
+
+<p>We head to <a href="https://dnsimple.com/domains">DNS Simple</a>, and set up an account.  After we log in, we add a domain.  Then we go to services, and scroll down to Heroku and click on that.  Then we go back and click on the Advanced Editor where we see our domain with an ALIAS and CNAME.  Change the content of the ALIAS to your url (with the www) and the content of the CNAME to your heroku app&rsquo;s url.  This tells your domain to redirect everything to your heroku url.  Now head on back to heroku and go into the settings of your app.  GO down to url&rsquo;s and add the the cool url.</p>
+
+<p>You have now successfully pushed an app to production, made the files work in production, and set up that code on your fancy url.  Nice</p>
 </div>
 
 
@@ -122,7 +149,7 @@
   
 
 
-<time datetime="2013-08-26T08:27:00-04:00" pubdate data-updated="true">Aug 26<span>th</span>, 2013</time>
+<time datetime="2013-12-27T09:25:00-05:00" pubdate data-updated="true">Dec 27<span>th</span>, 2013</time>
       
 
 
@@ -130,7 +157,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/08/26/graduated/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/08/26/graduated/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/12/27/push-to-heroku/" data-via="" data-counturl="http://stevenabrooks.github.io/blog/2013/12/27/push-to-heroku/" >Tweet</a>
   
   
   
@@ -139,10 +166,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/20/making-responsive-sites-for-mobile/" title="Previous Post: Making Responsive Sites for Mobile">&laquo; Making Responsive Sites for Mobile</a>
+        <a class="basic-alignment left" href="/blog/2013/12/18/rails-upload-download/" title="Previous Post: Upload/Download in Rails">&laquo; Upload/Download in Rails</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/08/26/controller-scope/" title="Next Post: Controller Scope">Controller Scope &raquo;</a>
       
     </p>
   </footer>
