@@ -1,0 +1,96 @@
+---
+layout: post
+title: "Angular on Rails"
+date: 2014-01-7 09:25
+categories:
+---
+The last few days I have had some spare time to play around with some fun new programming languages.  While I love rails, I felt like it was time to at leaf explore something else with rails, so enter [Angular.js](http://angularjs.org/), as client-size javascript MVC framework.  There's a lot of hype around it, so I wanted to see if I could put together a very basic app.  I knew ahead of time that Angular.js was client side, so I wanted to see how easy it would be to attach it to a rails backend.
+
+The truth is, it wasn't that easy, and although there is a nice [Railscast](http://railscasts.com/episodes/405-angularjs), following that does not yield you with the ability to call objects from the database.  So I had to do some extra digging on debugging on my own, which actually was super useful.
+
+At first glance, Angular.js was pretty sweet, it has something called double-binding which in short allows logic to be done client side in real time.  For example, when you type in your name into a text field, it will print you name as well as filter is the way you want it to right on the fly.  Pretty cool.
+
+This post will show a step by step tutorial of how to create a rails app with Angular.js on the front-end and allow you to successfully create an object and view those objects.
+
+First, lets create the rails app
+
+<code>rails new angular app</code> 
+
+After you <code>cd</code> into the app, we are going to create a resource for the model we are looking to have.  A resource will provide you with the model, an empty controller, a views folder with no views, and resourced routes for that model.  Close to scaffolding but not really.  Lets make a user model and give it a name:
+
+<code>rails g resource user name</code>
+
+and don't forget to migrate the database.
+
+<code>rake db:migrate</code>
+
+Next we have to create a controller with just an index action because the entire app will take place in that single action.  Lets call the controller home.
+
+<code>rails g controller home index</code>
+
+Next we have to remove the public/index.html file and make sure to add the home#index route as your root route:
+
+<code>root :to => "home#index"</code>
+
+Remember that empty user controller?  We have to go back to it now and create the RESTful data source for our app to interact with.  It's really not too too crazy.  For the purposed of this app we are only going to have an index action and a create action:
+
+![My params](/images/angularcontroller.png)
+
+Now we need to add Angular.js to the app.  In your Gemfile, and in the assets group, we need to add the Angular.js gem:
+
+<code>gem 'angularjs-rails</code>
+
+And in our application.js file, we need to add the following lines:
+
+<code>//= require angular</code><br>
+<code>//= require angular-resource</code>
+
+Awesome, were doing pretty well thus far.  Next we have to tell our app "Hey, you need to be in Angular.js", so go over to your application layout file and look for your html tag.  We need to add something to this tag to tell the app it's going to be Angular.  For this we do the following:
+
+<code>html ng-app</code>
+
+This directive is used to flag the html element and tell is that Angular should be considered the root element of our application.  You can add a directive like this to other elements in your app if you wish to not have the entire app be Angular.
+
+That is your basic setup.  We have Angular in our app and our html elements is ready.
+
+Now we have a view.  I'm going to show the view and then talk about whats going on here:
+
+![My params](/images/angularview.png)
+
+At the top of the view we have:
+
+<code>div ng-controller="UserController"</code>
+
+Eventually, we will create a controller, and what we are doing here is saying, "Anything in this div refers to the UserController".  We are then creating a list, and each list item has the following code attached:
+
+<code>ng-repeat="user in users"
+
+Eventually, we will have an array on users, and hg-repeat is a way to iterate through the array.  And then we simply list the users names.
+
+Next we have a form with an input field.  This input field has:
+
+<code>ng-model="newUser.name"</code>
+
+This ng-model is almost like a variable in that we will be setting this ng-model to whatever we put in the input field.
+
+Then we have a button that has:
+
+<code>ng-click="addUser()"</code>
+
+We are attaching ng-click to the button and that will run an addUser function that we will have to create.  In the span element, you will see a double bonded value of the input field.  When you are typing in text to the input field, it will show here.  It's more of a cool thing to have than necessary.  Now all we need is that controller.
+
+![My params](/images/angularmodule.png)
+
+At the top, we create a module which we call "User".  Going back to our layout file, we need to add this module to our directive.  That html element will now look like this:
+
+<code>html ng-app="User"</code>
+
+To create a controller in Angular is like creating a javascript class, with a function.  We create it by adding in a scope.  A scope is an object that refers to the application model, kinda like self in ruby or this in javascript, but also not really.  
+
+In order to set our array, remember its called users in the view, we have to find a way to get that data of users from the database.  Remember when we added angular-resource to the application.js file, and remember when we added ngResource to our module?  We did this to set up Angular resource which allows you to interact with restful server side data source (our user controller in railsland).
+
+In that first line we are saying, set the User variable to all the objects at the route "/users.json".  The reason we cannot simply give the route of "/users" is because the return html and not json.  In the next line we set the scope.users to User.query().  The query function allows you to GET an array.
+
+Awesome now all we want to do is add users to that array.  In the view, the button had an ng-click="addUser()" on it.  We needed to create that function and we do it here.  Here we are getting the input from the form field with an ng-model of newUser.name and saving it to the object.  In angular, the .save method is used to create an object and not update it.  Then all we do is push that entry into the users array that we set above and set the input field to blank.
+
+Now we can create an object and get an array of objects in a rails app that utilizes Angular.js on the client side.
