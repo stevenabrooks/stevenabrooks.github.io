@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="Here&rsquo;s the scenario. You have a site you created locally. It has file uploading. You have a domain name. You don&rsquo;t want to take forever &hellip;">
+  <meta name="description" content="The last few days I have had some spare time to play around with some fun new programming languages. While I love rails, I felt like it was time to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,131 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/07/angular/">Angular on Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-07T09:25:00-05:00" pubdate data-updated="true">Jan 7<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The last few days I have had some spare time to play around with some fun new programming languages.  While I love rails, I felt like it was time to at leaf explore something else with rails, so enter <a href="http://angularjs.org/">Angular.js</a>, as client-size javascript MVC framework.  There&rsquo;s a lot of hype around it, so I wanted to see if I could put together a very basic app.  I knew ahead of time that Angular.js was client side, so I wanted to see how easy it would be to attach it to a rails backend.</p>
+
+<p>The truth is, it wasn&rsquo;t that easy, and although there is a nice <a href="http://railscasts.com/episodes/405-angularjs">Railscast</a>, following that does not yield you with the ability to call objects from the database.  So I had to do some extra digging on debugging on my own, which actually was super useful.</p>
+
+<p>At first glance, Angular.js was pretty sweet, it has something called double-binding which in short allows logic to be done client side in real time.  For example, when you type in your name into a text field, it will print you name as well as filter is the way you want it to right on the fly.  Pretty cool.</p>
+
+<p>This post will show a step by step tutorial of how to create a rails app with Angular.js on the front-end and allow you to successfully create an object and view those objects.</p>
+
+<p>First, lets create the rails app</p>
+
+<p><code>rails new angular app</code></p>
+
+<p>After you <code>cd</code> into the app, we are going to create a resource for the model we are looking to have.  A resource will provide you with the model, an empty controller, a views folder with no views, and resourced routes for that model.  Close to scaffolding but not really.  Lets make a user model and give it a name:</p>
+
+<p><code>rails g resource user name</code></p>
+
+<p>and don&rsquo;t forget to migrate the database.</p>
+
+<p><code>rake db:migrate</code></p>
+
+<p>Next we have to create a controller with just an index action because the entire app will take place in that single action.  Lets call the controller home.</p>
+
+<p><code>rails g controller home index</code></p>
+
+<p>Next we have to remove the public/index.html file and make sure to add the home#index route as your root route:</p>
+
+<p><code>root :to => &ldquo;home#index&rdquo;</code></p>
+
+<p>Remember that empty user controller?  We have to go back to it now and create the RESTful data source for our app to interact with.  It&rsquo;s really not too too crazy.  For the purposed of this app we are only going to have an index action and a create action:</p>
+
+<p><img src="/images/angularcontroller.png" alt="My params" /></p>
+
+<p>Now we need to add Angular.js to the app.  In your Gemfile, and in the assets group, we need to add the Angular.js gem:</p>
+
+<p><code>gem &lsquo;angularjs-rails</code></p>
+
+<p>And in our application.js file, we need to add the following lines:</p>
+
+<p><code>//= require angular</code><br>
+<code>//= require angular-resource</code></p>
+
+<p>Awesome, were doing pretty well thus far.  Next we have to tell our app &ldquo;Hey, you need to be in Angular.js&rdquo;, so go over to your application layout file and look for your html tag.  We need to add something to this tag to tell the app it&rsquo;s going to be Angular.  For this we do the following:</p>
+
+<p><code>html ng-app</code></p>
+
+<p>This directive is used to flag the html element and tell is that Angular should be considered the root element of our application.  You can add a directive like this to other elements in your app if you wish to not have the entire app be Angular.</p>
+
+<p>That is your basic setup.  We have Angular in our app and our html elements is ready.</p>
+
+<p>Now we have a view.  I&rsquo;m going to show the view and then talk about whats going on here:</p>
+
+<p><img src="/images/angularview.png" alt="My params" /></p>
+
+<p>At the top of the view we have:</p>
+
+<p><code>div ng-controller=&ldquo;UserController&rdquo;</code></p>
+
+<p>Eventually, we will create a controller, and what we are doing here is saying, &ldquo;Anything in this div refers to the UserController&rdquo;.  We are then creating a list, and each list item has the following code attached:</p>
+
+<p><code>ng-repeat=&ldquo;user in users&rdquo;</p>
+
+<p>Eventually, we will have an array on users, and hg-repeat is a way to iterate through the array.  And then we simply list the users names.</p>
+
+<p>Next we have a form with an input field.  This input field has:</p>
+
+<p><code>ng-model=&ldquo;newUser.name&rdquo;</code></p>
+
+<p>This ng-model is almost like a variable in that we will be setting this ng-model to whatever we put in the input field.</p>
+
+<p>Then we have a button that has:</p>
+
+<p><code>ng-click=&ldquo;addUser()&rdquo;</code></p>
+
+<p>We are attaching ng-click to the button and that will run an addUser function that we will have to create.  In the span element, you will see a double bonded value of the input field.  When you are typing in text to the input field, it will show here.  It&rsquo;s more of a cool thing to have than necessary.  Now all we need is that controller.</p>
+
+<p><img src="/images/angularmodule.png" alt="My params" /></p>
+
+<p>At the top, we create a module which we call &ldquo;User&rdquo;.  Going back to our layout file, we need to add this module to our directive.  That html element will now look like this:</p>
+
+<p><code>html ng-app=&ldquo;User&rdquo;</code></p>
+
+<p>To create a controller in Angular is like creating a javascript class, with a function.  We create it by adding in a scope.  A scope is an object that refers to the application model, kinda like self in ruby or this in javascript, but also not really.</p>
+
+<p>In order to set our array, remember its called users in the view, we have to find a way to get that data of users from the database.  Remember when we added angular-resource to the application.js file, and remember when we added ngResource to our module?  We did this to set up Angular resource which allows you to interact with restful server side data source (our user controller in railsland).</p>
+
+<p>In that first line we are saying, set the User variable to all the objects at the route &ldquo;/users.json&rdquo;.  The reason we cannot simply give the route of &ldquo;/users&rdquo; is because the return html and not json.  In the next line we set the scope.users to User.query().  The query function allows you to GET an array.</p>
+
+<p>Awesome now all we want to do is add users to that array.  In the view, the button had an ng-click=&ldquo;addUser()&rdquo; on it.  We needed to create that function and we do it here.  Here we are getting the input from the form field with an ng-model of newUser.name and saving it to the object.  In angular, the .save method is used to create an object and not update it.  Then all we do is push that entry into the users array that we set above and set the input field to blank.</p>
+
+<p>Now we can create an object and get an array of objects in a rails app that utilizes Angular.js on the client side.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -576,62 +701,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/10/05/push-it-real-good/">Push It Real Good</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-10-05T18:23:00-04:00" pubdate data-updated="true">Oct 5<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Real quick post today on deployment.</p>
-
-<p>The apps I made thus far have all been deployed following these guidelines:</p>
-
-<p><a href="http://stackoverflow.com/">Spike Grobstein = Beast</a></p>
-
-<p>If you were able to successfully deploy your rails app to production via Capistrano you have done all the heavy lifting already.  If you make new changes that you would like to push to the server all you have to do is <a href="https://twitter.com/Chris_GonzGonz">thanks for my boy Chris Gonzales</a>:</p>
-
-<ol>
-<li>Go into your public folder on your local machine and write the command:</li>
-</ol>
-
-
-<p>cap deploy:setup</p>
-
-<ol>
-<li>Follow it up by the command:</li>
-</ol>
-
-
-<p>cap deploy</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -647,6 +716,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/07/angular/">Angular on Rails</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/27/push-to-heroku/">Heroku, AWS, DNS Simple</a>
       </li>
     
@@ -660,10 +733,6 @@
     
       <li class="post">
         <a href="/blog/2013/12/10/fancybox-gallery/">FancyBox Gallery Trix</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/10/highlight-current-page-rails/">Highlight Current Page Rails</a>
       </li>
     
   </ul>
@@ -708,7 +777,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Steven Brooks -
+  Copyright &copy; 2014 - Steven Brooks -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

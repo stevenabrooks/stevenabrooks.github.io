@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2013-12-27T16:23:03-05:00</updated>
+  <updated>2014-01-07T22:13:02-05:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -12,6 +12,104 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Angular on Rails]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2014/01/07/angular/"/>
+    <updated>2014-01-07T09:25:00-05:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2014/01/07/angular</id>
+    <content type="html"><![CDATA[<p>The last few days I have had some spare time to play around with some fun new programming languages.  While I love rails, I felt like it was time to at leaf explore something else with rails, so enter <a href="http://angularjs.org/">Angular.js</a>, as client-size javascript MVC framework.  There&rsquo;s a lot of hype around it, so I wanted to see if I could put together a very basic app.  I knew ahead of time that Angular.js was client side, so I wanted to see how easy it would be to attach it to a rails backend.</p>
+
+<p>The truth is, it wasn&rsquo;t that easy, and although there is a nice <a href="http://railscasts.com/episodes/405-angularjs">Railscast</a>, following that does not yield you with the ability to call objects from the database.  So I had to do some extra digging on debugging on my own, which actually was super useful.</p>
+
+<p>At first glance, Angular.js was pretty sweet, it has something called double-binding which in short allows logic to be done client side in real time.  For example, when you type in your name into a text field, it will print you name as well as filter is the way you want it to right on the fly.  Pretty cool.</p>
+
+<p>This post will show a step by step tutorial of how to create a rails app with Angular.js on the front-end and allow you to successfully create an object and view those objects.</p>
+
+<p>First, lets create the rails app</p>
+
+<p><code>rails new angular app</code></p>
+
+<p>After you <code>cd</code> into the app, we are going to create a resource for the model we are looking to have.  A resource will provide you with the model, an empty controller, a views folder with no views, and resourced routes for that model.  Close to scaffolding but not really.  Lets make a user model and give it a name:</p>
+
+<p><code>rails g resource user name</code></p>
+
+<p>and don&rsquo;t forget to migrate the database.</p>
+
+<p><code>rake db:migrate</code></p>
+
+<p>Next we have to create a controller with just an index action because the entire app will take place in that single action.  Lets call the controller home.</p>
+
+<p><code>rails g controller home index</code></p>
+
+<p>Next we have to remove the public/index.html file and make sure to add the home#index route as your root route:</p>
+
+<p><code>root :to => &ldquo;home#index&rdquo;</code></p>
+
+<p>Remember that empty user controller?  We have to go back to it now and create the RESTful data source for our app to interact with.  It&rsquo;s really not too too crazy.  For the purposed of this app we are only going to have an index action and a create action:</p>
+
+<p><img src="http://stevenabrooks.github.io/images/angularcontroller.png" alt="My params" /></p>
+
+<p>Now we need to add Angular.js to the app.  In your Gemfile, and in the assets group, we need to add the Angular.js gem:</p>
+
+<p><code>gem &lsquo;angularjs-rails</code></p>
+
+<p>And in our application.js file, we need to add the following lines:</p>
+
+<p><code>//= require angular</code><br>
+<code>//= require angular-resource</code></p>
+
+<p>Awesome, were doing pretty well thus far.  Next we have to tell our app &ldquo;Hey, you need to be in Angular.js&rdquo;, so go over to your application layout file and look for your html tag.  We need to add something to this tag to tell the app it&rsquo;s going to be Angular.  For this we do the following:</p>
+
+<p><code>html ng-app</code></p>
+
+<p>This directive is used to flag the html element and tell is that Angular should be considered the root element of our application.  You can add a directive like this to other elements in your app if you wish to not have the entire app be Angular.</p>
+
+<p>That is your basic setup.  We have Angular in our app and our html elements is ready.</p>
+
+<p>Now we have a view.  I&rsquo;m going to show the view and then talk about whats going on here:</p>
+
+<p><img src="http://stevenabrooks.github.io/images/angularview.png" alt="My params" /></p>
+
+<p>At the top of the view we have:</p>
+
+<p><code>div ng-controller=&ldquo;UserController&rdquo;</code></p>
+
+<p>Eventually, we will create a controller, and what we are doing here is saying, &ldquo;Anything in this div refers to the UserController&rdquo;.  We are then creating a list, and each list item has the following code attached:</p>
+
+<p><code>ng-repeat=&ldquo;user in users&rdquo;</p>
+
+<p>Eventually, we will have an array on users, and hg-repeat is a way to iterate through the array.  And then we simply list the users names.</p>
+
+<p>Next we have a form with an input field.  This input field has:</p>
+
+<p><code>ng-model=&ldquo;newUser.name&rdquo;</code></p>
+
+<p>This ng-model is almost like a variable in that we will be setting this ng-model to whatever we put in the input field.</p>
+
+<p>Then we have a button that has:</p>
+
+<p><code>ng-click=&ldquo;addUser()&rdquo;</code></p>
+
+<p>We are attaching ng-click to the button and that will run an addUser function that we will have to create.  In the span element, you will see a double bonded value of the input field.  When you are typing in text to the input field, it will show here.  It&rsquo;s more of a cool thing to have than necessary.  Now all we need is that controller.</p>
+
+<p><img src="http://stevenabrooks.github.io/images/angularmodule.png" alt="My params" /></p>
+
+<p>At the top, we create a module which we call &ldquo;User&rdquo;.  Going back to our layout file, we need to add this module to our directive.  That html element will now look like this:</p>
+
+<p><code>html ng-app=&ldquo;User&rdquo;</code></p>
+
+<p>To create a controller in Angular is like creating a javascript class, with a function.  We create it by adding in a scope.  A scope is an object that refers to the application model, kinda like self in ruby or this in javascript, but also not really.</p>
+
+<p>In order to set our array, remember its called users in the view, we have to find a way to get that data of users from the database.  Remember when we added angular-resource to the application.js file, and remember when we added ngResource to our module?  We did this to set up Angular resource which allows you to interact with restful server side data source (our user controller in railsland).</p>
+
+<p>In that first line we are saying, set the User variable to all the objects at the route &ldquo;/users.json&rdquo;.  The reason we cannot simply give the route of &ldquo;/users&rdquo; is because the return html and not json.  In the next line we set the scope.users to User.query().  The query function allows you to GET an array.</p>
+
+<p>Awesome now all we want to do is add users to that array.  In the view, the button had an ng-click=&ldquo;addUser()&rdquo; on it.  We needed to create that function and we do it here.  Here we are getting the input from the form field with an ng-model of newUser.name and saving it to the object.  In angular, the .save method is used to create an object and not update it.  Then all we do is push that entry into the users array that we set above and set the input field to blank.</p>
+
+<p>Now we can create an object and get an array of objects in a rails app that utilizes Angular.js on the client side.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Heroku, AWS, DNS Simple]]></title>
@@ -468,37 +566,6 @@ Steven</p>
 <p>This morning I was telling a few classmates before the session started about Active Admin and how cool I thought it was.  Our head instructor, Avi Flombaum, shook his head and told me that it really wasn&rsquo;t that great.  It made think of my trading days before I became a student at <a href="http://flatironschool.com/">The Flatiron School</a>.  At first I had my charts with a million different indicators on them, and as it turned out, I really didn&rsquo;t even use any of them.  So over time I took off indicators and as I took them off my gains increased.</p>
 
 <p>The truth is, when I was trading, I needed a little as possible.  I needed exactly the minimum for me to get the job done, so to speak.  Same goes for coding.  Yes this Active Admin looks amazing, but the truth is I don&rsquo;t need fireworks and amazing colors and anything above exactly what I need.  I have total confidence that I can make my own CMS pretty easily, and maybe make it pretty with some simple <a href="http://getbootstrap.com/2.3.2/">Bootstrap</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Community is Not Even Real]]></title>
-    <link href="http://stevenabrooks.github.io/blog/2013/08/13/the-community-is-not-even-real/"/>
-    <updated>2013-08-13T09:23:00-04:00</updated>
-    <id>http://stevenabrooks.github.io/blog/2013/08/13/the-community-is-not-even-real</id>
-    <content type="html"><![CDATA[<p>Quick post today.  Currently having a nice mini lecture on client/server stuff by <a href="https://twitter.com/blake41">Blake Johnson</a>.</p>
-
-<p>Anyway real quick I just wanted to get down on paper, or on the keys, how awesome the programming community is.</p>
-
-<p>Yesterday at the end of the day I was struggling with some <a href="https://developers.google.com/chart/">Google Graph</a> stuff.  I wanted to head home a little early to get to the gym so I though I&rsquo;d throw some darts online and see if any of them stuck.</p>
-
-<p>I posted two questions online hoping that maybe by the time I got home (1.5 hour commute) maybe somebody would help me.  I put a question on <a href="http://stackoverflow.com/">Stack Overflow</a> and also the <a href="https://groups.google.com/forum/#!forum/google-visualization-api">Google Chart&rsquo;s Forum</a>.</p>
-
-<p>I sent my two questions, packed up my keys, and as I opened the door to leave <a href="http://flatironschool.com/">The Flatiron School</a> I get an email response from someone from the Charts forum.  I couldn&rsquo;t believe it.  The thread that I asked a question on hadn&rsquo;t been active at all for a month, and a member responded to me in less than 2 minutes.</p>
-
-<p>Amazing.  I have learned so much in 10 weeks and I contribute a the large majority of that to the resources I have to my disposal here at <a href="http://flatironschool.com/">The Flatiron School</a>, but I feel more confident now that even when I am not a student here and on my own at 2am, I will have no trouble getting the help I need.  The community is unreal.</p>
-
-<p>Here is the ongoing conversation I am having with one of the users: <a href="https://groups.google.com/forum/#!topic/google-visualization-api/t4jAaaJc200">here</a>.</p>
-
-<p>I am officially not only searching google blogs or forums from now on, but I will not be bashful at all in asking questions to the public community.  This is similar to my early resistance to asking questions in class, but the first time I asked a dumb question that was not met with laughter I was over that.  Same thing here.</p>
-
-<p>And as a side not for only searching blogs on google now.  Yesterday I was having trouble with a dashboard for <a href="https://developers.google.com/chart/">Google Graph&rsquo;s</a> and standard google searching wasn&rsquo;t giving my anything helpful.  But then I searched strictly blogs, and not only was the first blog exactly what I was looking for but it was also a hold-your-hand style tutorial that was beyond perfect for what I was looking for.  Boom.</p>
-
-<p>In my programming career I have asked two questions to the public forum with both being answered within minutes as well as both responders had back and forth conversations with me.  Amazing.</p>
-
-<p>Maybe in my spare time I&rsquo;ll find a way to do analytics on this.  Would be really interesting to see the average time it takes someone to respond to a S-Overflow or forum question.  I totally love data crunching so maybe that will be something I can do.</p>
-
-<p>Also I&rsquo;m thinking of asking this guy what his <a href="https://www.github.com/">GitHub</a> is and tip him on <a href="https://www.gittip.com/">GitTip</a> because I would totally do that.</p>
 ]]></content>
   </entry>
   
