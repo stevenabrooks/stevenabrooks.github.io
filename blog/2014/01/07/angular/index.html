@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="The last few days I have had some spare time to play around with some fun new programming languages. While I love rails, I felt like it was time to &hellip;">
+  <meta name="description" content="This post will show a step by step tutorial of how to create a rails app with Angular.js on the front-end and allow you to successfully create an &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,19 +91,13 @@
   </header>
 
 
-<div class="entry-content"><p>The last few days I have had some spare time to play around with some fun new programming languages.  While I love rails, I felt like it was time to at leaf explore something else with rails, so enter <a href="http://angularjs.org/">Angular.js</a>, as client-size javascript MVC framework.  There&rsquo;s a lot of hype around it, so I wanted to see if I could put together a very basic app.  I knew ahead of time that Angular.js was client side, so I wanted to see how easy it would be to attach it to a rails backend.</p>
-
-<p>The truth is, it wasn&rsquo;t that easy, and although there is a nice <a href="http://railscasts.com/episodes/405-angularjs">Railscast</a>, following that does not yield you with the ability to call objects from the database.  So I had to do some extra digging on debugging on my own, which actually was super useful.</p>
-
-<p>At first glance, Angular.js was pretty sweet, it has something called double-binding which in short allows logic to be done client side in real time.  For example, when you type in your name into a text field, it will print you name as well as filter is the way you want it to right on the fly.  Pretty cool.</p>
-
-<p>This post will show a step by step tutorial of how to create a rails app with Angular.js on the front-end and allow you to successfully create an object and view those objects.</p>
+<div class="entry-content"><p>This post will show a step by step tutorial of how to create a rails app with Angular.js on the front-end and allow you to successfully create an object and view those objects.</p>
 
 <p>First, lets create the rails app</p>
 
 <p><code>rails new angular app</code></p>
 
-<p>After you <code>cd</code> into the app, we are going to create a resource for the model we are looking to have.  A resource will provide you with the model, an empty controller, a views folder with no views, and resourced routes for that model.  Close to scaffolding but not really.  Lets make a user model and give it a name:</p>
+<p>After you <code>cd</code> into the app, we are going to create a resource for the model we are going to have.  A resource will provide you with the model, an empty controller, a views folder with no views, and resourced routes for that model.  Close to scaffolding but not really.  Lets make a user model and give it a name:</p>
 
 <p><code>rails g resource user name</code></p>
 
@@ -132,11 +126,11 @@
 <p><code>//= require angular</code><br>
 <code>//= require angular-resource</code></p>
 
-<p>Awesome, were doing pretty well thus far.  Next we have to tell our app &ldquo;Hey, you need to be in Angular.js&rdquo;, so go over to your application layout file and look for your html tag.  We need to add something to this tag to tell the app it&rsquo;s going to be Angular.  For this we do the following:</p>
+<p>Awesome, were doing pretty well thus far.  Next we have to tell our app &ldquo;Hey, you need to be in Angular.js&rdquo;, so go over to your application layout file and look for your html tag.  We need to add something to this tag to tell the app it&rsquo;s going to be in Angular.  For this we do the following:</p>
 
 <p><code>html ng-app</code></p>
 
-<p>This directive is used to flag the html element and tell is that Angular should be considered the root element of our application.  You can add a directive like this to other elements in your app if you wish to not have the entire app be Angular.</p>
+<p>This directive is used to flag the html element and tell it that Angular should be considered the root element of our application.  You can add a directive like this to other elements in your app if you wish to not have the entire app be Angular.</p>
 
 <p>That is your basic setup.  We have Angular in our app and our html elements is ready.</p>
 
@@ -148,11 +142,11 @@
 
 <p><code>div ng-controller=&ldquo;UserController&rdquo;</code></p>
 
-<p>Eventually, we will create a controller, and what we are doing here is saying, &ldquo;Anything in this div refers to the UserController&rdquo;.  We are then creating a list, and each list item has the following code attached:</p>
+<p>Eventually, we will create an Angular controller, and what we are doing here is saying, &ldquo;Anything in this div refers to the UserController&rdquo;.  We are then creating a list, and each list item has the following code attached:</p>
 
-<p><code>ng-repeat=&ldquo;user in users&rdquo;</p>
+<p><code>ng-repeat=&ldquo;user in users&rdquo;</code></p>
 
-<p>Eventually, we will have an array on users, and hg-repeat is a way to iterate through the array.  And then we simply list the users names.</p>
+<p>Eventually, we will have an array of users, and ng-repeat is a way to iterate through the array.  And then we simply list the users names.</p>
 
 <p>Next we have a form with an input field.  This input field has:</p>
 
@@ -164,7 +158,7 @@
 
 <p><code>ng-click=&ldquo;addUser()&rdquo;</code></p>
 
-<p>We are attaching ng-click to the button and that will run an addUser function that we will have to create.  In the span element, you will see a double bonded value of the input field.  When you are typing in text to the input field, it will show here.  It&rsquo;s more of a cool thing to have than necessary.  Now all we need is that controller.</p>
+<p>We are attaching ng-click to the button and that will run an addUser function that we will have to create.  In the span element, you will see a double binded value of the input field.  When you are typing in text to the input field, it will show here.  It&rsquo;s more of a cool thing to have than necessary.  Now all we need is that angular controller.</p>
 
 <p><img src="/images/angularmodule.png" alt="My params" /></p>
 
