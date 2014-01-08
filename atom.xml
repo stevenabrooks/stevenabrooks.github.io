@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2014-01-08T11:19:35-05:00</updated>
+  <updated>2014-01-08T14:46:59-05:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -22,7 +22,7 @@
 
 <p>First, lets create the rails app</p>
 
-<p><code>rails new angular app</code></p>
+<p><code>rails new angular</code></p>
 
 <p>After you <code>cd</code> into the app, we are going to create a resource for the model we are going to have.  A resource will provide you with the model, an empty controller, a views folder with no views, and resourced routes for that model.  Close to scaffolding but not really.  Lets make a user model and give it a name:</p>
 
