@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2014-01-08T11:10:59-05:00</updated>
+  <updated>2014-01-08T11:12:20-05:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -42,7 +42,31 @@
 
 <p>Remember that empty user controller?  We have to go back to it now and create the RESTful data source for our app to interact with.  It&rsquo;s really not too too crazy.  For the purposed of this app we are only going to have an index action and a create action:</p>
 
-<p>File /Users/stevenbrooks1111/stevenabrooks.github.io/source/source/downloads/code/AngularController.rb could not be found</p>
+<figure class='code'><figcaption><span> (AngularController.rb)</span> <a href='http://stevenabrooks.github.io/downloads/code/AngularController.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">UsersController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+</span><span class='line'>  <span class="n">respond_to</span> <span class="ss">:json</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">index</span>
+</span><span class='line'>    <span class="n">respond_with</span> <span class="no">User</span><span class="o">.</span><span class="n">all</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">create</span>
+</span><span class='line'>    <span class="n">respond_with</span> <span class="no">User</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:user</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Now we need to add Angular.js to the app.  In your Gemfile, and in the assets group, we need to add the Angular.js gem:</p>
 
@@ -63,7 +87,33 @@
 
 <p>Now we have a view.  I&rsquo;m going to show the view and then talk about whats going on here:</p>
 
-<p>File /Users/stevenbrooks1111/stevenabrooks.github.io/source/source/downloads/code/angularview.html could not be found</p>
+<figure class='code'><figcaption><span> (angularview.html)</span> <a href='http://stevenabrooks.github.io/downloads/code/angularview.html'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">ng-controller=</span><span class="s">&quot;UserController&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;li</span> <span class="na">ng-repeat=</span><span class="s">&quot;user is users&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      {{ user.name }}
+</span><span class='line'>    <span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;form&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">ng-model=</span><span class="s">&quot;newUser.name&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;button</span> <span class="na">ng-click=</span><span class="s">&quot;addUser()&quot;</span><span class="nt">&gt;</span>Add User<span class="nt">&lt;/button&gt;&lt;br&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;span&gt;</span>{{newUser.name}}<span class="nt">&lt;/span&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/form&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>At the top of the view we have:</p>
 
@@ -87,7 +137,33 @@
 
 <p>We are attaching ng-click to the button and that will run an addUser function that we will have to create.  In the span element, you will see a double binded value of the input field.  When you are typing in text to the input field, it will show here.  It&rsquo;s more of a cool thing to have than necessary.  Now all we need is that angular controller.</p>
 
-<p>File /Users/stevenbrooks1111/stevenabrooks.github.io/source/source/downloads/code/angularmodule.js could not be found</p>
+<figure class='code'><figcaption><span> (angularmodule.js)</span> <a href='http://stevenabrooks.github.io/downloads/code/angularmodule.js'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s2">&quot;User&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;ngResource&quot;</span><span class="p">])</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">UserController</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$resource</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">User</span> <span class="o">=</span> <span class="nx">$resource</span><span class="p">(</span><span class="s2">&quot;/users.json&quot;</span><span class="p">)</span>
+</span><span class='line'>    <span class="nx">$scope</span><span class="p">.</span><span class="nx">users</span> <span class="o">=</span> <span class="nx">User</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">$scope</span><span class="p">.</span><span class="nx">addUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">entry</span> <span class="o">=</span> <span class="nx">User</span><span class="p">.</span><span class="nx">save</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span><span class="nx">$scope</span><span class="p">.</span><span class="nx">newUser</span><span class="p">.</span><span class="nx">name</span><span class="p">})</span>
+</span><span class='line'>    <span class="nx">$scope</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span>
+</span><span class='line'>    <span class="nx">$scope</span><span class="p">.</span><span class="nx">newUser</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;;&#39;</span>
+</span><span class='line'>  <span class="p">};</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>At the top, we create a module which we call &ldquo;User&rdquo;.  Going back to our layout file, we need to add this module to our directive.  That html element will now look like this:</p>
 
