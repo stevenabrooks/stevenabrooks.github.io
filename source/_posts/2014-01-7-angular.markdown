@@ -9,7 +9,7 @@ This post will show a step by step tutorial of how to create a rails app with An
 
 First, lets create the rails app
 
-<code>rails new angular app</code> 
+<code>rails new angular</code> 
 
 After you <code>cd</code> into the app, we are going to create a resource for the model we are going to have.  A resource will provide you with the model, an empty controller, a views folder with no views, and resourced routes for that model.  Close to scaffolding but not really.  Lets make a user model and give it a name:
 
