@@ -29,7 +29,7 @@ Next we have to remove the public/index.html file and make sure to add the home#
 
 Remember that empty user controller?  We have to go back to it now and create the RESTful data source for our app to interact with.  It's really not too too crazy.  For the purposed of this app we are only going to have an index action and a create action:
 
-![My params](/images/angularcontroller.png)
+{% include_code AngularController.rb %}
 
 Now we need to add Angular.js to the app.  In your Gemfile, and in the assets group, we need to add the Angular.js gem:
 
@@ -50,7 +50,7 @@ That is your basic setup.  We have Angular in our app and our html elements is r
 
 Now we have a view.  I'm going to show the view and then talk about whats going on here:
 
-![My params](/images/angularview.png)
+{% include_code angularview.html %}
 
 At the top of the view we have:
 
@@ -74,7 +74,7 @@ Then we have a button that has:
 
 We are attaching ng-click to the button and that will run an addUser function that we will have to create.  In the span element, you will see a double binded value of the input field.  When you are typing in text to the input field, it will show here.  It's more of a cool thing to have than necessary.  Now all we need is that angular controller.
 
-![My params](/images/angularmodule.png)
+{% include_code angularmodule.js %}
 
 At the top, we create a module which we call "User".  Going back to our layout file, we need to add this module to our directive.  That html element will now look like this:
 

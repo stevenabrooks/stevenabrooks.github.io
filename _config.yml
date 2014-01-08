@@ -31,7 +31,7 @@ permalink: /blog/:year/:month/:day/:title/
 source: source
 destination: public
 plugins: plugins
-code_dir: downloads/code
+code_dir: source/downloads/code
 category_dir: blog/categories
 markdown: rdiscount
 rdiscount:
@@ -69,7 +69,7 @@ github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
+twitter_user: stevenabrooks
 twitter_tweet_button: true
 
 # Google +1
