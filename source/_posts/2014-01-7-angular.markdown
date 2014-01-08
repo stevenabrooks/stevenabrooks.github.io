@@ -4,11 +4,6 @@ title: "Angular on Rails"
 date: 2014-01-7 09:25
 categories:
 ---
-The last few days I have had some spare time to play around with some fun new programming languages.  While I love rails, I felt like it was time to at leaf explore something else with rails, so enter [Angular.js](http://angularjs.org/), as client-size javascript MVC framework.  There's a lot of hype around it, so I wanted to see if I could put together a very basic app.  I knew ahead of time that Angular.js was client side, so I wanted to see how easy it would be to attach it to a rails backend.
-
-The truth is, it wasn't that easy, and although there is a nice [Railscast](http://railscasts.com/episodes/405-angularjs), following that does not yield you with the ability to call objects from the database.  So I had to do some extra digging on debugging on my own, which actually was super useful.
-
-At first glance, Angular.js was pretty sweet, it has something called double-binding which in short allows logic to be done client side in real time.  For example, when you type in your name into a text field, it will print you name as well as filter is the way you want it to right on the fly.  Pretty cool.
 
 This post will show a step by step tutorial of how to create a rails app with Angular.js on the front-end and allow you to successfully create an object and view those objects.
 
@@ -16,7 +11,7 @@ First, lets create the rails app
 
 <code>rails new angular app</code> 
 
-After you <code>cd</code> into the app, we are going to create a resource for the model we are looking to have.  A resource will provide you with the model, an empty controller, a views folder with no views, and resourced routes for that model.  Close to scaffolding but not really.  Lets make a user model and give it a name:
+After you <code>cd</code> into the app, we are going to create a resource for the model we are going to have.  A resource will provide you with the model, an empty controller, a views folder with no views, and resourced routes for that model.  Close to scaffolding but not really.  Lets make a user model and give it a name:
 
 <code>rails g resource user name</code>
 
@@ -45,11 +40,11 @@ And in our application.js file, we need to add the following lines:
 <code>//= require angular</code><br>
 <code>//= require angular-resource</code>
 
-Awesome, were doing pretty well thus far.  Next we have to tell our app "Hey, you need to be in Angular.js", so go over to your application layout file and look for your html tag.  We need to add something to this tag to tell the app it's going to be Angular.  For this we do the following:
+Awesome, were doing pretty well thus far.  Next we have to tell our app "Hey, you need to be in Angular.js", so go over to your application layout file and look for your html tag.  We need to add something to this tag to tell the app it's going to be in Angular.  For this we do the following:
 
 <code>html ng-app</code>
 
-This directive is used to flag the html element and tell is that Angular should be considered the root element of our application.  You can add a directive like this to other elements in your app if you wish to not have the entire app be Angular.
+This directive is used to flag the html element and tell it that Angular should be considered the root element of our application.  You can add a directive like this to other elements in your app if you wish to not have the entire app be Angular.
 
 That is your basic setup.  We have Angular in our app and our html elements is ready.
 
@@ -61,11 +56,11 @@ At the top of the view we have:
 
 <code>div ng-controller="UserController"</code>
 
-Eventually, we will create a controller, and what we are doing here is saying, "Anything in this div refers to the UserController".  We are then creating a list, and each list item has the following code attached:
+Eventually, we will create an Angular controller, and what we are doing here is saying, "Anything in this div refers to the UserController".  We are then creating a list, and each list item has the following code attached:
 
-<code>ng-repeat="user in users"
+<code>ng-repeat="user in users"</code>
 
-Eventually, we will have an array on users, and hg-repeat is a way to iterate through the array.  And then we simply list the users names.
+Eventually, we will have an array of users, and ng-repeat is a way to iterate through the array.  And then we simply list the users names.
 
 Next we have a form with an input field.  This input field has:
 
@@ -77,7 +72,7 @@ Then we have a button that has:
 
 <code>ng-click="addUser()"</code>
 
-We are attaching ng-click to the button and that will run an addUser function that we will have to create.  In the span element, you will see a double bonded value of the input field.  When you are typing in text to the input field, it will show here.  It's more of a cool thing to have than necessary.  Now all we need is that controller.
+We are attaching ng-click to the button and that will run an addUser function that we will have to create.  In the span element, you will see a double binded value of the input field.  When you are typing in text to the input field, it will show here.  It's more of a cool thing to have than necessary.  Now all we need is that angular controller.
 
 ![My params](/images/angularmodule.png)
 
