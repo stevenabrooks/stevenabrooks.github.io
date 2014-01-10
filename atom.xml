@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2014-01-08T14:46:59-05:00</updated>
+  <updated>2014-01-10T09:56:20-05:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -70,7 +70,7 @@
 
 <p>Now we need to add Angular.js to the app.  In your Gemfile, and in the assets group, we need to add the Angular.js gem:</p>
 
-<p><code>gem &lsquo;angularjs-rails</code></p>
+<p><code>gem &lsquo;angularjs-rails&rsquo;</code></p>
 
 <p>And in our application.js file, we need to add the following lines:</p>
 
@@ -121,7 +121,7 @@
 
 <p>Eventually, we will create an Angular controller, and what we are doing here is saying, &ldquo;Anything in this div refers to the UserController&rdquo;.  We are then creating a list, and each list item has the following code attached:</p>
 
-<p><code>ng-repeat=&ldquo;user in users&rdquo;</code></p>
+<p><code>li ng-repeat=&ldquo;user in users&rdquo;</code></p>
 
 <p>Eventually, we will have an array of users, and ng-repeat is a way to iterate through the array.  And then we simply list the users names.</p>
 
