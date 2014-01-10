@@ -33,7 +33,7 @@ Remember that empty user controller?  We have to go back to it now and create th
 
 Now we need to add Angular.js to the app.  In your Gemfile, and in the assets group, we need to add the Angular.js gem:
 
-<code>gem 'angularjs-rails</code>
+<code>gem 'angularjs-rails'</code>
 
 And in our application.js file, we need to add the following lines:
 
@@ -58,7 +58,7 @@ At the top of the view we have:
 
 Eventually, we will create an Angular controller, and what we are doing here is saying, "Anything in this div refers to the UserController".  We are then creating a list, and each list item has the following code attached:
 
-<code>ng-repeat="user in users"</code>
+<code>li ng-repeat="user in users"</code>
 
 Eventually, we will have an array of users, and ng-repeat is a way to iterate through the array.  And then we simply list the users names.
 
