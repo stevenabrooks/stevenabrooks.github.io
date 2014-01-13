@@ -1,0 +1,7 @@
+---
+layout: post
+title: "Angular on Rails"
+date: 2014-01-13 09:25
+categories:
+---
+This is a teaser post.  For the last few days I have been using a pretty popular ruby gem that was not working correctly.  With the help of a few people, I was able to find the error, make the correction, and write a passing test for the new code.  I have sent a pull request and hopefully it is accepted.  If it is I will write about it.  Could be my first open source commit.
