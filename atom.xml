@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2014-01-13T16:56:53-05:00</updated>
+  <updated>2014-01-14T16:53:02-05:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -14,7 +14,44 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Angular on Rails]]></title>
+    <title type="html"><![CDATA[15 Second Heroku Wait?]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2014/01/14/heroku-schedule/"/>
+    <updated>2014-01-14T10:23:00-05:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2014/01/14/heroku-schedule</id>
+    <content type="html"><![CDATA[<p>Here is the scenario you are in. You built a Rails app.  Congrats.  You have also pushed you app to <a href="http://heroku.com/">Heroku</a>.  Even better.  But after every hour, your Heroku server is seemingly shut down; that&rsquo;s why it can be free because it&rsquo;s not always &ldquo;in use&rdquo;.</p>
+
+<p>There&rsquo;s an easy way to combat that for free.</p>
+
+<p>1) Make a rake task that will &ldquo;ping&rdquo; your site.</p>
+
+<figure class='code'><figcaption><span> (update.rb)</span> <a href='http://stevenabrooks.github.io/downloads/code/update.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">desc</span> <span class="s2">&quot;Pings PING_URL to keep a dyno alive&quot;</span>
+</span><span class='line'><span class="n">task</span> <span class="ss">:dyno_ping</span> <span class="k">do</span>
+</span><span class='line'>  <span class="nb">require</span> <span class="s2">&quot;net/http&quot;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">&quot;YOUR SITE&quot;</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">response</span> <span class="o">=</span> <span class="ss">Net</span><span class="p">:</span><span class="ss">:HTTP</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2) Install <a href="https://scheduler.heroku.com">Heroku Scheduler</a> and set have it run the rake task every hour.</p>
+
+<p>That&rsquo;s it.  Now every time you go to your site you won&rsquo;t have to wait 15 second for it to load.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Open Source]]></title>
     <link href="http://stevenabrooks.github.io/blog/2014/01/13/stubhub/"/>
     <updated>2014-01-13T09:25:00-05:00</updated>
     <id>http://stevenabrooks.github.io/blog/2014/01/13/stubhub</id>
@@ -607,23 +644,6 @@ Steven</p>
 <p>Although I spent a good amount of time blogging about and working on my <a href="http://192.241.139.122/">Workout App</a>, I have decided to put that on the back burner for a while.  One of the things I got out of working on this application was the javascript and jQuery work.  Those are also very high on my list.  Last week I completed the first section of the <a href="http://www.codeavengers.com/">Code Avenger&rsquo;s</a> javascript tutorial.  I have to say this style of tutorial blows all other tutorials out of the water.  Because I know ruby I really needed a javascript tutorial which would be a stickler on syntax.  Avengers is very good at that and I just wish they would create third level for javascript which is supposed to focus on objects, GUI&rsquo;s, and events.</p>
 
 <p>Another thing that is high on my list is blogging. As I get heavy into the interviewing process there will be questions I am asked to which I do not know the answer to.  I would like to blog about specific questions that I do not know the answer to.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Making Responsive Sites for Mobile]]></title>
-    <link href="http://stevenabrooks.github.io/blog/2013/08/20/making-responsive-sites-for-mobile/"/>
-    <updated>2013-08-20T17:34:00-04:00</updated>
-    <id>http://stevenabrooks.github.io/blog/2013/08/20/making-responsive-sites-for-mobile</id>
-    <content type="html"><![CDATA[<p>I learned great lessons today about responsive websites.  The first lesson it to use a site such as <a href="http://responsinator.com/">The Responsinator</a> in order to be able to see your application across multiple platforms.  Second, use <a href="http://getbootstrap.com/2.3.2/">Twitter Bootstrap</a>.  Bootstrap comes with a responsive CSS stylesheet so that as long as you don&rsquo;t set a height/width for certain elements, your work will just become responsive on its own.  The third part is that on some mobile devices, such as the iPhone, the device will have auto zoom-out going for some reason.  In order to combat this you need to add the line</p>
-
-<p><img src="http://stevenabrooks.github.io/images/responsive.png" alt="responsive" /></p>
-
-<p>to your application and specifically to your layout file if you are using rails.  So rather than your site looking nice but having the iPhone zoom out like crazy, it will look something like this</p>
-
-<p><img src="http://stevenabrooks.github.io/images/photo.PNG" alt="my responsive form" /></p>
-
-<p>So while Bootstrap is amazing and allows people like me to create responsive sites without actually making them responsive, just remember to add the snippit above to your layout file.</p>
 ]]></content>
   </entry>
   

@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="I learned a valuable lesson this morning that I should have learned a while ago actually. Or at least I should have picked up on this earlier. Last &hellip;">
+  <meta name="description" content="I learned great lessons today about responsive websites. The first lesson it to use a site such as The Responsinator in order to be able to see your &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,50 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/20/making-responsive-sites-for-mobile/">Making Responsive Sites for Mobile</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-20T17:34:00-04:00" pubdate data-updated="true">Aug 20<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I learned great lessons today about responsive websites.  The first lesson it to use a site such as <a href="http://responsinator.com/">The Responsinator</a> in order to be able to see your application across multiple platforms.  Second, use <a href="http://getbootstrap.com/2.3.2/">Twitter Bootstrap</a>.  Bootstrap comes with a responsive CSS stylesheet so that as long as you don&rsquo;t set a height/width for certain elements, your work will just become responsive on its own.  The third part is that on some mobile devices, such as the iPhone, the device will have auto zoom-out going for some reason.  In order to combat this you need to add the line</p>
+
+<p><img src="/images/responsive.png" alt="responsive" /></p>
+
+<p>to your application and specifically to your layout file if you are using rails.  So rather than your site looking nice but having the iPhone zoom out like crazy, it will look something like this</p>
+
+<p><img src="/images/photo.PNG" alt="my responsive form" /></p>
+
+<p>So while Bootstrap is amazing and allows people like me to create responsive sites without actually making them responsive, just remember to add the snippit above to your layout file.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -512,46 +556,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/24/day-3/">Day 3, Four Models in One Form Are Driving Me Nuts</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-24T09:27:00-04:00" pubdate data-updated="true">Jul 24<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Grrrr.  Tough night last night.  The good news is that I&rsquo;m only going to have one form for this app and that&rsquo;s awesome. The bad news it that I am using four freaking models in my single form.  But the good news on that is if I can get this I will be able to crush any form in rails, which is literally one of the top three most important things about rails that I can think of.</p>
-
-<p>One of the things I learned is that in the create method in the controller, nothing in the joins table is happening until I save the information that is in the tables that the joins table belongs to.</p>
-
-<p>Quick post, spent a lot of time just trying to wrap my head around how I get multiple models in one form.  I realize though I can accept_nested_attributes for the sets within the lifts.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -569,7 +573,11 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/01/13/stubhub/">Angular on Rails</a>
+        <a href="/blog/2014/01/14/heroku-schedule/">15 Second Heroku Wait?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/13/stubhub/">Open Source</a>
       </li>
     
       <li class="post">
@@ -582,10 +590,6 @@
     
       <li class="post">
         <a href="/blog/2013/12/18/rails-upload-download/">Upload/Download in Rails</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/18/acts_as_list/">Acts_as_List With Active Admin</a>
       </li>
     
   </ul>
