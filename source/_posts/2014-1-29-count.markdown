@@ -1,0 +1,23 @@
+---
+layout: post
+title: "What's This Difference"
+date: 2014-01-29 10:23
+categories:
+---
+Hadn't been able to blog as much as I wanted in the last few days so I thought I'd write about something cool.  Lately, an app I have been working on has the potential to be seen by a very high volume of users, so in creating this application performance has to be something I am considering.
+
+So then to that extent I ask you, "What's the difference between 
+
+Model.all.count
+
+and
+
+Model.count?"
+
+Let's assume that the model we are referring to is Event.  Right now, in one of my apps I have roughly 350 or so events in my database.  Not big but can still serve the purpose of this blog post.  Both lines of code return us the same count, 350 or so.  With that I'm mind, what's the difference?
+
+Well when we run ```Event.all``` what does that do?  That returns an array of events.  So then we would be running count on that array of events.  Effectively, our SQL query would be something like ```SELECT "events".* FROM "events"```.  We would load the array and then run a count query on that array.
+
+When we run ```Event.count``` are we running count on an array?  No we are not.  Effectively, our SQL query here is ```SELECT COUNT(*) FROM "events"```.  Here, we are running a count query on the DB.
+
+ 
