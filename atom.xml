@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2014-01-14T16:53:02-05:00</updated>
+  <updated>2014-01-29T10:52:01-05:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[What's This Difference]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2014/01/29/count/"/>
+    <updated>2014-01-29T10:23:00-05:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2014/01/29/count</id>
+    <content type="html"><![CDATA[<p>Hadn&rsquo;t been able to blog as much as I wanted in the last few days so I thought I&rsquo;d write about something cool.  Lately, an app I have been working on has the potential to be seen by a very high volume of users, so in creating this application performance has to be something I am considering.</p>
+
+<p>So then to that extent I ask you, &ldquo;What&rsquo;s the difference between</p>
+
+<p>Model.all.count</p>
+
+<p>and</p>
+
+<p>Model.count?&#8221;</p>
+
+<p>Let&rsquo;s assume that the model we are referring to is Event.  Right now, in one of my apps I have roughly 350 or so events in my database.  Not big but can still serve the purpose of this blog post.  Both lines of code return us the same count, 350 or so.  With that I&rsquo;m mind, what&rsquo;s the difference?</p>
+
+<p>Well when we run <code>Event.all</code> what does that do?  That returns an array of events.  So then we would be running count on that array of events.  Effectively, our SQL query would be something like <code>SELECT "events".* FROM "events"</code>.  We would load the array and then run a count query on that array.</p>
+
+<p>When we run <code>Event.count</code> are we running count on an array?  No we are not.  Effectively, our SQL query here is <code>SELECT COUNT(*) FROM "events"</code>.  Here, we are running a count query on the DB.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[15 Second Heroku Wait?]]></title>
@@ -627,23 +650,6 @@ Steven</p>
 <p>The scope I was introduced to in the past 12 weeks was variable scope, etc.  So this was a fun problem to work through.</p>
 
 <p>You learn something new everyday&hellip;or at least you should try.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Graduated]]></title>
-    <link href="http://stevenabrooks.github.io/blog/2013/08/26/graduated/"/>
-    <updated>2013-08-26T08:27:00-04:00</updated>
-    <id>http://stevenabrooks.github.io/blog/2013/08/26/graduated</id>
-    <content type="html"><![CDATA[<p>Last Friday, myself and 31 other students graduated from <a href="http://flatironschool.com/">The Flatiron School</a>.  It was a fantastic 12 weeks and an excellent start to my programming career.  We also Karaoke&rsquo;d a lot Friday night and I still don&rsquo;t have much of a voice so that probably won&rsquo;t help all my interviews this week.</p>
-
-<p>Either way I wanted to make a quick post today about some of my goals for the near future.</p>
-
-<p>I feel strong with ruby, I feel I can make anything in ruby, but I also feel weak specifically in meta programming ruby.  So on my current to-do list, meta programming in ruby is for certain up there at the top.</p>
-
-<p>Although I spent a good amount of time blogging about and working on my <a href="http://192.241.139.122/">Workout App</a>, I have decided to put that on the back burner for a while.  One of the things I got out of working on this application was the javascript and jQuery work.  Those are also very high on my list.  Last week I completed the first section of the <a href="http://www.codeavengers.com/">Code Avenger&rsquo;s</a> javascript tutorial.  I have to say this style of tutorial blows all other tutorials out of the water.  Because I know ruby I really needed a javascript tutorial which would be a stickler on syntax.  Avengers is very good at that and I just wish they would create third level for javascript which is supposed to focus on objects, GUI&rsquo;s, and events.</p>
-
-<p>Another thing that is high on my list is blogging. As I get heavy into the interviewing process there will be questions I am asked to which I do not know the answer to.  I would like to blog about specific questions that I do not know the answer to.</p>
 ]]></content>
   </entry>
   

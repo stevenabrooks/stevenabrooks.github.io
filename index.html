@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="Here is the scenario you are in. You built a Rails app. Congrats. You have also pushed you app to Heroku. Even better. But after every hour, your &hellip;">
+  <meta name="description" content="Hadn&rsquo;t been able to blog as much as I wanted in the last few days so I thought I&rsquo;d write about something cool. Lately, an app I have been &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,56 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/29/count/">What&#8217;s This Difference</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-29T10:23:00-05:00" pubdate data-updated="true">Jan 29<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Hadn&rsquo;t been able to blog as much as I wanted in the last few days so I thought I&rsquo;d write about something cool.  Lately, an app I have been working on has the potential to be seen by a very high volume of users, so in creating this application performance has to be something I am considering.</p>
+
+<p>So then to that extent I ask you, &ldquo;What&rsquo;s the difference between</p>
+
+<p>Model.all.count</p>
+
+<p>and</p>
+
+<p>Model.count?&#8221;</p>
+
+<p>Let&rsquo;s assume that the model we are referring to is Event.  Right now, in one of my apps I have roughly 350 or so events in my database.  Not big but can still serve the purpose of this blog post.  Both lines of code return us the same count, 350 or so.  With that I&rsquo;m mind, what&rsquo;s the difference?</p>
+
+<p>Well when we run <code>Event.all</code> what does that do?  That returns an array of events.  So then we would be running count on that array of events.  Effectively, our SQL query would be something like <code>SELECT "events".* FROM "events"</code>.  We would load the array and then run a count query on that array.</p>
+
+<p>When we run <code>Event.count</code> are we running count on an array?  No we are not.  Effectively, our SQL query here is <code>SELECT COUNT(*) FROM "events"</code>.  Here, we are running a count query on the DB.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -737,42 +787,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/06/test/">Test</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-06T00:00:00-05:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>If this works I have figured out how to jail rig posts.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -788,6 +802,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/29/count/">What&#8217;s This Difference</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/14/heroku-schedule/">15 Second Heroku Wait?</a>
       </li>
     
@@ -801,10 +819,6 @@
     
       <li class="post">
         <a href="/blog/2013/12/27/push-to-heroku/">Heroku, AWS, DNS Simple</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/18/rails-upload-download/">Upload/Download in Rails</a>
       </li>
     
   </ul>

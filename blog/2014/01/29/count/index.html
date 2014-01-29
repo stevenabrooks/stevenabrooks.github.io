@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Searching Today - Steven Brooks' Blog</title>
+  <title>What's This Difference - Steven Brooks' Blog</title>
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="I&rsquo;m going to try to start something new on my blog. Unfortunately the last few weeks I haven&rsquo;t been able to code as much as I would have &hellip;">
+  <meta name="description" content="Hadn&rsquo;t been able to blog as much as I wanted in the last few days so I thought I&rsquo;d write about something cool. Lately, an app I have been &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2013/09/30/searching-today">
+  <link rel="canonical" href="http://stevenabrooks.github.io/blog/2014/01/29/count">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Steven Brooks' Blog" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Searching Today</h1>
+      <h1 class="entry-title">What's This Difference</h1>
     
     
       <p class="meta">
@@ -84,14 +84,28 @@
   
 
 
-<time datetime="2013-09-30T10:42:00-04:00" pubdate data-updated="true">Sep 30<span>th</span>, 2013</time>
+<time datetime="2014-01-29T10:23:00-05:00" pubdate data-updated="true">Jan 29<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I&rsquo;m going to try to start something new on my blog.  Unfortunately the last few weeks I haven&rsquo;t been able to code as much as I would have liked to (most of my time has been spent networking, interviewing, etc).  So now I&rsquo;d like do a few hours a day of different rails features and log what went on here on my blog.  Today I&rsquo;m going to work on search which will include manual search as well as some of the gems such as Sunspot.  Ttyl.</p>
+<div class="entry-content"><p>Hadn&rsquo;t been able to blog as much as I wanted in the last few days so I thought I&rsquo;d write about something cool.  Lately, an app I have been working on has the potential to be seen by a very high volume of users, so in creating this application performance has to be something I am considering.</p>
+
+<p>So then to that extent I ask you, &ldquo;What&rsquo;s the difference between</p>
+
+<p>Model.all.count</p>
+
+<p>and</p>
+
+<p>Model.count?&#8221;</p>
+
+<p>Let&rsquo;s assume that the model we are referring to is Event.  Right now, in one of my apps I have roughly 350 or so events in my database.  Not big but can still serve the purpose of this blog post.  Both lines of code return us the same count, 350 or so.  With that I&rsquo;m mind, what&rsquo;s the difference?</p>
+
+<p>Well when we run <code>Event.all</code> what does that do?  That returns an array of events.  So then we would be running count on that array of events.  Effectively, our SQL query would be something like <code>SELECT "events".* FROM "events"</code>.  We would load the array and then run a count query on that array.</p>
+
+<p>When we run <code>Event.count</code> are we running count on an array?  No we are not.  Effectively, our SQL query here is <code>SELECT COUNT(*) FROM "events"</code>.  Here, we are running a count query on the DB.</p>
 </div>
 
 
@@ -114,7 +128,7 @@
   
 
 
-<time datetime="2013-09-30T10:42:00-04:00" pubdate data-updated="true">Sep 30<span>th</span>, 2013</time>
+<time datetime="2014-01-29T10:23:00-05:00" pubdate data-updated="true">Jan 29<span>th</span>, 2014</time>
       
 
 
@@ -122,7 +136,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2013/09/30/searching-today/" data-via="stevenabrooks" data-counturl="http://stevenabrooks.github.io/blog/2013/09/30/searching-today/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stevenabrooks.github.io/blog/2014/01/29/count/" data-via="stevenabrooks" data-counturl="http://stevenabrooks.github.io/blog/2014/01/29/count/" >Tweet</a>
   
   
   
@@ -131,10 +145,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/09/25/its-been-a-while/" title="Previous Post: It's Been a While">&laquo; It's Been a While</a>
+        <a class="basic-alignment left" href="/blog/2014/01/14/heroku-schedule/" title="Previous Post: 15 Second Heroku Wait?">&laquo; 15 Second Heroku Wait?</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/09/30/some-searching/" title="Next Post: Rails DataTables">Rails DataTables &raquo;</a>
       
     </p>
   </footer>
