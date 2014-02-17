@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Day One Again"
+date: 2014-02-17 09:25
+categories:
+---
+It's been a long time since I last blogged (I think 3-4 weeks or so).  I'll quickly fill you in with what's been going on.  I had a bunch of interviews with some really cool companies so I was doing a lot of coding challenges on top of all of my contract work.  I was a busy beaver.
+
+But now I am so happy to say that I have found a home at StreetEast.  The really cool thing is out of all the companies I interviewed with, they were by far the one I wanted the most.
+
+As far as this blog is concerned, I can promise you that I will be writing about some really cool stuff on here.  For example, while my new laptop is downloading Mac OS X, I had a chance to look at the rails app, and yep, theres only like 150 models.
+
+Seeing something like that makes me so excited because I know I have so much to learn.  I have met all of the members of the team and everyone is super awesome.  Can't wait to see how awesome these next few weeks will be in learning the new code base and well just learning a ton in genral.
