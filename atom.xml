@@ -4,7 +4,7 @@
   <title><![CDATA[Steven Brooks' Blog]]></title>
   <link href="http://stevenabrooks.github.io/atom.xml" rel="self"/>
   <link href="http://stevenabrooks.github.io/"/>
-  <updated>2014-01-29T11:00:20-05:00</updated>
+  <updated>2014-02-17T17:09:05-05:00</updated>
   <id>http://stevenabrooks.github.io/</id>
   <author>
     <name><![CDATA[Steven Brooks]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Day One Again]]></title>
+    <link href="http://stevenabrooks.github.io/blog/2014/02/17/day-one/"/>
+    <updated>2014-02-17T09:25:00-05:00</updated>
+    <id>http://stevenabrooks.github.io/blog/2014/02/17/day-one</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s been a long time since I last blogged (I think 3-4 weeks or so).  I&rsquo;ll quickly fill you in with what&rsquo;s been going on.  I had a bunch of interviews with some really cool companies so I was doing a lot of coding challenges on top of all of my contract work.  I was a busy beaver.</p>
+
+<p>But now I am so happy to say that I have found a home at StreetEast.  The really cool thing is out of all the companies I interviewed with, they were by far the one I wanted the most.</p>
+
+<p>As far as this blog is concerned, I can promise you that I will be writing about some really cool stuff on here.  For example, while my new laptop is downloading Mac OS X, I had a chance to look at the rails app, and yep, theres only like 150 models.</p>
+
+<p>Seeing something like that makes me so excited because I know I have so much to learn.  I have met all of the members of the team and everyone is super awesome.  Can&rsquo;t wait to see how awesome these next few weeks will be in learning the new code base and well just learning a ton in genral.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[What's The Difference?]]></title>
@@ -631,25 +646,6 @@ Steven</p>
 <p>O(N2) represents an algorithm whose performance is directly proportional to the square of the size of the input data set.</p>
 
 <p>O(2N) denotes an algorithm whose growth will double with each additional element in the input data set.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Controller Scope]]></title>
-    <link href="http://stevenabrooks.github.io/blog/2013/08/26/controller-scope/"/>
-    <updated>2013-08-26T20:22:00-04:00</updated>
-    <id>http://stevenabrooks.github.io/blog/2013/08/26/controller-scope</id>
-    <content type="html"><![CDATA[<p>Well I had two interviews today&hellip;and on the second interview I had a questions to which i did not get the full answer to.</p>
-
-<p>The question was, &ldquo;why should we abstract methods out of the controller and put them into the model in rails?&rdquo;  Actually i think the question was worded a little different but that&rsquo;s pretty close.</p>
-
-<p>I answered by claiming that you want to abstract methods into the model because a messy controller would be difficult for another programmer to read your code.  Now that isn&rsquo;t wrong, but it isn&rsquo;t right either.</p>
-
-<p>The full correct answer has to do with scope, and after some help from the friendly interviewer I was able to get the answer.   If you create a method in the controller it&rsquo;s scope is just to that specific controller.  If you make a method in the model not only does its controller and view had access to those methods but so do all the other models.</p>
-
-<p>The scope I was introduced to in the past 12 weeks was variable scope, etc.  So this was a fun problem to work through.</p>
-
-<p>You learn something new everyday&hellip;or at least you should try.</p>
 ]]></content>
   </entry>
   

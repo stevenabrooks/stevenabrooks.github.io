@@ -9,7 +9,7 @@
   <meta name="author" content="Steven Brooks">
 
   
-  <meta name="description" content="So yesterday I hit a little bit of a wall. And the good news it I&rsquo;m not too worried about it. Right now I have four objects being either &hellip;">
+  <meta name="description" content="Although I have has multiple breakthroughs as far as my knowledge has been concerned over the last few days, I am still very stuck. The good news is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,54 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/28/day-5/">Day 5, Making My Params First</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-28T16:46:00-04:00" pubdate data-updated="true">Jul 28<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Although I have has multiple breakthroughs as far as my knowledge has been concerned over the last few days, I am still very stuck.  The good news is, I am now beginning to think differently about my forms.  Previously, I was worrying about the form first whereas now I am more conceded about creating the params that I want to be given from the form and then making the form first those params that I want.  Here are the current params I would like:</p>
+
+<p><img src="/images/params.png" alt="My params" /></p>
+
+<p>On the above code, I have a routine, which has a name.  That routine has this thing called arbitrary which means nothing.  But that routine has many lifts, each with an exercise_id and many infos(or sets) which have weight and repetitions.</p>
+
+<p>These are the params I constructed in IRB.</p>
+
+<p>The issue I am now having is that when I choose more than one exercise in my short form:</p>
+
+<p><img src="/images/smallform.png" alt="My form" /></p>
+
+<p>The params are only showing :lift once.  My guess is that it is only picking up the last exercise_id because it is overwriting each lift and just leaving the last one.  After about two hours so far today going down a rabbit hole I have decided to post my first question on <a href="http://stackoverflow.com/">Stack Overflow</a>.  So if anyone can help you can see my first questions <a href="http://stackoverflow.com/questions/17912435/nested-form-with-multiple-of-the-same-key-names">here</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -600,49 +648,9 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/09/hello-world/">Blog Post 1.0</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-09T17:51:00-04:00" pubdate data-updated="true">Jun 9<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;m excited to begin blogging about my experience in learning to become a programmer and especially my experience as a student at The Flatiron School.</p>
-
-<p>I&rsquo;d like to write these posts and have this blog tailored to a wide variety of people ranging from someone who has no programming knowledge to those who are masters in the field (I&rsquo;m sure once my development skills and vocabulary grow a good number of these posts will begin to be more technical.)  I can promise this specific blog will be different than other blogs built by programmers because I believe my background is very unique to this field.  While my fellow classmates come from many different background ranging from professional skydivers to accountants at Goldman Sachs, the only job I&rsquo;ve had has been as a professional baseball player.  One the other side of the coin I cannot promise that I will have perfect grammar or that I will not curse from time to time.</p>
-
-<p>I&rsquo;d also like to thank Max Jacobson (a fellow classmate) for helping me in debugging issues to set up this blog to my Github account.</p>
-
-<p>To be continued&hellip;</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/5/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -655,6 +663,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/17/day-one/">Day One Again</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/01/29/count/">What&#8217;s the Difference?</a>
@@ -670,10 +682,6 @@
     
       <li class="post">
         <a href="/blog/2014/01/07/angular/">Angular on Rails</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/27/push-to-heroku/">Heroku, AWS, DNS Simple</a>
       </li>
     
   </ul>
